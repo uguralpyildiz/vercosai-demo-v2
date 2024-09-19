@@ -235,7 +235,14 @@ h6,
     color: var(--light);
 }
 
-
+.views-container{
+    margin-top: 25px;
+}
+.views-container span{
+    color: #f5f5f5;
+    font-weight: 800 !important;
+    font-size: 13px ;
+}
 /*** Section Title ***/
 .section-title::before {
     position: absolute;
