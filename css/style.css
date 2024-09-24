@@ -956,7 +956,9 @@ svg text {
     stroke: #59A54F;
     font-size: 240px;
 }
-
+.text-white h5{
+    color: #fff !important;
+}
 @keyframes stroke {
     0% {
         fill: rgba(72, 138, 20, 0);
