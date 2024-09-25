@@ -129,7 +129,9 @@ h6,
     top: -150px;
     transition: .5s;
 }
-
+.navbar-brand img{
+    width: 180px;
+}
 .navbar {
     padding: 11px 0 !important;
     
@@ -191,6 +193,9 @@ color: #fff !important;
 }
 
 @media (max-width: 991.98px) {
+    .navbar-brand img {
+            width: 130px;
+        }
     .breadcrumb{
         display: none !important;
     }
@@ -424,7 +429,7 @@ color: #fff !important;
     color: #FFFFFF;
 }
 
-.service-item a.btn {
+.service-item span.btn {
     position: relative;
     display: flex;
     color: #fff;
@@ -432,12 +437,12 @@ color: #fff !important;
     z-index: 1;
 }
 
-.service-item:hover a.btn {
+.service-item:hover span.btn {
     color: #000;
     font-weight: 800;
 }
 
-.service-item a.btn::before {
+.service-item span.btn::before {
     position: absolute;
     content: "";
     width: 100%;
@@ -450,7 +455,7 @@ color: #fff !important;
     z-index: -1;
 }
 
-.service-item:hover a.btn::before {
+.service-item:hover span.btn::before {
     width: 100%;
     height: 35px;
     
@@ -607,6 +612,7 @@ color: #fff !important;
     display: flex;
     flex-direction: column;
     align-items: center;
+   
 }
 
 .testimonial-carousel .owl-nav .owl-prev,
