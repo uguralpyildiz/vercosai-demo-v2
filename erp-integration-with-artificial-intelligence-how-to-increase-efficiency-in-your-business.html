@@ -94,41 +94,51 @@
                 </div>
             <script>
                     document.addEventListener("DOMContentLoaded", function () {
-                            // Sayfa içinde herhangi bir yere tıklandığında çalışacak kod
-                            document.addEventListener("click", function (event) {
-                                var clickover = event.target;
-                                var navbarCollapse = document.querySelector("#navbarCollapse");
-                                var isOpened = navbarCollapse.classList.contains("show"); // Bootstrap 5'te "show" class'ı kullanılıyor
-                                var isNavbarToggle = clickover.closest(".navbar-toggler");
-                                var isDropdownToggle = clickover.closest(".dropdown-toggle"); // Dropdown menüsü açma butonunu kontrol et
-                                var isDropdownMenu = clickover.closest(".dropdown-menu"); // Dropdown menüsünü kontrol et
+    var lastScrollPosition = window.scrollY || document.documentElement.scrollTop;
 
-                                // Navbar sadece dropdown ve navbar-toggler dışındaki alanlara tıklandığında kapanacak
-                                if (isOpened && !isNavbarToggle && !isDropdownMenu && !isDropdownToggle) {
-                                    document.querySelector("button.navbar-toggler").click();
-                                }
-                            });
+    // Sayfa içinde herhangi bir yere tıklandığında çalışacak kod
+    document.addEventListener("click", function (event) {
+        var clickover = event.target;
+        var navbarCollapse = document.querySelector("#navbarCollapse");
+        var isOpened = navbarCollapse.classList.contains("show"); // Bootstrap 5'te "show" class'ı kullanılıyor
+        var isNavbarToggle = clickover.closest(".navbar-toggler");
+        var isDropdownToggle = clickover.closest(".dropdown-toggle"); // Dropdown menüsü açma butonunu kontrol et
+        var isDropdownMenu = clickover.closest(".dropdown-menu"); // Dropdown menüsünü kontrol et
 
-                            // Dropdown'un kapanmaması için varsayılan kapanma davranışını engelle
-                            var dropdowns = document.querySelectorAll('.dropdown-menu');
-                            dropdowns.forEach(function (dropdown) {
-                                dropdown.addEventListener('click', function (event) {
-                                    event.stopPropagation(); // Tıklama olayı diğer elemanlara yayılmasın
-                                });
-                            });
+        // Navbar sadece dropdown ve navbar-toggler dışındaki alanlara tıklandığında kapanacak
+        if (isOpened && !isNavbarToggle && !isDropdownMenu && !isDropdownToggle) {
+            document.querySelector("button.navbar-toggler").click();
+            // Sayfa pozisyonunu sıfırla
+            lastScrollPosition = window.scrollY || document.documentElement.scrollTop;
+        }
+    });
 
-                            // Sayfa kaydırıldığında navbar'ı kapat, ancak dropdown menüsü açıksa kapanmasın
-                            window.addEventListener('scroll', function () {
-                                var navbarCollapse = document.querySelector("#navbarCollapse");
-                                var isOpened = navbarCollapse.classList.contains("show");
+    // Dropdown'un kapanmaması için varsayılan kapanma davranışını engelle
+    var dropdowns = document.querySelectorAll('.dropdown-menu');
+    dropdowns.forEach(function (dropdown) {
+        dropdown.addEventListener('click', function (event) {
+            event.stopPropagation(); // Tıklama olayı diğer elemanlara yayılmasın
+        });
+    });
 
-                                // Eğer dropdown menüsü açık değilse navbar'ı kapat
-                                var isDropdownOpen = document.querySelector('.dropdown-menu.show'); // Açık dropdown'u kontrol et
-                                if (isOpened && !isDropdownOpen) {
-                                    document.querySelector("button.navbar-toggler").click();
-                                }
-                            });
-                        });
+    // Sayfa kaydırıldığında navbar'ı kapat, ancak son pozisyondan itibaren 100px kaydırılınca
+    window.addEventListener('scroll', function () {
+        var navbarCollapse = document.querySelector("#navbarCollapse");
+        var isOpened = navbarCollapse.classList.contains("show");
+
+        // Mevcut kaydırma pozisyonunu kontrol et
+        var currentScrollPosition = window.scrollY || document.documentElement.scrollTop;
+
+        // Eğer navbar açıksa ve son kaydedilen pozisyondan 100px fazla kaydırılmışsa navbar'ı kapat
+        if (isOpened && Math.abs(currentScrollPosition - lastScrollPosition) > 200) {
+            document.querySelector("button.navbar-toggler").click();
+            // Yeni pozisyonu kaydet
+            lastScrollPosition = currentScrollPosition;
+        }
+    });
+});
+
+
 
 
 
@@ -155,41 +165,51 @@
                         </ol>
                     <script>
                     document.addEventListener("DOMContentLoaded", function () {
-                            // Sayfa içinde herhangi bir yere tıklandığında çalışacak kod
-                            document.addEventListener("click", function (event) {
-                                var clickover = event.target;
-                                var navbarCollapse = document.querySelector("#navbarCollapse");
-                                var isOpened = navbarCollapse.classList.contains("show"); // Bootstrap 5'te "show" class'ı kullanılıyor
-                                var isNavbarToggle = clickover.closest(".navbar-toggler");
-                                var isDropdownToggle = clickover.closest(".dropdown-toggle"); // Dropdown menüsü açma butonunu kontrol et
-                                var isDropdownMenu = clickover.closest(".dropdown-menu"); // Dropdown menüsünü kontrol et
+    var lastScrollPosition = window.scrollY || document.documentElement.scrollTop;
 
-                                // Navbar sadece dropdown ve navbar-toggler dışındaki alanlara tıklandığında kapanacak
-                                if (isOpened && !isNavbarToggle && !isDropdownMenu && !isDropdownToggle) {
-                                    document.querySelector("button.navbar-toggler").click();
-                                }
-                            });
+    // Sayfa içinde herhangi bir yere tıklandığında çalışacak kod
+    document.addEventListener("click", function (event) {
+        var clickover = event.target;
+        var navbarCollapse = document.querySelector("#navbarCollapse");
+        var isOpened = navbarCollapse.classList.contains("show"); // Bootstrap 5'te "show" class'ı kullanılıyor
+        var isNavbarToggle = clickover.closest(".navbar-toggler");
+        var isDropdownToggle = clickover.closest(".dropdown-toggle"); // Dropdown menüsü açma butonunu kontrol et
+        var isDropdownMenu = clickover.closest(".dropdown-menu"); // Dropdown menüsünü kontrol et
 
-                            // Dropdown'un kapanmaması için varsayılan kapanma davranışını engelle
-                            var dropdowns = document.querySelectorAll('.dropdown-menu');
-                            dropdowns.forEach(function (dropdown) {
-                                dropdown.addEventListener('click', function (event) {
-                                    event.stopPropagation(); // Tıklama olayı diğer elemanlara yayılmasın
-                                });
-                            });
+        // Navbar sadece dropdown ve navbar-toggler dışındaki alanlara tıklandığında kapanacak
+        if (isOpened && !isNavbarToggle && !isDropdownMenu && !isDropdownToggle) {
+            document.querySelector("button.navbar-toggler").click();
+            // Sayfa pozisyonunu sıfırla
+            lastScrollPosition = window.scrollY || document.documentElement.scrollTop;
+        }
+    });
 
-                            // Sayfa kaydırıldığında navbar'ı kapat, ancak dropdown menüsü açıksa kapanmasın
-                            window.addEventListener('scroll', function () {
-                                var navbarCollapse = document.querySelector("#navbarCollapse");
-                                var isOpened = navbarCollapse.classList.contains("show");
+    // Dropdown'un kapanmaması için varsayılan kapanma davranışını engelle
+    var dropdowns = document.querySelectorAll('.dropdown-menu');
+    dropdowns.forEach(function (dropdown) {
+        dropdown.addEventListener('click', function (event) {
+            event.stopPropagation(); // Tıklama olayı diğer elemanlara yayılmasın
+        });
+    });
 
-                                // Eğer dropdown menüsü açık değilse navbar'ı kapat
-                                var isDropdownOpen = document.querySelector('.dropdown-menu.show'); // Açık dropdown'u kontrol et
-                                if (isOpened && !isDropdownOpen) {
-                                    document.querySelector("button.navbar-toggler").click();
-                                }
-                            });
-                        });
+    // Sayfa kaydırıldığında navbar'ı kapat, ancak son pozisyondan itibaren 100px kaydırılınca
+    window.addEventListener('scroll', function () {
+        var navbarCollapse = document.querySelector("#navbarCollapse");
+        var isOpened = navbarCollapse.classList.contains("show");
+
+        // Mevcut kaydırma pozisyonunu kontrol et
+        var currentScrollPosition = window.scrollY || document.documentElement.scrollTop;
+
+        // Eğer navbar açıksa ve son kaydedilen pozisyondan 100px fazla kaydırılmışsa navbar'ı kapat
+        if (isOpened && Math.abs(currentScrollPosition - lastScrollPosition) > 200) {
+            document.querySelector("button.navbar-toggler").click();
+            // Yeni pozisyonu kaydet
+            lastScrollPosition = currentScrollPosition;
+        }
+    });
+});
+
+
 
 
 
