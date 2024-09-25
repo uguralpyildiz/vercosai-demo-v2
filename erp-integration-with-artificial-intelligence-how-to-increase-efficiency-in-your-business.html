@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>VercosAI Digital Transformation</title>
+    <title>ERP Integration with Artificial Intelligence | VercosAI Digital Transformation</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -64,7 +64,7 @@
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-dark p-0">
                 <a href="index.html" class="navbar-brand">
-                    <img style="width: 180px;" src="img/logo.svg" alt="logo">
+                    <img  src="img/logo.svg" alt="logo">
                 </a>
                 <button type="button" class="navbar-toggler ms-auto me-0" data-bs-toggle="collapse"
                     data-bs-target="#navbarCollapse">
@@ -92,6 +92,48 @@
                     </div>
                     
                 </div>
+            <script>
+                    document.addEventListener("DOMContentLoaded", function () {
+                            // Sayfa içinde herhangi bir yere tıklandığında çalışacak kod
+                            document.addEventListener("click", function (event) {
+                                var clickover = event.target;
+                                var navbarCollapse = document.querySelector("#navbarCollapse");
+                                var isOpened = navbarCollapse.classList.contains("show"); // Bootstrap 5'te "show" class'ı kullanılıyor
+                                var isNavbarToggle = clickover.closest(".navbar-toggler");
+                                var isDropdownToggle = clickover.closest(".dropdown-toggle"); // Dropdown menüsü açma butonunu kontrol et
+                                var isDropdownMenu = clickover.closest(".dropdown-menu"); // Dropdown menüsünü kontrol et
+
+                                // Navbar sadece dropdown ve navbar-toggler dışındaki alanlara tıklandığında kapanacak
+                                if (isOpened && !isNavbarToggle && !isDropdownMenu && !isDropdownToggle) {
+                                    document.querySelector("button.navbar-toggler").click();
+                                }
+                            });
+
+                            // Dropdown'un kapanmaması için varsayılan kapanma davranışını engelle
+                            var dropdowns = document.querySelectorAll('.dropdown-menu');
+                            dropdowns.forEach(function (dropdown) {
+                                dropdown.addEventListener('click', function (event) {
+                                    event.stopPropagation(); // Tıklama olayı diğer elemanlara yayılmasın
+                                });
+                            });
+
+                            // Sayfa kaydırıldığında navbar'ı kapat, ancak dropdown menüsü açıksa kapanmasın
+                            window.addEventListener('scroll', function () {
+                                var navbarCollapse = document.querySelector("#navbarCollapse");
+                                var isOpened = navbarCollapse.classList.contains("show");
+
+                                // Eğer dropdown menüsü açık değilse navbar'ı kapat
+                                var isDropdownOpen = document.querySelector('.dropdown-menu.show'); // Açık dropdown'u kontrol et
+                                if (isOpened && !isDropdownOpen) {
+                                    document.querySelector("button.navbar-toggler").click();
+                                }
+                            });
+                        });
+
+
+
+
+                </script>
             </nav>
         </div>
     </div>
@@ -111,7 +153,49 @@
                             <li class="breadcrumb-item"><a class="text-white" href="#">ERP Integration with...</a></li>
                             
                         </ol>
-                    </nav>
+                    <script>
+                    document.addEventListener("DOMContentLoaded", function () {
+                            // Sayfa içinde herhangi bir yere tıklandığında çalışacak kod
+                            document.addEventListener("click", function (event) {
+                                var clickover = event.target;
+                                var navbarCollapse = document.querySelector("#navbarCollapse");
+                                var isOpened = navbarCollapse.classList.contains("show"); // Bootstrap 5'te "show" class'ı kullanılıyor
+                                var isNavbarToggle = clickover.closest(".navbar-toggler");
+                                var isDropdownToggle = clickover.closest(".dropdown-toggle"); // Dropdown menüsü açma butonunu kontrol et
+                                var isDropdownMenu = clickover.closest(".dropdown-menu"); // Dropdown menüsünü kontrol et
+
+                                // Navbar sadece dropdown ve navbar-toggler dışındaki alanlara tıklandığında kapanacak
+                                if (isOpened && !isNavbarToggle && !isDropdownMenu && !isDropdownToggle) {
+                                    document.querySelector("button.navbar-toggler").click();
+                                }
+                            });
+
+                            // Dropdown'un kapanmaması için varsayılan kapanma davranışını engelle
+                            var dropdowns = document.querySelectorAll('.dropdown-menu');
+                            dropdowns.forEach(function (dropdown) {
+                                dropdown.addEventListener('click', function (event) {
+                                    event.stopPropagation(); // Tıklama olayı diğer elemanlara yayılmasın
+                                });
+                            });
+
+                            // Sayfa kaydırıldığında navbar'ı kapat, ancak dropdown menüsü açıksa kapanmasın
+                            window.addEventListener('scroll', function () {
+                                var navbarCollapse = document.querySelector("#navbarCollapse");
+                                var isOpened = navbarCollapse.classList.contains("show");
+
+                                // Eğer dropdown menüsü açık değilse navbar'ı kapat
+                                var isDropdownOpen = document.querySelector('.dropdown-menu.show'); // Açık dropdown'u kontrol et
+                                if (isOpened && !isDropdownOpen) {
+                                    document.querySelector("button.navbar-toggler").click();
+                                }
+                            });
+                        });
+
+
+
+
+                </script>
+            </nav>
                     <div class="views-container">
                         <span style="padding: 10px;" class="pill-skill rounded-pill text-center">
                         <i class="fa fa-eye"></i> 1.3k Views
@@ -129,7 +213,7 @@
         <div class="row blog-entries element-animate">
             <div class="col-md-12 col-lg-8 main-content">
                 <div class="post-content-body">
-                    
+                    <h4>30/08/2024</h4>
                     <p>
                         In today's rapidly evolving business landscape, integrating <b>Artificial Intelligence (AI)</b>
                         with <b>Enterprise Resource Planning (ERP)</b> systems presents an unprecedented opportunity for
