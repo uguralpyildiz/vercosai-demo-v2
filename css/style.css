@@ -1041,6 +1041,9 @@ color: #fff !important;
     .newsletter img {
             display: none !important;
         }
+        .display-none{
+            display: none !important;
+        }
     .newsletter-text{
         width: 100%;
     }   
