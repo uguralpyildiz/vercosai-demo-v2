@@ -305,7 +305,7 @@ with Our AI and Image Processing Services
                                 <a href="bottling.html"
                                     class="service-item bottling d-flex flex-column justify-content-center text-center rounded">
                                     <div class="cardvideo">
-                                        <video poster="img/solutionsimgvid/bottling.jpeg" id="cardv" width="100%" height="100%" loop muted src="img/solutionsimgvid/bottlingvid.mp4"></video>
+                                        <video poster="img/solutionsimgvid/bottling.jpeg" class="cardv" width="100%" height="100%"  loop muted src="img/solutionsimgvid/bottlingvid.mp4"></video>
                                     </div>
                                     <h5 >Bottling</h5>
                                    
@@ -315,7 +315,7 @@ with Our AI and Image Processing Services
                                 <a href="erp-integration.html"
                                     class="service-item erp d-flex flex-column justify-content-center text-center rounded">
                                     <div class="cardvideo">
-                                        <video poster="img/solutionsimgvid/erp integration.jpg" id="cardv" width="100%" height="100%" loop muted src="img/solutionsimgvid/erp integr5ationvid.mp4"></video>
+                                        <video poster="img/solutionsimgvid/erp integration.jpg" class="cardv" width="100%" height="100%" loop muted src="img/solutionsimgvid/erp integr5ationvid.mp4"></video>
                                     </div>
                                     <h5 class="mb-3">ERP Integration</h5>
                                 </a>
@@ -324,7 +324,7 @@ with Our AI and Image Processing Services
                                 <a href="packaging.html"
                                     class="service-item pack d-flex flex-column justify-content-center text-center rounded">
                                     <div class="cardvideo">
-                                        <video poster="img/solutionsimgvid/pacgagingimg.jpg" id="cardv" width="100%" height="100%" loop muted src="img/solutionsimgvid/packaging.mp4"></video>
+                                        <video poster="img/solutionsimgvid/pacgagingimg.jpg" class="cardv" width="100%" height="100%" loop muted src="img/solutionsimgvid/packaging.mp4"></video>
                                     </div>
                                     <h5 class="mb-3">Packaging</h5>
                                 </a>
@@ -337,7 +337,7 @@ with Our AI and Image Processing Services
                                 <a href="fmcg.html"
                                     class="service-item fmcg d-flex flex-column justify-content-center text-center rounded">
                                     <div class="cardvideo">
-                                        <video poster="img/solutionsimgvid/FCMG.jpg" id="cardv" width="100%" height="100%" loop muted src="img/solutionsimgvid/FCMG.mp4"></video>
+                                        <video poster="img/solutionsimgvid/FCMG.jpg" class="cardv" width="100%" height="100%" loop muted src="img/solutionsimgvid/FCMG.mp4"></video>
                                     </div>
                                     <h5 class="mb-3">FMCG</h5>
                                 </a>
@@ -347,7 +347,7 @@ with Our AI and Image Processing Services
                                 <a href="line-tracking.html"
                                     class="service-item linetrack d-flex flex-column justify-content-center text-center rounded">
                                     <div class="cardvideo">
-                                        <video poster="img/solutionsimgvid/line tracking with.jpg" id="cardv" width="100%" height="100%" loop muted src="img/solutionsimgvid/line trackingvid.mp4"></video>
+                                        <video poster="img/solutionsimgvid/line tracking with.jpg" class="cardv" width="100%" height="100%" loop muted src="img/solutionsimgvid/line trackingvid.mp4"></video>
                                     </div>
                                     <h5 class="mb-3">Line Tracking</h5>
                                 </a>
@@ -356,7 +356,7 @@ with Our AI and Image Processing Services
                                 <a href="safety.html"
                                     class="service-item safety d-flex flex-column justify-content-center text-center rounded">
                                     <div class="cardvideo">
-                                        <video poster="img/solutionsimgvid/safety.jpg" id="cardv" width="100%" height="100%" loop muted src="img/solutionsimgvid/safety.mp4"></video>
+                                        <video poster="img/solutionsimgvid/safety.jpg" class="cardv" width="100%" height="100%" loop muted src="img/solutionsimgvid/safety.mp4"></video>
                                     </div>
                                     <h5 class="mb-3">Safety</h5>
                                 </a>
@@ -856,21 +856,38 @@ with Our AI and Image Processing Services
     <!-- Footer End -->
 
 <script>
-   
-    const cardvideo = document.querySelectorAll(".cardvideo")
-        const cardv = document.querySelectorAll("#cardv")
+    
+    const cardvideo = document.querySelectorAll(".cardvideo");
+        const cardv = document.querySelectorAll(".cardv");
 
-        for (let i = 0; i < cardvideo.length; i++) {
-            cardvideo[i].addEventListener("mouseover", () => {
-                cardv[i].play(); // Mouse over olduğunda video oynatılır
+        // Ekran genişliğini kontrol et
+        const isMobile = window.innerWidth <= 768; // Mobil cihazlar için (768px ve daha küçük ekranlar)
+
+        if (!isMobile) {
+            for (let i = 0; i < cardvideo.length; i++) {
+                cardvideo[i].addEventListener("mouseover", () => {
+                    cardv[i].play(); // Mouse over olduğunda video oynatılır
+                });
+
+                cardvideo[i].addEventListener("mouseleave", () => {
+                    cardv[i].pause(); // Mouse'tan çıkıldığında video durdurulur
+                    cardv[i].currentTime = 0; // Video başlangıç noktasına döner
+                });
+            }
+        } else {
+            // Mobil cihazlarda sadece poster gösterilsin, video oynatılmasın
+            cardv.forEach(video => {
+                video.setAttribute('poster', video.getAttribute('poster')); // Sadece poster görünsün
+                video.style.pointerEvents = 'none'; // Tıklanabilirliği kaldır (isteğe bağlı)
             });
-
-            cardvideo[i].addEventListener("mouseleave", () => {
-                cardv[i].pause(); // Mouse'tan çıkıldığında video durdurulur
-                cardv[i].currentTime = 0; // Video başlangıç noktasına döner
-            });
-
         }
+
+        // Tüm videolarda kontrol butonlarını gizle
+        cardv.forEach(video => {
+            video.removeAttribute('controls'); // Kontrol butonlarını kaldır
+        });
+
+
 </script>
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-dark btn-lg back-to-top pt-2"><i class="bi bi-arrow-up"></i></a>
