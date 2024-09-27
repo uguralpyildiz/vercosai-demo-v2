@@ -32,8 +32,12 @@ body{
     right: 45px;
     bottom: 45px;
     z-index: 99;
+    background: #000 !important;
 }
-
+.back-to-top:hover{
+    box-shadow: 0 0 30px #59A54F99;
+ 
+}
 .post-entry-sidebar ul{
     list-style-type: none;
     padding: 0 !important;
@@ -129,10 +133,16 @@ h6,
     top: -150px;
     transition: .5s;
 }
+.sticky-top{
+    padding-top: 17px;
+}
 .navbar-brand img{
     width: 180px;
 }
+
+
 .navbar {
+    
     padding: 11px 0 !important;
     
     
@@ -193,6 +203,49 @@ color: #fff !important;
 }
 
 @media (max-width: 991.98px) {
+    svg text {
+    
+            animation: stroke 5s infinite alternate;
+            stroke-width: 2;
+            stroke: #59A54F !important;
+            font-size: 240px;
+        }
+    
+        .text-white h5 {
+            color: #59A54F !important;
+        }
+    @keyframes stroke {
+            0% {
+                fill: rgba(72, 138, 20, 0);
+                stroke: #59A54F !important;
+                text-shadow: 0 0 50px #59A54F;
+                stroke-dashoffset: 25%;
+                stroke-dasharray: 0 50%;
+                stroke-width: 2;
+            }
+    
+            70% {
+                fill: rgba(72, 138, 20, 0);
+                stroke: #59A54F !important;
+                text-shadow: 0 0 50px #59A54F;
+            }
+    
+            80% {
+                fill: rgba(72, 138, 20, 0);
+                stroke: #59A54F !important;
+                text-shadow: 0 0 50px #59A54F;
+                stroke-width: 3;
+            }
+    
+            100% {
+                fill: #59A54F !important;
+                text-shadow: 0 0 100px #59A54F;
+                stroke: rgba(54, 95, 160, 0);
+                stroke-dashoffset: -25%;
+                stroke-dasharray: 50% 0;
+                stroke-width: 0;
+            }
+        }
     .navbar-brand img {
             width: 130px;
         }
@@ -267,6 +320,7 @@ color: #fff !important;
     margin-top: -130px;
     background: #000;
     background-size: cover;
+    
 }
 
 .hero-header .breadcrumb-item+.breadcrumb-item::before {
@@ -387,13 +441,49 @@ color: #fff !important;
 /*** Service ***/
 .service-item {
     position: relative;
-    padding: 45px 30px;
-    background: #01490d83;
-    border: 2px solid #92DF9F99;
+    display: flex;
+    align-items: center;
+    justify-content: end !important;
+    height: 266px;
+    border: 2px solid #5FA16A;
     transition: .5s;
     color: #fff !important;
+    z-index: 1;
+    overflow: hidden;
 }
 
+
+
+
+
+
+.cardvideo{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+    z-index: -1;
+}
+.cardvideo video{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cardvideo::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    z-index: 1;
+    opacity: .3;
+}
 .service-item:hover {
     background: #052e00;
 }
@@ -401,17 +491,26 @@ color: #fff !important;
 .service-item .service-icon {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: end !important;
+    background: transparent;
     border-radius: 11px;
-    margin: 0 auto 20px auto;
+    
     width: 155px;
     height: 155px;
     color: var(--primary);
-    background: #ffffff50;
+    background: #000;
     transition: .5s;
+
+}
+.service-item:hover{
+    
+    box-shadow:  0 0 85px #59A54F89;
 }
 .service-item .service-icon img{
     border-radius: 11px;
+    object-fit: cover;
+    width: 150px;
+    height: 150px;
 }
 
 .service-item:hover .service-icon {
@@ -422,6 +521,14 @@ color: #fff !important;
 .service-item p {
     transition: .5s;
     color: #fff;
+    font-size: 22px;
+    width: 100%;
+    font-weight: 800;
+    background: #003f0a50;
+    border-radius: 11px;
+    backdrop-filter: blur(5px);
+    padding: 8px;
+    margin: 0 !important;
 }
 
 .service-item:hover h5,
@@ -498,6 +605,17 @@ color: #fff !important;
     }
 }
 
+@media (min-width: 1400px) {
+
+    .container-xxl,
+    .container-xl,
+    .container-lg,
+    .container-md,
+    .container-sm,
+    .container {
+        max-width: 1400px;
+    }
+}
 
 /*** Case Study ***/
 .case-item img {
@@ -844,7 +962,7 @@ color: #fff !important;
 .client-slider::before,
 .client-slider::after {
     background: -webkit-gradient(linear, left top, right top, from(#010500), to(rgba(255, 255, 255, 0)));
-    background: linear-gradient(to right, #010500 0%, rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(to left, transparent 0%, #010500 100%);
     content: "";
     height: 100%;
     position: absolute;
@@ -950,7 +1068,7 @@ color: #fff !important;
 svg {
     font-family: consolas;
     position: absolute;
-    width: 100%;
+    width: 85%;
     z-index: -1;
     height: 100%;
 }
