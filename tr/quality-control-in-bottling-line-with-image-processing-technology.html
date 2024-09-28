@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Quality Control in Bottling Line with Image Processing Technology | VercosAI Dijital Dönüşüm</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Ubuntu:wght@500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <script src="https://kit.fontawesome.com/607e4879ac.js" crossorigin="anonymous"></script>
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Navbar Start -->
+    <div class="container-fluid sticky-top ">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-dark p-0">
+                <a href="index.html" class="navbar-brand">
+                    <img  src="img/logo.svg" alt="logo">
+                </a>
+                <button type="button" class="navbar-toggler ms-auto me-0" data-bs-toggle="collapse"
+                    data-bs-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav ms-auto">
+                        <a href="index.html" class="nav-item nav-link">Ana Sayfa</a>
+                        <div class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Çözümlerimiz</a>
+                            <div class="dropdown-menu bg-primary mt-2">
+                                <a href="Ambalajlama.html" class="dropdown-item">Ambalajlama</a>
+                                <a href="erp-entegrasyonu.html" class="dropdown-item">ERP Entegrasyonu</a>
+                                <a href="siseleme.html" class="dropdown-item">Şişeleme</a>
+                                <a href="htm.html" class="dropdown-item">Hızlı Tüketim Ürünleri</a>
+                                <a href="hat-takibi.html" class="dropdown-item">Hat Takibi</a>
+                                <a href="isg.html" class="dropdown-item">İş Güvenliği</a>
+                            </div>
+                        </div>
+                         <a href="yetenekler.html" class="nav-item nav-link">Yeteneklerimiz</a>
+                        <a href="hakkimizda.html" class="nav-item nav-link">Hakkımızda</a>
+                        <a href="blog.html" class="nav-item nav-link active">Blog</a>
+                        <a href="iletisim.html" class="nav-item nav-link">İletişim</a>
+                        <a href="https://vercosai.com" class="lang nav-item nav-link"><i class="fa-solid fa-globe"></i> EN</a>
+                    </div>
+                    
+                </div>
+            <script>
+                    document.addEventListener("DOMContentLoaded", function () {
+    var lastScrollPosition = window.scrollY || document.documentElement.scrollTop;
+
+    // Sayfa içinde herhangi bir yere tıklandığında çalışacak kod
+    document.addEventListener("click", function (event) {
+        var clickover = event.target;
+        var navbarCollapse = document.querySelector("#navbarCollapse");
+        var isOpened = navbarCollapse.classList.contains("show"); // Bootstrap 5'te "show" class'ı kullanılıyor
+        var isNavbarToggle = clickover.closest(".navbar-toggler");
+        var isDropdownToggle = clickover.closest(".dropdown-toggle"); // Dropdown menüsü açma butonunu kontrol et
+        var isDropdownMenu = clickover.closest(".dropdown-menu"); // Dropdown menüsünü kontrol et
+
+        // Navbar sadece dropdown ve navbar-toggler dışındaki alanlara tıklandığında kapanacak
+        if (isOpened && !isNavbarToggle && !isDropdownMenu && !isDropdownToggle) {
+            document.querySelector("button.navbar-toggler").click();
+            // Sayfa pozisyonunu sıfırla
+            lastScrollPosition = window.scrollY || document.documentElement.scrollTop;
+        }
+    });
+
+    // Dropdown'un kapanmaması için varsayılan kapanma davranışını engelle
+    var dropdowns = document.querySelectorAll('.dropdown-menu');
+    dropdowns.forEach(function (dropdown) {
+        dropdown.addEventListener('click', function (event) {
+            event.stopPropagation(); // Tıklama olayı diğer elemanlara yayılmasın
+        });
+    });
+
+    // Sayfa kaydırıldığında navbar'ı kapat, ancak son pozisyondan itibaren 100px kaydırılınca
+    window.addEventListener('scroll', function () {
+        var navbarCollapse = document.querySelector("#navbarCollapse");
+        var isOpened = navbarCollapse.classList.contains("show");
+
+        // Mevcut kaydırma pozisyonunu kontrol et
+        var currentScrollPosition = window.scrollY || document.documentElement.scrollTop;
+
+        // Eğer navbar açıksa ve son kaydedilen pozisyondan 100px fazla kaydırılmışsa navbar'ı kapat
+        if (isOpened && Math.abs(currentScrollPosition - lastScrollPosition) > 200) {
+            document.querySelector("button.navbar-toggler").click();
+            // Yeni pozisyonu kaydet
+            lastScrollPosition = currentScrollPosition;
+        }
+    });
+});
+
+
+
+
+
+
+                </script>
+            </nav>
+        </div>
+    </div>
+    <!-- Navbar End -->
+
+    <!-- Hero Start -->
+    <div class="container-fluid pt-5 bg-darkorbit hero-header">
+        <div class="container pt-5">
+            <div class="row g-5 pt-5">
+                <div class="col-lg-6 align-self-center text-center text-lg-start mb-lg-5">
+                    
+                    <h3 style="color: #fff;">
+                        Quality Control in Bottling Line with Image Processing Technology
+                    </h3>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center justify-content-lg-start mb-0">
+                            <li class="breadcrumb-item"><a class="text-white" href="index.html">Home</a></li>
+                            <li class="breadcrumb-item"><a class="text-white" href="#">Recent publication</a></li>
+                            <li class="breadcrumb-item text-white active" aria-current="page"><b>Quality Control in...</b></li>
+                        </ol>
+                    <script>
+                    document.addEventListener("DOMContentLoaded", function () {
+    var lastScrollPosition = window.scrollY || document.documentElement.scrollTop;
+
+    // Sayfa içinde herhangi bir yere tıklandığında çalışacak kod
+    document.addEventListener("click", function (event) {
+        var clickover = event.target;
+        var navbarCollapse = document.querySelector("#navbarCollapse");
+        var isOpened = navbarCollapse.classList.contains("show"); // Bootstrap 5'te "show" class'ı kullanılıyor
+        var isNavbarToggle = clickover.closest(".navbar-toggler");
+        var isDropdownToggle = clickover.closest(".dropdown-toggle"); // Dropdown menüsü açma butonunu kontrol et
+        var isDropdownMenu = clickover.closest(".dropdown-menu"); // Dropdown menüsünü kontrol et
+
+        // Navbar sadece dropdown ve navbar-toggler dışındaki alanlara tıklandığında kapanacak
+        if (isOpened && !isNavbarToggle && !isDropdownMenu && !isDropdownToggle) {
+            document.querySelector("button.navbar-toggler").click();
+            // Sayfa pozisyonunu sıfırla
+            lastScrollPosition = window.scrollY || document.documentElement.scrollTop;
+        }
+    });
+
+    // Dropdown'un kapanmaması için varsayılan kapanma davranışını engelle
+    var dropdowns = document.querySelectorAll('.dropdown-menu');
+    dropdowns.forEach(function (dropdown) {
+        dropdown.addEventListener('click', function (event) {
+            event.stopPropagation(); // Tıklama olayı diğer elemanlara yayılmasın
+        });
+    });
+
+    // Sayfa kaydırıldığında navbar'ı kapat, ancak son pozisyondan itibaren 100px kaydırılınca
+    window.addEventListener('scroll', function () {
+        var navbarCollapse = document.querySelector("#navbarCollapse");
+        var isOpened = navbarCollapse.classList.contains("show");
+
+        // Mevcut kaydırma pozisyonunu kontrol et
+        var currentScrollPosition = window.scrollY || document.documentElement.scrollTop;
+
+        // Eğer navbar açıksa ve son kaydedilen pozisyondan 100px fazla kaydırılmışsa navbar'ı kapat
+        if (isOpened && Math.abs(currentScrollPosition - lastScrollPosition) > 200) {
+            document.querySelector("button.navbar-toggler").click();
+            // Yeni pozisyonu kaydet
+            lastScrollPosition = currentScrollPosition;
+        }
+    });
+});
+
+
+
+
+
+
+                </script>
+            </nav>
+                    <div class="views-container">
+                        <span style="padding: 10px;" class="pill-skill rounded-pill text-center">
+                        <i class="fa fa-eye"></i> 1.6k Views
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <!-- Hero End -->
+
+    <section style="padding-top: 50px; background: #27462c !important;" class="section bg-darkorbit">
+        <div class="container">
+            <div class="row blog-entries element-animate">
+                <div class="col-md-12 col-lg-8 main-content">
+                    <div class="post-content-body">
+                        <h4>10/09/2024</h4>
+                        <p>
+                            In today’s fast-paced production environments, maintaining the highest standards of quality is
+                            paramount for success, particularly in the beverage industry. One cutting-edge approach to
+                            quality assurance involves <b>image processing technology</b> integrated into bottling lines.
+                            This post explores how image processing technology is revolutionizing the way bottling
+                            operations detect and rectify defects, thus ensuring product integrity and consumer
+                            satisfaction. From introducing the basics of image processing in bottling to diving deep into
+                            identifying common defects and implementing sophisticated algorithms for enhanced accuracy, we
+                            will cover how this technology is applied effectively. Join us as we unveil the technological
+                            advancements shaping the future of bottling operations, ensuring every bottle meets the highest
+                            quality standards.
+                        </p>
+                        <img style="width: 100%; margin-bottom: 55px; border-radius: 10px;"
+                            src="blog/Quality Control in Bottling Line with Image Processing Technology.jpg" alt="">
+    
+                        <h4>Introduction to Image Processing in Bottling</h4>
+                        <p>
+                            The bottling industry requires high standards of quality control to ensure product safety and
+                            consumer satisfaction. One technology that has significantly advanced this aspect of production
+                            is <b>image processing technology</b>. This innovative approach employs sophisticated algorithms
+                            to inspect and analyze the physical characteristics of bottles at various stages of the bottling
+                            process.
+                        </p>
+                        <p>
+                            Image processing technology in bottling lines helps manufacturers detect defects such as cracks,
+                            contamination, and incorrect labeling before products reach the consumer. This method not only
+                            boosts the efficiency of the production line but also plays a critical role in preventing costly
+                            recalls and maintaining brand reputation. By integrating high-resolution cameras and precise
+                            sensors, the system provides real-time feedback, allowing for immediate correction and
+                            adjustment of the production process.
+                        </p>
+                        <p>
+                            Moreover, the application of <b>artificial intelligence</b> in image processing has further
+                            enhanced quality control capabilities. AI algorithms are capable of learning from vast amounts
+                            of data to improve detection accuracy over time, thereby reducing human error and increasing
+                            throughput. The result is a more streamlined, efficient, and cost-effective bottling automation
+                            process that meets regulatory standards and exceeds consumer expectations.
+                        </p>
+    
+                        <h4>Identifying Common Defects in Bottles</h4>
+                        <p>
+                            The bottling line quality control process is pivotal to maintaining high standards in beverage
+                            production. A key component of this process involves using image processing technology to
+                            identify common defects in bottles that might compromise product quality. This technology
+                            enables manufacturers to inspect bottles at high speeds with remarkable accuracy.
+                        </p>
+                        <p>
+                            Common defects detectable through this advanced imaging system include cracks, contamination,
+                            improper sealing, and structural anomalies. These defects may arise during manufacturing or
+                            transport and can lead to product spoilage or safety concerns. By integrating image processing
+                            technology into the quality control phase, the automation of the bottling process not only
+                            becomes more efficient but also significantly more reliable.
+                        </p>
+                        <p>
+                            Through the use of high-resolution cameras and sophisticated algorithms, image processing
+                            systems can analyze thousands of bottles per hour with a precision that human inspectors might
+                            not achieve. This aspect of quality control is further enhanced by artificial intelligence,
+                            which continually learns from the data it processes. AI algorithms adapt to recognize new defect
+                            patterns, improving the bottling automation process's adaptability and effectiveness over time.
+                        </p>
+                        <p>
+                            Ultimately, the employment of these technologies ensures that the final product reaches the
+                            consumer in the best possible condition, reinforcing brand reliability and customer
+                            satisfaction. This technological intervention, thus, plays a crucial role in enhancing
+                            production line efficiency and maintaining stringent quality standards in bottle production.
+                        </p>
+    
+                        <h4>Implementing Image Processing for Quality Control</h4>
+                        <p>
+                            The integration of image processing technology in the bottling automation process has
+                            significantly elevated the standards of quality control. By capturing high-resolution images of
+                            each bottle as it moves through the production line, advanced algorithms are able to detect even
+                            the minutest defects, ensuring that only products that meet stringent quality guidelines reach
+                            consumers.
+                        </p>
+                        <p>
+                            At the heart of this innovation is the application of <b>artificial intelligence (AI)</b> to
+                            interpret the captured images for defect recognition. AI algorithms are trained on vast datasets
+                            of images which help them learn to differentiate between acceptable variations and actual flaws.
+                            This ability to quickly and accurately identify potential issues without the need for human
+                            intervention not only boosts production line efficiency but also reduces the possibility of
+                            human error.
+                        </p>
+                        <p>
+                            On a practical level, implementing image processing means installing high-resolution cameras
+                            along critical points of the bottling line. These cameras continuously feed images to an AI
+                            system that assesses them in real time. Adjustments in the system, based on collected data, are
+                            continuously made to enhance detection accuracy, providing a loop of perpetual improvement that
+                            is closely aligned with industry 4.0 principles.
+                        </p>
+                        <p>
+                            Overall, the implementation of image processing for quality control in bottling lines represents
+                            a significant leap forward in how bottling operations uphold product integrity and safety,
+                            directly impacting consumer satisfaction and trust in a brand.
+                        </p>
+    
+                        <h4>Enhancing Accuracy with Advanced Algorithms</h4>
+                        <p>
+                            The integration of advanced algorithms within image processing technology for bottling line
+                            quality control represents a significant leap towards optimal manufacturing efficiency and
+                            product reliability. By leveraging sophisticated algorithmic approaches, companies can detect
+                            even the minutest imperfections or variations in bottle production that could affect product
+                            integrity and consumer satisfaction.
+                        </p>
+                        <p>
+                            One key aspect of enhancing accuracy in bottle quality control is the application of
+                            <b>Artificial Intelligence (AI)</b>. The use of AI enables the automation of defect detection
+                            processes in bottling automation, making the analysis more precise and much faster compared to
+                            traditional methods. These advanced algorithms are capable of learning from data to distinguish
+                            between acceptable variations and defects, improving the system's ability to adapt to new
+                            challenges without human intervention.
+                        </p>
+                        <p>
+                            Incorporating such intelligent systems not only bolsters the effectiveness of quality control
+                            measures but also elevates production line efficiency. As these algorithms analyze thousands of
+                            images per minute, they ensure consistent product quality and significantly reduce the chances
+                            of defective products reaching the consumer. Moreover, this consistency aids in complying with
+                            strict regulatory standards and reducing waste, further enhancing the overall sustainability of
+                            the production operation.
+                        </p>
+                        <p>
+                            Overall, enhancing accuracy with advanced algorithms in image processing technology is pivotal
+                            in streamlining operations in a bottling line. By automating the quality control processes
+                            through cutting-edge technologies, bottling companies can achieve faster production times, lower
+                            costs, and superior product quality, setting new benchmarks in the industry.
+                        </p>
+    
+                       
+                    </div>
+                </div>
+    
+                <!-- END main-content -->
+    
+            <div class="col-md-12 col-lg-4 sidebar text-white">
+            
+                <!-- END sidebar-box -->
+                <div class="sidebar-box sticky-effectox" style="max-height: 70vh; overflow: auto;">
+                    <h3 class="heading text-white">Popular Posts</h3>
+                    <div class="post-entry-sidebar">
+            
+                        <ul>
+                            <li>
+                                <a
+                                    href="erp-integration-with-artificial-intelligence-how-to-increase-efficiency-in-your-business.html">
+                                    <div class=" wow fadeIn" data-wow-delay="0.3s">
+                                        <div class="case-item position-relative overflow-hidden rounded mb-2">
+                                            <img class="img-fluid"
+                                                src="blog/ERP Integration with Artificial Intelligence How to Increase Efficiency in Your Business.jpg"
+                                                alt="">
+                                            <a class="case-overlay text-decoration-none"
+                                                href="erp-integration-with-artificial-intelligence-how-to-increase-efficiency-in-your-business.html">
+            
+                                                <h5 class="lh-base text-white mb-3">
+                                                    ERP Integration with Artificial Intelligence How to Increase Efficiency in Your
+                                                    Business
+                                                </h5>
+                                                <span class="btn btn-square btn-primary"><i class="fa fa-arrow-right"></i></span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="packaging-sorting-and-error-detection-increase-efficiency-with-ai.html">
+                                    <div class=" wow fadeIn" data-wow-delay="0.3s">
+                                        <div class="case-item position-relative overflow-hidden rounded mb-2">
+                                            <img class="img-fluid"
+                                                src="blog/Packaging Sorting and Error Detection Increase Efficiency with AI.jpg"
+                                                alt="">
+                                            <a class="case-overlay text-decoration-none"
+                                                href="packaging-sorting-and-error-detection-increase-efficiency-with-ai.html">
+            
+                                                <h5 class="lh-base text-white mb-3">
+                                                    Packaging Sorting and Error Detection Increase Efficiency with AI
+                                                </h5>
+                                                <span class="btn btn-square btn-primary"><i class="fa fa-arrow-right"></i></span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+            
+                        </ul>
+                    </div>
+                </div>
+                <!-- END sidebar-box -->
+            
+            </div>
+            <!-- END sidebar -->
+            </div>
+        </div>
+    </section>
+
+
+
+<div class="container-fluid py-5 bg-primarybit">
+    <div class="container py-5">
+        <div class="mx-auto text-center wow fadeIn" data-wow-delay="0.1s" style="max-width: 500px;">
+            <div class="btn btn-sm border rounded-pill pill-skill text-primary px-3 mb-3"> FAQs</div>
+            <h1 class="mb-4">Frequently Asked Questions</h1>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="accordion" id="accordionFAQ1">
+                    <div class="accordion-item wow fadeIn" data-wow-delay="0.1s">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                What is the main focus of implementing image processing technology in bottling lines?
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                            data-bs-parent="#accordionFAQ1">
+                            <div class="accordion-body">
+                                The main focus is to enhance quality control by detecting and sorting out defects in
+                                bottles such as
+                                cracks, contamination, or incorrect labeling, ensuring only products meeting quality
+                                standards
+                                reach the consumer.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item wow fadeIn" data-wow-delay="0.2s">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                How does image processing technology improve efficiency in bottling lines?
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                            data-bs-parent="#accordionFAQ1">
+                            <div class="accordion-body">
+                                It automates the inspection process, which speeds up the production line by quickly
+                                identifying and rejecting
+                                defective items, minimizing downtime and reducing the need for manual inspections.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item wow fadeIn" data-wow-delay="0.3s">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                What types of defects can image processing technology identify on a bottling line?
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                            data-bs-parent="#accordionFAQ1">
+                            <div class="accordion-body">
+                                Image processing technology can identify various types of defects including physical
+                                damage like
+                                cracks or chips, labeling errors like misalignment or incorrect labels, and
+                                contamination
+                                issues.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item wow fadeIn" data-wow-delay="0.4s">
+                        <h2 class="accordion-header" id="headingFour">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                What are the benefits of using image processing technology in quality control compared
+                                to
+                                traditional methods?
+                            </button>
+                        </h2>
+                        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                            data-bs-parent="#accordionFAQ1">
+                            <div class="accordion-body">
+                                Benefits include improved accuracy and consistency in defect detection, higher
+                                processing speeds, reduced labor costs, and the ability to store and analyze
+                                inspection data for further quality improvement.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="accordion" id="accordionFAQ2">
+                    <div class="accordion-item wow fadeIn" data-wow-delay="0.5s">
+                        <h2 class="accordion-header" id="headingFive">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                Can image processing systems adapt to different types of bottles and labels?
+                            </button>
+                        </h2>
+                        <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+                            data-bs-parent="#accordionFAQ2">
+                            <div class="accordion-body">
+                                Yes, modern image processing systems can be programmed and equipped with algorithms that
+                                allow them to adapt
+                                to various bottle shapes, sizes, and types of labels, making them versatile for multiple
+                                product
+                                lines.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item wow fadeIn" data-wow-delay="0.6s">
+                        <h2 class="accordion-header" id="headingSix">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                What challenges might companies face when integrating image processing technology into
+                                existing bottling lines?
+                            </button>
+                        </h2>
+                        <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix"
+                            data-bs-parent="#accordionFAQ2">
+                            <div class="accordion-body">
+                                Challenges can include the high initial cost of technology, the need to train staff to
+                                operate and maintain new systems, and potential disruptions during the
+                                integration phase.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item wow fadeIn" data-wow-delay="0.7s">
+                        <h2 class="accordion-header" id="headingSeven">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                                How does image processing technology contribute to sustainability in bottling
+                                operations?
+                            </button>
+                        </h2>
+                        <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven"
+                            data-bs-parent="#accordionFAQ2">
+                            <div class="accordion-body">
+                                By improving the accuracy of defect detection, it reduces waste of materials and
+                                products,
+                                ensuring that fewer resources are used unnecessarily, which contributes to more
+                                sustainable
+                                production practices.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+ 
+
+
+    <!-- Newsletter Start -->
+    <div class="container-fluid bg-darkorbit newsletter">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="display-none col-md-5 ps-lg-0 pt-5 pt-md-0 text-start wow fadeIn" data-wow-delay="0.3s">
+                    <img class="img-fluid" src="img/newsletter.png" alt="">
+                </div>
+                <div class="col-md-7  newsletter-text wow fadeIn" data-wow-delay="0.5s">
+                    <div class="btn btn-sm border rounded-pill text-white px-3 mb-3">Haber Bülteni</div>
+                    <h1 class="text-white mb-4">Haber Bültenimize Abone Ol!</h1>
+                    <div class="position-relative w-100 mt-3 mb-2">
+                        <input class="form-control border-0 rounded-pill w-100 ps-4 pe-5" type="text"
+                            placeholder="Mail Adresiniz" style="height: 48px;">
+                        <button type="button" class="btn shadow-none position-absolute top-0 end-0 mt-1 me-2"><i
+                                class="fa fa-paper-plane text-primary fs-4"></i></button>
+                    </div>
+                    <small class="text-white-50">Abone olarak gizlilik ve şartlarımızı kabul etmiş olursunuz.</small>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Newsletter End -->
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-primarybit text-white-50 footer pt-5">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.1s">
+                    <a href="index.html" class="d-inline-block mb-3">
+                        <img style="width: 200px;" src="img/logo.svg" alt="logo">
+                    </a>
+                     
+                </div>
+                 <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.3s">
+                    <h5 class="text-white mb-4">Popüler Linkler</h5>
+                    <a class="btn btn-link" href="hakkimizda.html">Hakkımızda</a>
+                    <a class="btn btn-link" href="iletisim.html">İletişim</a>
+                    <a class="btn btn-link" href="gizlilik.html">Gizlilik Politikası</a>
+                    <a class="btn btn-link" href="sartlar.html">Şartlar & Koşullar</a>
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.5s">
+                    <h5 class="text-white mb-4">Çözümlerimiz</h5>
+                    <a class="btn btn-link" href="siseleme.html">Şişeleme</a>
+                    <a class="btn btn-link" href="erp-entegrasyonu.html">ERP Entegrasyonu</a>
+                    <a class="btn btn-link" href="Ambalajlama.html">Ambalajlama</a>
+                    <a class="btn btn-link" href="htm.html">Hızlı Tüketim Ürünleri</a>
+                    <a class="btn btn-link" href="hat-takibi.html">Hat Takibi</a>
+                    <a class="btn btn-link" href="isg.html">İş Güvenliği</a>
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.7s">
+                    <h5 class="text-white mb-4">İletişime Geç</h5>
+                    <p><i style="width: 10px;" class="fa fa-map-marker-alt me-3"></i>Sakarya, TURKEY</p>
+                
+                    <p><a style="color:#ffffff80; text-decoration:none" href="mailto:hello@vercosai.com"><i style="width: 10px;" class="fa fa-envelope me-3"></i>hello@vercosai.com</a></p>
+                    <div class="d-flex pt-2">
+                       <a class="btn btn-outline-light btn-social" href="https://www.x.com/Vercos_AI"><i class="fab fa-x-twitter"></i></a>
+                     
+                        <a class="btn btn-outline-light btn-social" href="https://www.youtube.com/@vercosai"><i class="fab fa-youtube"></i></a>
+                       
+                        <a class="btn btn-outline-light btn-social" href="https://www.linkedin.com/company/vercosai"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container wow fadeIn" data-wow-delay="0.1s">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="border-bottom" href="https://vercosai.com">VercosAI</a>, Tüm Hakları Saklıdır.
+
+                        
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <div class="footer-menu">
+                            <a href="https://vercosai.com/tr">Ana Sayfa</a>
+                            <a href="https://vercosai.com/tr/cookies.html">Çerezler</a>
+                            <a href="https://vercosai.com/tr/iletisim.html">Yardım</a>
+                            <a href="FAQs.html">S.S.S</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-dark btn-lg back-to-top pt-2"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>ERP Integration with Artificial Intelligence | VercosAI Dijital Dönüşüm</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Ubuntu:wght@500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <script src="https://kit.fontawesome.com/607e4879ac.js" crossorigin="anonymous"></script>
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Navbar Start -->
+    <div class="container-fluid sticky-top ">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-dark p-0">
+                <a href="index.html" class="navbar-brand">
+                    <img  src="img/logo.svg" alt="logo">
+                </a>
+                <button type="button" class="navbar-toggler ms-auto me-0" data-bs-toggle="collapse"
+                    data-bs-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav ms-auto">
+                        <a href="index.html" class="nav-item nav-link">Ana Sayfa</a>
+                        <div class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Çözümlerimiz</a>
+                            <div class="dropdown-menu bg-primary mt-2">
+                                <a href="Ambalajlama.html" class="dropdown-item">Ambalajlama</a>
+                                <a href="erp-entegrasyonu.html" class="dropdown-item">ERP Entegrasyonu</a>
+                                <a href="siseleme.html" class="dropdown-item">Şişeleme</a>
+                                <a href="htm.html" class="dropdown-item">Hızlı Tüketim Ürünleri</a>
+                                <a href="hat-takibi.html" class="dropdown-item">Hat Takibi</a>
+                                <a href="isg.html" class="dropdown-item">İş Güvenliği</a>
+                            </div>
+                        </div>
+                         <a href="yetenekler.html" class="nav-item nav-link">Yeteneklerimiz</a>
+                        <a href="hakkimizda.html" class="nav-item nav-link">Hakkımızda</a>
+                        <a href="blog.html" class="nav-item nav-link active">Blog</a>
+                        <a href="iletisim.html" class="nav-item nav-link">İletişim</a>
+                        <a href="https://vercosai.com" class="lang nav-item nav-link"><i class="fa-solid fa-globe"></i> EN</a>
+                    </div>
+                    
+                </div>
+            <script>
+                    document.addEventListener("DOMContentLoaded", function () {
+    var lastScrollPosition = window.scrollY || document.documentElement.scrollTop;
+
+    // Sayfa içinde herhangi bir yere tıklandığında çalışacak kod
+    document.addEventListener("click", function (event) {
+        var clickover = event.target;
+        var navbarCollapse = document.querySelector("#navbarCollapse");
+        var isOpened = navbarCollapse.classList.contains("show"); // Bootstrap 5'te "show" class'ı kullanılıyor
+        var isNavbarToggle = clickover.closest(".navbar-toggler");
+        var isDropdownToggle = clickover.closest(".dropdown-toggle"); // Dropdown menüsü açma butonunu kontrol et
+        var isDropdownMenu = clickover.closest(".dropdown-menu"); // Dropdown menüsünü kontrol et
+
+        // Navbar sadece dropdown ve navbar-toggler dışındaki alanlara tıklandığında kapanacak
+        if (isOpened && !isNavbarToggle && !isDropdownMenu && !isDropdownToggle) {
+            document.querySelector("button.navbar-toggler").click();
+            // Sayfa pozisyonunu sıfırla
+            lastScrollPosition = window.scrollY || document.documentElement.scrollTop;
+        }
+    });
+
+    // Dropdown'un kapanmaması için varsayılan kapanma davranışını engelle
+    var dropdowns = document.querySelectorAll('.dropdown-menu');
+    dropdowns.forEach(function (dropdown) {
+        dropdown.addEventListener('click', function (event) {
+            event.stopPropagation(); // Tıklama olayı diğer elemanlara yayılmasın
+        });
+    });
+
+    // Sayfa kaydırıldığında navbar'ı kapat, ancak son pozisyondan itibaren 100px kaydırılınca
+    window.addEventListener('scroll', function () {
+        var navbarCollapse = document.querySelector("#navbarCollapse");
+        var isOpened = navbarCollapse.classList.contains("show");
+
+        // Mevcut kaydırma pozisyonunu kontrol et
+        var currentScrollPosition = window.scrollY || document.documentElement.scrollTop;
+
+        // Eğer navbar açıksa ve son kaydedilen pozisyondan 100px fazla kaydırılmışsa navbar'ı kapat
+        if (isOpened && Math.abs(currentScrollPosition - lastScrollPosition) > 200) {
+            document.querySelector("button.navbar-toggler").click();
+            // Yeni pozisyonu kaydet
+            lastScrollPosition = currentScrollPosition;
+        }
+    });
+});
+
+
+
+
+
+
+                </script>
+            </nav>
+        </div>
+    </div>
+    <!-- Navbar End -->
+
+    <!-- Hero Start -->
+    <div class="container-fluid pt-5 bg-darkorbit hero-header">
+        <div class="container pt-5">
+            <div class="row g-5 pt-5">
+                <div class="col-lg-6 align-self-center text-center text-lg-start mb-lg-5">
+                    <h3 style="color: #fff;">ERP Integration with Artificial Intelligence How to Increase Efficiency in Your
+                        Business</h3>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center justify-content-lg-start mb-0">
+                            <li class="breadcrumb-item"><a class="text-white" href="index.html">Home</a></li>
+                            <li class="breadcrumb-item"><a class="text-white" href="#">Recent publication</a></li>
+                            <li class="breadcrumb-item"><a class="text-white" href="#">ERP Integration with...</a></li>
+                            
+                        </ol>
+                    <script>
+                    document.addEventListener("DOMContentLoaded", function () {
+    var lastScrollPosition = window.scrollY || document.documentElement.scrollTop;
+
+    // Sayfa içinde herhangi bir yere tıklandığında çalışacak kod
+    document.addEventListener("click", function (event) {
+        var clickover = event.target;
+        var navbarCollapse = document.querySelector("#navbarCollapse");
+        var isOpened = navbarCollapse.classList.contains("show"); // Bootstrap 5'te "show" class'ı kullanılıyor
+        var isNavbarToggle = clickover.closest(".navbar-toggler");
+        var isDropdownToggle = clickover.closest(".dropdown-toggle"); // Dropdown menüsü açma butonunu kontrol et
+        var isDropdownMenu = clickover.closest(".dropdown-menu"); // Dropdown menüsünü kontrol et
+
+        // Navbar sadece dropdown ve navbar-toggler dışındaki alanlara tıklandığında kapanacak
+        if (isOpened && !isNavbarToggle && !isDropdownMenu && !isDropdownToggle) {
+            document.querySelector("button.navbar-toggler").click();
+            // Sayfa pozisyonunu sıfırla
+            lastScrollPosition = window.scrollY || document.documentElement.scrollTop;
+        }
+    });
+
+    // Dropdown'un kapanmaması için varsayılan kapanma davranışını engelle
+    var dropdowns = document.querySelectorAll('.dropdown-menu');
+    dropdowns.forEach(function (dropdown) {
+        dropdown.addEventListener('click', function (event) {
+            event.stopPropagation(); // Tıklama olayı diğer elemanlara yayılmasın
+        });
+    });
+
+    // Sayfa kaydırıldığında navbar'ı kapat, ancak son pozisyondan itibaren 100px kaydırılınca
+    window.addEventListener('scroll', function () {
+        var navbarCollapse = document.querySelector("#navbarCollapse");
+        var isOpened = navbarCollapse.classList.contains("show");
+
+        // Mevcut kaydırma pozisyonunu kontrol et
+        var currentScrollPosition = window.scrollY || document.documentElement.scrollTop;
+
+        // Eğer navbar açıksa ve son kaydedilen pozisyondan 100px fazla kaydırılmışsa navbar'ı kapat
+        if (isOpened && Math.abs(currentScrollPosition - lastScrollPosition) > 200) {
+            document.querySelector("button.navbar-toggler").click();
+            // Yeni pozisyonu kaydet
+            lastScrollPosition = currentScrollPosition;
+        }
+    });
+});
+
+
+
+
+
+
+                </script>
+            </nav>
+                    <div class="views-container">
+                        <span style="padding: 10px;" class="pill-skill rounded-pill text-center">
+                        <i class="fa fa-eye"></i> 1.3k Views
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <!-- Hero End -->
+
+<section style="padding-top: 50px; background: #27462c !important;" class="section bg-darkorbit">
+    <div class="container">
+        <div class="row blog-entries element-animate">
+            <div class="col-md-12 col-lg-8 main-content">
+                <div class="post-content-body">
+                    <h4>30/08/2024</h4>
+                    <p>
+                        In today's rapidly evolving business landscape, integrating <b>Artificial Intelligence (AI)</b>
+                        with <b>Enterprise Resource Planning (ERP)</b> systems presents an unprecedented opportunity for
+                        companies looking to enhance operational efficiency. This integration not only automates mundane
+                        tasks but also facilitates smarter, data-driven decision-making, fundamentally transforming how
+                        businesses operate.
+                    </p>
+                    <img style="width: 100%; margin-bottom: 55px; border-radius: 10px;"
+                        src="blog/ERP Integration with Artificial Intelligence How to Increase Efficiency in Your Business.jpg"
+                        alt="">
+                    <h4>Understanding ERP and AI Basics</h4>
+                    <p>
+                        <b>Enterprise Resource Planning (ERP) systems</b> are crucial for managing various business
+                        processes in one integrated system. These systems help in automating functions like inventory
+                        management, project management, accounting, and human resources, thereby streamlining operations
+                        and increasing efficiency. On the other hand, <b>Artificial Intelligence (AI)</b> mimics human
+                        intelligence processes such as learning, reasoning, and self-correction.
+                    </p>
+                    <p>
+                        Integrating AI with ERP systems can significantly enhance business functionalities. AI can
+                        analyze large volumes of data generated by ERP components to forecast trends, propose actionable
+                        insights, and automate routine tasks, thus transforming data into strategic business insights.
+                    </p>
+                    <h4>Strategies for Successful ERP AI Integration</h4>
+                    <p>
+                        Integrating <b>AI into ERP systems</b> can significantly boost business efficiency. Key
+                        strategies include identifying business areas that will benefit from AI, selecting the right AI
+                        technologies, and ensuring compatibility with existing ERP systems. It is crucial to work
+                        closely with stakeholders and map out clear objectives for AI to automate routine tasks and
+                        provide predictive analytics.
+                    </p>
+                    <p>
+                        Monitoring and gathering feedback from users ensures continuous improvement and optimization of
+                        the AI-ERP system.
+                    </p>
+                    <h4>Monitoring and Optimizing AI Performance</h4>
+                    <p>
+                        Continuous monitoring of <b>AI performance within ERP systems</b> is crucial to harness its full
+                        potential. Tracking metrics related to business goals and AI's data processing accuracy is
+                        essential, especially in areas like inventory management. Periodically adjusting AI algorithms
+                        to fit evolving business needs ensures that the system remains efficient.
+                    </p>
+                    <h4>Real-World Impact: ERP AI on Business Efficiency</h4>
+                    <p>
+                        The integration of AI with ERP systems has revolutionized business operations by enhancing data
+                        analysis, automating routine tasks, and improving decision-making. For example, in supply chain
+                        management, AI can predict inventory needs, manage procurement, and ensure optimal stock levels,
+                        reducing costs and enhancing service delivery.
+                    </p>
+                </div>
+            </div>
+            <!-- END main-content -->
+            
+            <div class="col-md-12 col-lg-4 sidebar text-white">
+            
+                <!-- END sidebar-box -->
+                <div class="sidebar-box sticky-effectox" style="max-height: 70vh; overflow: auto;">
+                    <h3 class="heading text-white">Popular Posts</h3>
+                    <div class="post-entry-sidebar">
+            
+                        <ul>
+                            <li>
+                                <a href="artificial-intelligence-support-in-work-safety-and-productivity-ppe-control-human-detection-and-machine-management.html">
+                                    <div class=" wow fadeIn" data-wow-delay="0.3s">
+                                        <div class="case-item position-relative overflow-hidden rounded mb-2">
+                                            <img class="img-fluid"
+                                                src="blog/Artificial Intelligence Support in Work Safety and Productivity PPE Control, Human Detection and Machine Management.jpg"
+                                                alt="">
+                                            <a class="case-overlay text-decoration-none" href="artificial-intelligence-support-in-work-safety-and-productivity-ppe-control-human-detection-and-machine-management.html">
+            
+                                                <h5 class="lh-base text-white mb-3">
+                                                    Artificial Intelligence Support in Work Safety and Productivity PPE Control, Human Detection and Machine Management
+                                                </h5>
+                                                <span class="btn btn-square btn-primary"><i class="fa fa-arrow-right"></i></span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="packaging-sorting-and-error-detection-increase-efficiency-with-ai.html">
+                                    <div class=" wow fadeIn" data-wow-delay="0.3s">
+                                        <div class="case-item position-relative overflow-hidden rounded mb-2">
+                                            <img class="img-fluid"
+                                                src="blog/Packaging Sorting and Error Detection Increase Efficiency with AI.jpg"
+                                                alt="">
+                                            <a class="case-overlay text-decoration-none" href="packaging-sorting-and-error-detection-increase-efficiency-with-ai.html">
+            
+                                                <h5 class="lh-base text-white mb-3">
+                                                    Packaging Sorting and Error Detection Increase Efficiency with AI
+                                                </h5>
+                                                <span class="btn btn-square btn-primary"><i class="fa fa-arrow-right"></i></span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+            
+                        </ul>
+                    </div>
+                </div>
+                <!-- END sidebar-box -->
+            
+            </div>
+            <!-- END sidebar -->
+        </div>
+    </div>
+</section>
+
+
+
+
+ 
+
+
+    <!-- Newsletter Start -->
+    <div class="container-fluid bg-darkorbit newsletter">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="display-none col-md-5 ps-lg-0 pt-5 pt-md-0 text-start wow fadeIn" data-wow-delay="0.3s">
+                    <img class="img-fluid" src="img/newsletter.png" alt="">
+                </div>
+                <div class="col-md-7  newsletter-text wow fadeIn" data-wow-delay="0.5s">
+                    <div class="btn btn-sm border rounded-pill text-white px-3 mb-3">Haber Bülteni</div>
+                    <h1 class="text-white mb-4">Haber Bültenimize Abone Ol!</h1>
+                    <div class="position-relative w-100 mt-3 mb-2">
+                        <input class="form-control border-0 rounded-pill w-100 ps-4 pe-5" type="text"
+                            placeholder="Mail Adresiniz" style="height: 48px;">
+                        <button type="button" class="btn shadow-none position-absolute top-0 end-0 mt-1 me-2"><i
+                                class="fa fa-paper-plane text-primary fs-4"></i></button>
+                    </div>
+                    <small class="text-white-50">Abone olarak gizlilik ve şartlarımızı kabul etmiş olursunuz.</small>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Newsletter End -->
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-primarybit text-white-50 footer pt-5">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.1s">
+                    <a href="index.html" class="d-inline-block mb-3">
+                        <img style="width: 200px;" src="img/logo.svg" alt="logo">
+                    </a>
+                     
+                </div>
+                 <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.3s">
+                    <h5 class="text-white mb-4">Popüler Linkler</h5>
+                    <a class="btn btn-link" href="hakkimizda.html">Hakkımızda</a>
+                    <a class="btn btn-link" href="iletisim.html">İletişim</a>
+                    <a class="btn btn-link" href="gizlilik.html">Gizlilik Politikası</a>
+                    <a class="btn btn-link" href="sartlar.html">Şartlar & Koşullar</a>
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.5s">
+                    <h5 class="text-white mb-4">Çözümlerimiz</h5>
+                    <a class="btn btn-link" href="siseleme.html">Şişeleme</a>
+                    <a class="btn btn-link" href="erp-entegrasyonu.html">ERP Entegrasyonu</a>
+                    <a class="btn btn-link" href="Ambalajlama.html">Ambalajlama</a>
+                    <a class="btn btn-link" href="htm.html">Hızlı Tüketim Ürünleri</a>
+                    <a class="btn btn-link" href="hat-takibi.html">Hat Takibi</a>
+                    <a class="btn btn-link" href="isg.html">İş Güvenliği</a>
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.7s">
+                    <h5 class="text-white mb-4">İletişime Geç</h5>
+                    <p><i style="width: 10px;" class="fa fa-map-marker-alt me-3"></i>Sakarya, TURKEY</p>
+                
+                    <p><a style="color:#ffffff80; text-decoration:none" href="mailto:hello@vercosai.com"><i style="width: 10px;" class="fa fa-envelope me-3"></i>hello@vercosai.com</a></p>
+                    <div class="d-flex pt-2">
+                       <a class="btn btn-outline-light btn-social" href="https://www.x.com/Vercos_AI"><i class="fab fa-x-twitter"></i></a>
+                     
+                        <a class="btn btn-outline-light btn-social" href="https://www.youtube.com/@vercosai"><i class="fab fa-youtube"></i></a>
+                       
+                        <a class="btn btn-outline-light btn-social" href="https://www.linkedin.com/company/vercosai"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container wow fadeIn" data-wow-delay="0.1s">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="border-bottom" href="https://vercosai.com">VercosAI</a>, Tüm Hakları Saklıdır.
+
+                        
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <div class="footer-menu">
+                            <a href="https://vercosai.com/tr">Ana Sayfa</a>
+                            <a href="https://vercosai.com/tr/cookies.html">Çerezler</a>
+                            <a href="https://vercosai.com/tr/iletisim.html">Yardım</a>
+                            <a href="FAQs.html">S.S.S</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-dark btn-lg back-to-top pt-2"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
