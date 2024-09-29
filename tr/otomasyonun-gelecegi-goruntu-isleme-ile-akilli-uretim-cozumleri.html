@@ -1,0 +1,609 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Görüntü İşleme ile Otomasyonun Geleceği Akıllı üretim Çözümleri </title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Ubuntu:wght@500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <script src="https://kit.fontawesome.com/607e4879ac.js" crossorigin="anonymous"></script>
+    <link href="css/style.css" rel="stylesheet">
+<meta http-equiv="Content-Language" content="tr"></head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Yükleniyor... </span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Navbar Start -->
+    <div class="container-fluid sticky-top ">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-dark p-0">
+                <a href="index.html" class="navbar-brand">
+                    <img  src="img/logo.svg" alt="logo">
+                </a>
+                <button type="button" class="navbar-toggler ms-auto me-0" data-bs-toggle="collapse"
+                    data-bs-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav ms-auto">
+                        <a href="index.html" class="nav-item nav-link">Ana Sayfa</a>
+                        <div class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">&#199;&#246;z&#252;mlerimiz</a>
+                            <div class="dropdown-menu bg-primary mt-2"><a href="Ambalajlama.html" class="dropdown-item">AmbalajlamaERP</a>
+                                <a href="erp-entegrasyonu.html" class="dropdown-item"> EntegrasyonuŞişelemeHızlı</a>
+                                <a href="siseleme.html" class="dropdown-item"></a>
+                                <a href="htm.html" class="dropdown-item"> Tüketim ÜrünleriHat Takibiİş</a>
+                                <a href="hat-takibi.html" class="dropdown-item"></a>
+                                <a href="isg.html" class="dropdown-item"> Güvenliği </a> </div>
+                        </div>
+                         <a href="yetenekler.html" class="nav-item nav-link">Yeteneklerimiz</a>
+                        <a href="hakkimizda.html" class="nav-item nav-link">Hakkımızda</a>
+                        <a href="blog.html" class="nav-item nav-link active">Blog </a>
+                        <a href="iletisim.html" class="nav-item nav-link">İletişim</a>
+                        <a href="https://vercosai.com" class="lang nav-item nav-link"><i class="fa-solid fa-globe"></i> EN</a>
+                    </div>
+                    
+                </div>
+            <script>
+                    document.addEventListener("DOMContentLoaded", function () {
+    var lastScrollPosition = window.scrollY || document.documentElement.scrollTop;
+
+    // Sayfa içinde herhangi bir yere tıklandığında çalışacak kod
+    document.addEventListener("click", function (event) {
+        var clickover = event.target;
+        var navbarCollapse = document.querySelector("#navbarCollapse");
+        var isOpened = navbarCollapse.classList.contains("show"); // Bootstrap 5'te "show" class'ı kullanılıyor
+        var isNavbarToggle = clickover.closest(".navbar-toggler");
+        var isDropdownToggle = clickover.closest(".dropdown-toggle"); // Dropdown menüsü açma butonunu kontrol et
+        var isDropdownMenu = clickover.closest(".dropdown-menu"); // Dropdown menüsünü kontrol et
+
+        // Navbar sadece dropdown ve navbar-toggler dışındaki alanlara tıklandığında kapanacak
+        if (isOpened && !isNavbarToggle && !isDropdownMenu && !isDropdownToggle) {
+            document.querySelector("button.navbar-toggler").click();
+            // Sayfa pozisyonunu sıfırla
+            lastScrollPosition = window.scrollY || document.documentElement.scrollTop;
+        }
+    });
+
+    // Dropdown'un kapanmaması için varsayılan kapanma davranışını engelle
+    var dropdowns = document.querySelectorAll('.dropdown-menu');
+    dropdowns.forEach(function (dropdown) {
+        dropdown.addEventListener('click', function (event) {
+            event.stopPropagation(); // Tıklama olayı diğer elemanlara yayılmasın
+        });
+    });
+
+    // Sayfa kaydırıldığında navbar'ı kapat, ancak son pozisyondan itibaren 100px kaydırılınca
+    window.addEventListener('scroll', function () {
+        var navbarCollapse = document.querySelector("#navbarCollapse");
+        var isOpened = navbarCollapse.classList.contains("show");
+
+        // Mevcut kaydırma pozisyonunu kontrol et
+        var currentScrollPosition = window.scrollY || document.documentElement.scrollTop;
+
+        // Eğer navbar açıksa ve son kaydedilen pozisyondan 100px fazla kaydırılmışsa navbar'ı kapat
+        if (isOpened && Math.abs(currentScrollPosition - lastScrollPosition) > 200) {
+            document.querySelector("button.navbar-toggler").click();
+            // Yeni pozisyonu kaydet
+            lastScrollPosition = currentScrollPosition;
+        }
+    });
+});
+
+
+
+
+
+
+                </script>
+            </nav>
+        </div>
+    </div>
+    <!-- Navbar End -->
+
+    <!-- Hero Start -->
+    <div class="container-fluid pt-5 bg-darkorbit hero-header">
+        <div class="container pt-5">
+            <div class="row g-5 pt-5">
+                <div class="col-lg-6 align-self-center text-center text-lg-start mb-lg-5">
+                    <h3 style="color: #fff;">Görüntü İşleme ile Otomasyonun Geleceği Akıllı üretim Çözümleri  </h3>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center justify-content-lg-start mb-0">
+                            <li class="breadcrumb-item"><a class="text-white" href="index.html">Ana Sayfa </a></li>
+                            <li class="breadcrumb-item"><a class="text-white" href="#">Blog </a></li>
+                            <li class="breadcrumb-item text-white active" aria-current="page"><b>Akıllı otomasyonun Geleceği... </b></li>
+                        </ol>
+                    <script>
+                    document.addEventListener("DOMContentLoaded", function () {
+    var lastScrollPosition = window.scrollY || document.documentElement.scrollTop;
+
+    // Sayfa içinde herhangi bir yere tıklandığında çalışacak kod
+    document.addEventListener("click", function (event) {
+        var clickover = event.target;
+        var navbarCollapse = document.querySelector("#navbarCollapse");
+        var isOpened = navbarCollapse.classList.contains("show"); // Bootstrap 5'te "show" class'ı kullanılıyor
+        var isNavbarToggle = clickover.closest(".navbar-toggler");
+        var isDropdownToggle = clickover.closest(".dropdown-toggle"); // Dropdown menüsü açma butonunu kontrol et
+        var isDropdownMenu = clickover.closest(".dropdown-menu"); // Dropdown menüsünü kontrol et
+
+        // Navbar sadece dropdown ve navbar-toggler dışındaki alanlara tıklandığında kapanacak
+        if (isOpened && !isNavbarToggle && !isDropdownMenu && !isDropdownToggle) {
+            document.querySelector("button.navbar-toggler").click();
+            // Sayfa pozisyonunu sıfırla
+            lastScrollPosition = window.scrollY || document.documentElement.scrollTop;
+        }
+    });
+
+    // Dropdown'un kapanmaması için varsayılan kapanma davranışını engelle
+    var dropdowns = document.querySelectorAll('.dropdown-menu');
+    dropdowns.forEach(function (dropdown) {
+        dropdown.addEventListener('click', function (event) {
+            event.stopPropagation(); // Tıklama olayı diğer elemanlara yayılmasın
+        });
+    });
+
+    // Sayfa kaydırıldığında navbar'ı kapat, ancak son pozisyondan itibaren 100px kaydırılınca
+    window.addEventListener('scroll', function () {
+        var navbarCollapse = document.querySelector("#navbarCollapse");
+        var isOpened = navbarCollapse.classList.contains("show");
+
+        // Mevcut kaydırma pozisyonunu kontrol et
+        var currentScrollPosition = window.scrollY || document.documentElement.scrollTop;
+
+        // Eğer navbar açıksa ve son kaydedilen pozisyondan 100px fazla kaydırılmışsa navbar'ı kapat
+        if (isOpened && Math.abs(currentScrollPosition - lastScrollPosition) > 200) {
+            document.querySelector("button.navbar-toggler").click();
+            // Yeni pozisyonu kaydet
+            lastScrollPosition = currentScrollPosition;
+        }
+    });
+});
+
+
+
+
+
+
+                </script>
+            </nav>
+                    <div class="views-container">
+                        <span style="padding: 10px;" class="pill-skill rounded-pill text-center">
+                        <i class="fa fa-eye"></i> 625 izlenme  </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <!-- Hero End -->
+
+    <section style="padding-top: 50px; background: #27462c !important;" class="section bg-darkorbit">
+        <div class="container">
+    
+            <div class="row blog-entries element-animate">
+    
+                <div class="col-md-12 col-lg-8 main-content">
+    
+                    <div class="post-content-body">
+                        <h4>26/09/2024</h4>
+                        <p>Verimlilik ve hassasiyetin endüstriyel ilerlemenin ön saflarında yer aldığı bir çağda,
+                             akıllı üretim çözümleriyle entegrasyon işlemesi, endüstrilerin nasıl işlediği konusunda bir dönüm noktası olarak duruyor.  <b>Bu
+Otomasyonun Geleceği: Görüntü İşleme ile Akıllı üretim Çözümleri</b>  Dönüştürücüye giriyor
+bu teknolojinin gücü, modern üretimdeki uygulamalarının kapsamlı bir şekilde araştırılmasını sağlar
+yatay.  Gerçek zamanlı karar vermeyi geliştirmekten operasyonel maliyetleri önemli ölçüde azaltmaya kadar, bu özellik
+                            , görüntü işleme teknolojisinin temel unsurları, yapay
+                             zeka kullanılarak geliştirilmesi, pratik uygulama stratejileri ve üretim hatları üzerindeki somut etkiler konusunda size rehberlik edecektir.  Ayrıca,
+                             otomatik
+                             üretimi şekillendirmeye devam eden ortaya çıkan trendlere ve gelecekteki potansiyele bir bakış sunacağız.  Bu makale, endüstri profesyonellerini
+                             bu dijital dönüşüm çağında gelişmek için gerekli bilgi ve araçlarla donatmayı amaçlamaktadır.  </p>
+                        <img style="width: 100%; margin-bottom: 55px; border-radius: 10px;"
+                            src="img/The Future of Automate blog.jpg" alt="Smart Manufacturing Solutions with Image Processing">
+                    
+                        <h4>Akıllı üretimde Görüntü İşlemeyi anlama </h4>
+                        <p><b>Akıllı üretim çözümlerinin kalbinde,</b> <b> görüntü işlemenin gelişmiş uygulaması yatar</b>. 
+                            Bu teknoloji, otomasyonu artırarak ve üretim sistemlerinin verimliliğini artırarak önemli bir rol oynamaktadır
+                            .  Akıllı üretim bağlamında görüntü işleme,
+                             üretim süreçleri sırasında yakalanan görüntüleri tomanipulate ve analiz eden bilgisayar algoritmalarının kullanımını ifade eder.  Birincil amaç,
+                             gerçek zamanlı karar vermeye yardımcı olmak ve ürün kalitesini artırmak için çapraz bilgi çıkarmaktır.  </p>
+                    
+                        <h4>AI ile Akıllı üretim Çözümleri Geliştirme </h4>
+                        <p><b>Yapay zekanın (AI)</b>  <b> akıllı üretim çözümlerine entegrasyonu </b>
+endüstride devrim yaratmak.  AI, daha önce
+                             insan müdahalesi gerektiren görevlerde gelişmiş karar vermeyi ve daha fazla kesinliği kolaylaştırır.  AI teknolojilerinden yararlanarak, üreticiler verimliliği önemli ölçüde artırabilir
+                            , maliyetleri azaltabilir ve ürün kalitesini artırabilir.  </p>
+                    
+                        <h4>AI-Driven Process Optimizasyonu </h4>
+                        <p>AI’nın üretimdeki en önemli katkılarından biri süreç optimizasyonudur.  AI algoritmaları
+                            
+                            , modelleri tanımlamak ve ortaya çıkmadan önce potansiyel sorunları tahmin etmek için üretim hatlarından üretilen veri miktarlarını analiz eder.  Bu<b> öngörücü bakım</b> , maliyetli arıza sürelerini önler ve ekipmanın ömrünü uzatır.  </p>
+                    
+                        <h4>Kalite kontrol için Makine Öğrenimi </h4>
+                        <p>Makine öğrenimi modelleri, kalite kontrol süreçlerini iyileştirmek için yaygın olarak kullanılmaktadır.  Bu modeller,
+                             üretim hatlarından toplanan binlerce görüntüden oluşan ve
+                             ürünlerdeki en küçük anormallikleri bile tespit etmelerini sağlayan veri setleri üzerinde eğitilmiştir.  <b>Görüntü işleme teknolojilerinin</b>  makine öğrenimi ile entegrasyonu
+daha yüksek ürün standartlarına ve müşteri memnuniyetine yol açarak bu yeteneği geliştirir.  </p>
+                    
+                        <h4>AI ve Robotik: Otomasyonda Ortaklar </h4>
+                        <p>Yapay zeka ile donatılmış robotik sistemler<b></b>, akıllı üretim çözümlerinin ayrılmaz bir parçası haline geliyor.  Theserobotlar
+                             karmaşık görevleri yüksek hassasiyet ve esneklik ile gerçekleştirir.  Örneğin, AI robotların uyum sağlamasını sağlar
+<b>görüntü işlemeyi kullanarak gerçek zamanlı görsel girdilerden öğrenerek farklı görevler</b>.  Bu uyarlanabilirlik
+                            , özel üretim ve tam zamanında üretim stratejileri için gereklidir.  </p>
+                    
+                        <h4>Üretim hatlarında Görüntü İşleme Uygulama </h4>
+                        <p><b>Görüntü işleme teknolojilerinin</b>  üretim hatlarına entegrasyonu
+<b>akıllı üretim çözümlerinin etkinliği</b>.  Bu gelişmiş uygulama,
+                             üstün gerçek zamanlı görseller sağlayarak, doğru hata tespiti sağlayarak ve
+                             özerk işlemleri kolaylaştırarak geleneksel üretim ayarlarını dönüştürür.  </p>
+                    
+                        <h4>Görsel Denetim sistemlerini kurma </h4>
+                        <p>Görüntü işlemeyi etkili bir şekilde uygulamak için, üreticiler önce sofistike<b> görsel denetim kurmalıdır
+sistemler</b>.  Bu sistemler,
+                             anında mükemmellikleri tespit etmek için makine öğrenme algoritmaları ile birlikte yüksek çözünürlüklü kameralar kullanır.  Bunu yaparak, insan hatasını en aza indirir, verimi artırır ve
+                             üretim boyunca tutarlı bir şekilde ürün standartlarını korurlar.  </p>
+                    
+                        <h4>Otomatik üretimde sonuçlar ve gelecekteki Eğilimler </h4>
+                        <p><b></b>  <b>Akıllı üretim çözümlerinde görüntü işlemenin entegrasyonu</b> zaten sağlandı
+üretim verimliliği ve kalite kontrolünde önemli gelişmeler.  Görsel denetim süreçlerini otomatikleştirerek
+                            , üreticiler insan hatasını azaltmış ve verimi artırmıştır.  Sonuçlar,
+                             gelişmiş doğruluk, daha hızlı işlem süreleri ve daha tutarlı çıktılarla kendileri için konuşur.  </p>
+                    
+                        <p>Geleceğe baktığımızda, otomatik üretimdeki eğilimler yenilikçi bir dönüşüm için hazır görünüyor. 
+                            Görüntü işleme teknolojilerinin ve makine öğrenme algoritmalarının yakınsaması, büyük yetenekler vaat ediyor
+                            .  Sistemler sadece kusurları ve tutarsızlıkları daha hassas bir şekilde tespit etmekle kalmayacak, aynı zamanda
+                             insan müdahalesi olmadan değişen koşullara uyum sağlayacak ve yanıt verecektir.  </p>
+                    
+                        <h4>Sık sorulan sorular </h4>
+                        <p>
+                            <b>Akıllı üretim nedir? </b><br>Akıllı üretim,
+                             verimliliği artırmak, hataları azaltmak ve ürün kalitesini artırmak için IoT, AI ve robotik üretim tesisleri gibi çeşitli akıllı sistemlerin entegrasyonunu içerir.  </p>
+                    
+                        <p>
+                            <b>Görüntü işleme akıllı üretime nasıl uyum sağlar? </b><br>Görüntü işleme, makinelerin çevrelerini görsel olarak yorumlamalarını ve tepki vermelerini sağlar, görevler için çok önemlidir,
+                             kalite kontrolü ve robotik rehberlik.  </p>
+                    
+                        <p>
+                            <b>Görüntü işlemeyi üretimde entegre etmenin faydaları nelerdir? </b><br>Temel avantajlar arasında gelişmiş kalite kontrolü, daha yüksek üretim hızı, daha düşük işletme maliyetleri ve daha az kanıtlanmış
+                             güvenlik yer alır.  </p>
+                    
+                        <p>
+                            <b>Görüntü işleme teknolojilerini benimsemenin getirdiği zorluklar nelerdir? </b><br>Bazı zorluklar arasında yüksek başlangıç ​​maliyetleri, entegrasyon karmaşıklıkları ve kalifiye personel ihtiyacı bulunmaktadır.  </p>
+                    </div>
+
+    
+                    
+                </div>
+    
+                <!-- END main-content -->
+    
+                <div class="col-md-12 col-lg-4 sidebar text-white">
+    
+                    <!-- END sidebar-box -->
+                    <div class="sidebar-box sticky-effectox" style="max-height: 70vh; overflow: auto;">
+                        <h3 class="heading text-white">Popüler Bloglar </h3>
+                        <div class="post-entry-sidebar">
+    
+                            <ul>
+                                <li>
+                                    <a href="yapay-zeka-ile-erp-entegasyonu-isletmenizde-verimliligi-nasil-artirabilirsiniz.html">
+                                        <div class=" wow fadeIn" data-wow-delay="0.3s">
+                                            <div class="case-item position-relative overflow-hidden rounded mb-2">
+                                                <img class="img-fluid" src="blog/ERP Integration with Artificial Intelligence How to Increase Efficiency in Your Business.jpg" alt="">
+                                                <a class="case-overlay text-decoration-none" href="yapay-zeka-ile-erp-entegasyonu-isletmenizde-verimliligi-nasil-artirabilirsiniz.html">
+                                                    
+                                                    <h5 class="lh-base text-white mb-3">Yapay Zeka ile ERP Entegrasyonu İşinizde verimliliği Nasıl Artırırsınız  </h5>
+                                                    <span class="btn btn-square btn-primary"><i
+                                                            class="fa fa-arrow-right"></i></span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="paketleme-siralama-ve-hata-tespiti-yapay-zeka-ile-verimliligi-artirin.html">
+                                        <div class=" wow fadeIn" data-wow-delay="0.3s">
+                                            <div class="case-item position-relative overflow-hidden rounded mb-2">
+                                                <img class="img-fluid" src="blog/Packaging Sorting and Error Detection Increase Efficiency with AI.jpg" alt="">
+                                                <a class="case-overlay text-decoration-none" href="paketleme-siralama-ve-hata-tespiti-yapay-zeka-ile-verimliligi-artirin.html">
+                                                    
+                                                    <h5 class="lh-base text-white mb-3">Paketleme Sıralama ve hata Algılama AI ile verimliliği artırır  </h5>
+                                                    <span class="btn btn-square btn-primary"><i
+                                                            class="fa fa-arrow-right"></i></span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                               
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- END sidebar-box -->
+    
+                </div>
+                <!-- END sidebar -->
+    
+            </div>
+        </div>
+    </section>
+
+
+    <div class="container-fluid py-5 bg-primarybit">
+        <div class="container py-5">
+            <div class="mx-auto text-center wow fadeIn" data-wow-delay="0.1s" style="max-width: 500px;">
+                <div class="btn btn-sm border rounded-pill pill-skill text-primary px-3 mb-3"> S.S.S</div>
+                <h1 class="mb-4">Sıkça sorulan sorular </h1>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="accordion" id="accordionFAQ1">
+                        <div class="accordion-item wow fadeIn" data-wow-delay="0.1s">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">VerCosAI ne tür çözümler sunuyor?  </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                                data-bs-parent="#accordionFAQ1">
+                                <div class="accordion-body">VerCosAI, AI ve görüntü işleme tabanlı çözümler sunar.  Ana hizmetlerimiz şunları içerir:  <ul>
+                                        <li>Şişeleme ve Ambalaj Hattı İzleme </li>
+                                        <li>Ürün Sayımı ve Kalite Kontrolü </li>
+                                        <li>ERP entegrasyonları </li>
+                                        <li>Güvenlik ve Kişisel Koruyucu Ekipman (KKD) İncelemesi </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item wow fadeIn" data-wow-delay="0.2s">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Görüntü işleme çözümleriniz hangi sektörlere hitap ediyor?  </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                                data-bs-parent="#accordionFAQ1">
+                                <div class="accordion-body">Çözümlerimiz
+                                    , FMCG, üretim, yiyecek ve içecek, paketleme, güvenlik ve otomasyon.  Ayrıca
+                                    
+                                     iş ihtiyaçlarınıza göre özelleştirilmiş çözümler sunuyoruz.  </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item wow fadeIn" data-wow-delay="0.3s">
+                            <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">VerCosAI çözümleri mevcut ERP sistemimizle entegre olabilir mi?  </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                                data-bs-parent="#accordionFAQ1">
+                                <div class="accordion-body">Evet, VerCosAI’nin ERP entegrasyon çözümleri
+                                    
+                                    , işletmenizde kullandığınız ERP sistemleri ile kolayca entegre olabilir.  Bu entegrasyon, üretim hattı verilerinin doğrudan 
+                                    
+                                    ERP system. </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item wow fadeIn" data-wow-delay="0.4s">
+                            <h2 class="accordion-header" id="headingFour">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">Çözümlerinizi kullanmak için özel bir donanıma ihtiyacım var mı?  </button>
+                            </h2>
+                            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                                data-bs-parent="#accordionFAQ1">
+                                <div class="accordion-body">VerCosAI'nin çözümleri
+                                    
+                                    , mevcut üretim hatlarınıza kolayca entegre edilebilen donanım ve yazılımlarla çalışır.  Özel donanımın gerekli olup olmadığı, iş gereksinimlerinize bağlıdır
+                                    .  </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="col-lg-6">
+                    <div class="accordion" id="accordionFAQ2">
+                        <div class="accordion-item wow fadeIn" data-wow-delay="0.5s">
+                            <h2 class="accordion-header" id="headingFive">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">KKD denetimi nedir ve nasıl çalışır?  </button>
+                            </h2>
+                            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+                                data-bs-parent="#accordionFAQ2">
+                                <div class="accordion-body">KKD denetimi, çalışanların güvenlik kurallarına uyup uymadığını
+                                     ve
+                                     gerekli kişisel koruyucu ekipmanı (kasklar, gözlükler, eldivenler vb.) giyip giymediğini izleyen bir AI sistemidir. 
+                                    Görüntü işleme
+                                     teknolojisini kullanarak, çalışanları gerçek zamanlı olarak izleyerek güvenliği sağlar.  </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item wow fadeIn" data-wow-delay="0.6s">
+                            <h2 class="accordion-header" id="headingSix">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">Sistemlerinizi kurmak ne kadar sürer?  </button>
+                            </h2>
+                            <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix"
+                                data-bs-parent="#accordionFAQ2">
+                                <div class="accordion-body">Kurulum süresi, işletmenizin boyutuna ve gereksinimlerine bağlıdır.  Bununla birlikte,
+                                    
+                                     çözümlerimizin çoğu hızlı bir kurulum sürecine sahiptir ve minimum kesinti ile uygulanmaktadır.  </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item wow fadeIn" data-wow-delay="0.7s">
+                            <h2 class="accordion-header" id="headingSeven">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">VerCosAI'den hangi destek hizmetlerini alabilirim?  </button>
+                            </h2>
+                            <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven"
+                                data-bs-parent="#accordionFAQ2">
+                                <div class="accordion-body">Proje tesliminden sonra,
+                                    
+                                     müşterilerimize kurulum desteği, eğitim ve ongoingmaintenance hizmetleri sağlıyoruz.  Ayrıca müşteri isteklerine göre özelleştirilmiş destek çözümleri sunuyoruz
+                                    .  </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item wow fadeIn" data-wow-delay="0.8s">
+                            <h2 class="accordion-header" id="headingEight">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">Çözümleriniz uzaktan izlenebilir mi?  </button>
+                            </h2>
+                            <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight"
+                                data-bs-parent="#accordionFAQ2">
+                                <div class="accordion-body">Evet, VerCosAI çözümleri uzaktan erişim ve izleme yetenekleri ile donatılmıştır. 
+                                    Bu,
+                                     üretim hattınızı ve sistemlerinizi her yerden izlemenizi ve gerçek zamanlı veri
+                                     raporlarına erişmenizi sağlar.  </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+        </div>
+    </div>
+
+
+
+ 
+
+
+    <!-- Newsletter Start -->
+    <div class="container-fluid bg-darkorbit newsletter">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="display-none col-md-5 ps-lg-0 pt-5 pt-md-0 text-start wow fadeIn" data-wow-delay="0.3s">
+                    <img class="img-fluid" src="img/newsletter.png" alt="">
+                </div>
+                <div class="col-md-7  newsletter-text wow fadeIn" data-wow-delay="0.5s">
+                    <div class="btn btn-sm border rounded-pill text-white px-3 mb-3">Haber B&#252;lteni</div>
+                    <h1 class="text-white mb-4">Haber B&#252;ltenimize Abone Ol!</h1>
+                    <div class="position-relative w-100 mt-3 mb-2">
+                        <input class="form-control border-0 rounded-pill w-100 ps-4 pe-5" type="text"
+                            placeholder="Mail Adresiniz" style="height: 48px;">
+                        <button type="button" class="btn shadow-none position-absolute top-0 end-0 mt-1 me-2"><i
+                                class="fa fa-paper-plane text-primary fs-4"></i></button>
+                    </div>
+                    <small class="text-white-50">Abone olarak gizlilik ve şartlarımızı kabul etmiş olursunuz.</small>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Newsletter End -->
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-primarybit text-white-50 footer pt-5">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.1s">
+                    <a href="index.html" class="d-inline-block mb-3">
+                        <img style="width: 200px;" src="img/logo.svg" alt="logo">
+                    </a>
+                     
+                </div>
+                 <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.3s">
+                    <h5 class="text-white mb-4">Pop&#252;ler Linkler</h5>
+                    <a class="btn btn-link" href="hakkimizda.html">Hakkımızda</a>
+                    <a class="btn btn-link" href="iletisim.html">İletişim</a>
+                    <a class="btn btn-link" href="gizlilik.html">Gizlilik Politikası</a>
+                    <a class="btn btn-link" href="sartlar.html">Şartlar &amp; Koşullar</a>
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.5s">
+                    <h5 class="text-white mb-4">&#199;&#246;z&#252;mlerimiz</h5>
+                    <a class="btn btn-link" href="siseleme.html">Şişeleme</a>
+                    <a class="btn btn-link" href="erp-entegrasyonu.html">ERP Entegrasyonu </a>
+                    <a class="btn btn-link" href="Ambalajlama.html">Ambalajlama </a>
+                    <a class="btn btn-link" href="htm.html">Hızlı T&#252;ketim &#220;r&#252;nleri</a>
+                    <a class="btn btn-link" href="hat-takibi.html">Hat Takibi</a>
+                    <a class="btn btn-link" href="isg.html">İş G&#252;venliği</a>
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.7s">
+                    <h5 class="text-white mb-4">İletişime Ge&#231;</h5>
+                    <p><i style="width: 10px;" class="fa fa-map-marker-alt me-3"></i>Sakarya, TÜRKIYE </p>
+                
+                    <p><a style="color:#ffffff80; text-decoration:none" href="mailto:hello@vercosai.com"><i style="width: 10px;" class="fa fa-envelope me-3"></i>hello@vercosai.com</a></p>
+                    <div class="d-flex pt-2">
+                       <a class="btn btn-outline-light btn-social" href="https://www.x.com/Vercos_AI"><i class="fab fa-x-twitter"></i></a>
+                     
+                        <a class="btn btn-outline-light btn-social" href="https://www.youtube.com/@vercosai"><i class="fab fa-youtube"></i></a>
+                       
+                        <a class="btn btn-outline-light btn-social" href="https://www.linkedin.com/company/vercosai"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container wow fadeIn" data-wow-delay="0.1s">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">&#169; <a class="border-bottom" href="https://vercosai.com">VercosAI</a>, T&#252;m Hakları Saklıdır. </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <div class="footer-menu"><a href="https://vercosai.com/tr">Ana SayfaÇerezlerYardımS </a>
+                            <a href="https://vercosai.com/tr/cookies.html"></a>
+                            <a href="https://vercosai.com/tr/iletisim.html"></a>
+                            <a href="FAQs.html"></a> </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-dark btn-lg back-to-top pt-2"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
