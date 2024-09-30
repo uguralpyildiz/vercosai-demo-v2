@@ -189,6 +189,11 @@ color: #fff !important;
     color: #fff;
     text-shadow: 0 0 12px #fff;
 }
+.dropdown-menu a.active-p{
+    background: #92DF9F00;
+    color: #fff;
+    text-shadow: 0 0 12px #fff;
+}
 
 
 .navbar .dropdown-toggle::after {
