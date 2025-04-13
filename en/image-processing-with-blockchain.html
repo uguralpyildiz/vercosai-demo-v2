@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title> Blockchain-Based Product Traceability Systems | VercosAI Digital Transformation</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Ubuntu:wght@500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <script src="https://kit.fontawesome.com/607e4879ac.js" crossorigin="anonymous"></script>
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Navbar Start -->
+    <div class="container-fluid sticky-top ">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-dark p-0">
+                <a href="index.html" class="navbar-brand">
+                    <img  src="img/logo.svg" alt="logo">
+                </a>
+                <button type="button" class="navbar-toggler ms-auto me-0" data-bs-toggle="collapse"
+                    data-bs-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav ms-auto">
+                        <a href="index.html" class="nav-item nav-link ">Home</a>
+                        <div class="nav-item dropdown">
+                            <a style="cursor:pointer" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Solutions</a>
+                            <div class="dropdown-menu bg-primary mt-2">
+                                <a href="packaging.html" class="dropdown-item">Packaging</a>
+                                <a href="erp-integration.html" class="dropdown-item">ERP Integration</a>
+                                <a href="bottling.html" class="dropdown-item">Bottling</a>
+                                <a href="fmcg.html" class="dropdown-item">FMCG</a>
+                                <a href="line-tracking.html" class="dropdown-item">Line Tracking</a>
+                                <a href="safety.html" class="dropdown-item">Safety</a>
+                            </div>
+                        </div>
+                        <a href="capabilities.html" class="nav-item nav-link">Capabilities</a>
+                        <a href="about.html" class="nav-item nav-link">About Us</a>
+                        <a href="blog.html" class="nav-item nav-link active">Blog</a>
+                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                        <a href="https://vercosai.com/goruntu-isleme-ile-blockchain.html" class="lang nav-item nav-link"><i class="fa-solid fa-globe"></i> TR</a>
+                    </div>
+                    
+                </div>
+            <script>
+                    document.addEventListener("DOMContentLoaded", function () {
+    var lastScrollPosition = window.scrollY || document.documentElement.scrollTop;
+
+    // Sayfa içinde herhangi bir yere tıklandığında çalışacak kod
+    document.addEventListener("click", function (event) {
+        var clickover = event.target;
+        var navbarCollapse = document.querySelector("#navbarCollapse");
+        var isOpened = navbarCollapse.classList.contains("show"); // Bootstrap 5'te "show" class'ı kullanılıyor
+        var isNavbarToggle = clickover.closest(".navbar-toggler");
+        var isDropdownToggle = clickover.closest(".dropdown-toggle"); // Dropdown menüsü açma butonunu kontrol et
+        var isDropdownMenu = clickover.closest(".dropdown-menu"); // Dropdown menüsünü kontrol et
+
+        // Navbar sadece dropdown ve navbar-toggler dışındaki alanlara tıklandığında kapanacak
+        if (isOpened && !isNavbarToggle && !isDropdownMenu && !isDropdownToggle) {
+            document.querySelector("button.navbar-toggler").click();
+            // Sayfa pozisyonunu sıfırla
+            lastScrollPosition = window.scrollY || document.documentElement.scrollTop;
+        }
+    });
+
+    // Dropdown'un kapanmaması için varsayılan kapanma davranışını engelle
+    var dropdowns = document.querySelectorAll('.dropdown-menu');
+    dropdowns.forEach(function (dropdown) {
+        dropdown.addEventListener('click', function (event) {
+            event.stopPropagation(); // Tıklama olayı diğer elemanlara yayılmasın
+        });
+    });
+
+    // Sayfa kaydırıldığında navbar'ı kapat, ancak son pozisyondan itibaren 100px kaydırılınca
+    window.addEventListener('scroll', function () {
+        var navbarCollapse = document.querySelector("#navbarCollapse");
+        var isOpened = navbarCollapse.classList.contains("show");
+
+        // Mevcut kaydırma pozisyonunu kontrol et
+        var currentScrollPosition = window.scrollY || document.documentElement.scrollTop;
+
+        // Eğer navbar açıksa ve son kaydedilen pozisyondan 100px fazla kaydırılmışsa navbar'ı kapat
+        if (isOpened && Math.abs(currentScrollPosition - lastScrollPosition) > 200) {
+            document.querySelector("button.navbar-toggler").click();
+            // Yeni pozisyonu kaydet
+            lastScrollPosition = currentScrollPosition;
+        }
+    });
+});
+
+
+
+
+
+
+                </script>
+            </nav>
+        </div>
+    </div>
+    <!-- Navbar End -->
+
+    <!-- Hero Start -->
+    <div class="container-fluid pt-5 bg-darkorbit hero-header">
+        <div class="container pt-5">
+            <div class="row g-5 pt-5">
+                <div class="col-lg-6 align-self-center text-center text-lg-start mb-lg-5">
+                    <h3 style="color: #fff;"> Blockchain-Based Product Traceability Systems
+                    </h3>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center justify-content-lg-start mb-0">
+                            <li class="breadcrumb-item"><a class="text-white" href="index.html">Home</a></li>
+                            <li class="breadcrumb-item"><a class="text-white" href="#">Recent publication</a></li>
+                            <li class="breadcrumb-item text-white active" aria-current="page"><b> Blockchain-Based Product Traceability Systems</b></li>
+                        </ol>
+                    <script>
+                    document.addEventListener("DOMContentLoaded", function () {
+    var lastScrollPosition = window.scrollY || document.documentElement.scrollTop;
+
+    // Sayfa içinde herhangi bir yere tıklandığında çalışacak kod
+    document.addEventListener("click", function (event) {
+        var clickover = event.target;
+        var navbarCollapse = document.querySelector("#navbarCollapse");
+        var isOpened = navbarCollapse.classList.contains("show"); // Bootstrap 5'te "show" class'ı kullanılıyor
+        var isNavbarToggle = clickover.closest(".navbar-toggler");
+        var isDropdownToggle = clickover.closest(".dropdown-toggle"); // Dropdown menüsü açma butonunu kontrol et
+        var isDropdownMenu = clickover.closest(".dropdown-menu"); // Dropdown menüsünü kontrol et
+
+        // Navbar sadece dropdown ve navbar-toggler dışındaki alanlara tıklandığında kapanacak
+        if (isOpened && !isNavbarToggle && !isDropdownMenu && !isDropdownToggle) {
+            document.querySelector("button.navbar-toggler").click();
+            // Sayfa pozisyonunu sıfırla
+            lastScrollPosition = window.scrollY || document.documentElement.scrollTop;
+        }
+    });
+
+    // Dropdown'un kapanmaması için varsayılan kapanma davranışını engelle
+    var dropdowns = document.querySelectorAll('.dropdown-menu');
+    dropdowns.forEach(function (dropdown) {
+        dropdown.addEventListener('click', function (event) {
+            event.stopPropagation(); // Tıklama olayı diğer elemanlara yayılmasın
+        });
+    });
+
+    // Sayfa kaydırıldığında navbar'ı kapat, ancak son pozisyondan itibaren 100px kaydırılınca
+    window.addEventListener('scroll', function () {
+        var navbarCollapse = document.querySelector("#navbarCollapse");
+        var isOpened = navbarCollapse.classList.contains("show");
+
+        // Mevcut kaydırma pozisyonunu kontrol et
+        var currentScrollPosition = window.scrollY || document.documentElement.scrollTop;
+
+        // Eğer navbar açıksa ve son kaydedilen pozisyondan 100px fazla kaydırılmışsa navbar'ı kapat
+        if (isOpened && Math.abs(currentScrollPosition - lastScrollPosition) > 200) {
+            document.querySelector("button.navbar-toggler").click();
+            // Yeni pozisyonu kaydet
+            lastScrollPosition = currentScrollPosition;
+        }
+    });
+});
+
+
+
+
+
+
+                </script>
+            </nav>
+                    <div class="views-container">
+                        <span style="padding: 10px;" class="pill-skill rounded-pill text-center">
+                        <i class="fa fa-eye"></i> 266 Views
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <!-- Hero End -->
+
+    <section style="padding-top: 50px; background: #27462c !important;" class="section bg-darkorbit">
+        <div class="container">
+    
+            <div class="row blog-entries element-animate">
+    
+                <div class="col-md-12 col-lg-8 main-content">
+    
+                    <div class="post-content-body">
+                        <h4>25/02/2025</h4>
+
+                        
+                        <h4>Image Processing and Blockchain-Based Product Traceability Systems</h4>
+                        <p>
+                            Today, we are all witnessing how rapidly technology is advancing. Product traceability has become a vital concern for
+                            both consumers and manufacturers. The combination of image processing and blockchain technologies holds the potential to
+                            revolutionize this field. In this article, we will examine in detail how these two advanced technologies contribute to
+                            product traceability. From the core principles and applications of image processing technology to the advantages of
+                            secure data storage with blockchain, and from the results to future strategies, we will cover all aspects. By doing so,
+                            we will explore how these technologies, aimed at enhancing security and transparency in industrial processes, can be
+                            integrated into the business world.
+                        </p>
+                        <img style="width: 100%; margin-bottom: 55px; border-radius: 10px;" src="new/3.jpg"
+                            alt="">
+                        <h4>Impact of Image Processing and Blockchain on Product Traceability</h4>
+                        <p>As the complexity of global supply chains increases, ensuring product traceability and data security becomes
+                            essential. In this context, image processing and blockchain technologies offer revolutionary solutions. Image
+                            processing enables the digital recognition, classification, and tracking of products. On the other hand, blockchain
+                            technology guarantees transaction security and transparency, supporting reliable data flow across all layers of the
+                            process.</p>
+                        
+                        <h4>Image Processing and Blockchain Integration</h4>
+                        <p>Image processing allows the unique identification of each product by detecting serial numbers, labels, or specific
+                            markings on packaging. This provides the ability to track the journey of a product from its origin to the consumer.
+                            This process is especially crucial in sensitive sectors such as food safety and pharmaceutical tracking.</p>
+                        
+                        <p>When integrated with blockchain, the data collected by image processing is transferred to the blockchain. This
+                            integration ensures that each data block is immutable and accessible only to authorized individuals. As a result,
+                            data security is enhanced, and trust in the system is increased. Furthermore, due to the transparency feature of
+                            blockchain, any fraud or irregularity that might arise throughout the supply chain can be easily detected and
+                            prevented.</p>
+                        
+                        <p>This combination of technologies marks significant progress in the field of product traceability. The detailed
+                            product information obtained through image processing, strengthened by blockchain technology, is made accessible to
+                            all stakeholders. This creates a high level of transparency for both supply chain managers and end consumers.</p>
+                        
+                        <h4>Role of Image Processing and Blockchain Technologies in Product Traceability</h4>
+                        <p>Image processing and blockchain technologies play a groundbreaking role in making modern supply chains more secure
+                            and manageable, revolutionizing product traceability. This provides a secure and transparent trading environment for
+                            both manufacturers and consumers.</p>
+                        
+                        <h4>Basic Principles and Applications of Image Processing Technology</h4>
+                        <p>Image processing refers to the process of applying various operations and analysis on digital images. This technology
+                            is used to enhance image quality or extract specific information through numerical and optical adjustments. Image
+                            processing applications are widely used in fields ranging from healthcare to security systems.</p>
+                        
+                        <p>The basic principles involve performing mathematical operations on the pixels that make up the image, changing their
+                            values to obtain a new image. For instance, image sharpening, noise reduction, and color correction are among the
+                            most commonly used methods.</p>
+                        
+                        <p>The integration of image processing technology with blockchain for product traceability holds great potential in
+                            verifying the source of products and preventing counterfeiting. Image processing helps ensure transparency and data
+                            security in the authentication of products, helping consumers feel safe.</p>
+                        
+                        <p>Particularly, this technology is thought to play a crucial role in detecting counterfeit products by analyzing
+                            visuals on packaging and product labels. Additionally, when combined with blockchain technology, a secure digital
+                            record system can be established to track products throughout the entire supply chain.</p>
+                        
+                        <p>The strategic use of image processing technology in this way offers innovative and effective solutions for
+                            inter-industry advancements. This provides a clear advantage, especially in cases where evolving consumer
+                            expectations and technological advancements converge.</p>
+                        
+                        <h4>Secure Data Storage with Blockchain: Image Processing Potential</h4>
+                        <p>Blockchain technology is considered a revolutionary innovation in terms of data storage and transparency. This
+                            technology provides a secure data storage environment by recording all transaction history in an immutable way. This
+                            feature makes product traceability systems more reliable and transparent.</p>
+                        
+                        <p>In the field of product traceability, while image processing is used to track and verify products, blockchain
+                            integration further secures this process. Image processing allows real-time tracking and classification of products,
+                            while blockchain ensures that this information is protected from any external interference.</p>
+                        
+                        <p>The data obtained through image processing can be encrypted and stored on the blockchain. This way, crucial
+                            information such as the product's history, status, and ownership at each point in the supply chain is secured. This
+                            process not only ensures data security but also provides consumers with transparent information about the entire
+                            journey of the product.</p>
+                        
+                        <h4>Results and Future Strategies</h4>
+                        <p>With advancing technologies, image processing and blockchain systems hold significant potential in the field of
+                            product traceability. The integration of these technologies enables a wide range of applications across industries,
+                            particularly in terms of transparency and data security. It is expected that in the coming years, this integration
+                            will be further developed and become a standard practice in various sectors.</p>
+                        
+                        <p>In the future, the effective use of technology aims to make product traceability systems more accurate and faster. In
+                            this context, the advanced use of image processing technology and the strengthening of blockchain infrastructure
+                            should be prioritized.</p>
+                        
+                        <p>Strategically, considering the potential of these technologies to enhance trust between businesses and consumers,
+                            investments should be increased, and research and development activities in these areas should be supported.
+                            Additionally, regulations and standards should be aligned with these new technological developments to ensure the
+                            seamless and efficient operation of the system.</p>
+                        
+                        <h4>Frequently Asked Questions</h4>
+                        <p><strong>What is image processing technology?</strong><br>Image processing technology refers to the operations applied
+                            to digital images. These operations include enhancing, manipulating, or interpreting images. These processes,
+                            performed using various algorithms and statistical methods, are widely used in image analysis and automation
+                            systems.</p>
+                        
+                        <p><strong>What is blockchain technology and how can it be used for product traceability?</strong><br>Blockchain is a
+                            distributed ledger technology that allows data to be stored in a way that is transparent and immutable. When used
+                            for product traceability, it securely, transparently, and immutably records every stage of a product’s journey. This
+                            enables easy tracking and verification of the processes the product goes through along the supply chain.</p>
+                        
+                        <p><strong>How can image processing and blockchain technologies be integrated?</strong><br>Image processing can be used
+                            for the automatic recognition and classification of products. When combined with blockchain, the data obtained can
+                            be securely stored and recorded on the blockchain. This integration ensures that product verification and
+                            traceability are carried out more reliably and efficiently.</p>
+                        
+                        <p><strong>What benefits do these technologies provide for product security?</strong><br>These technologies offer
+                            significant advantages in preventing counterfeiting and facilitating product recalls. Since every step of a
+                            product’s journey is transparently recorded, consumer security is enhanced, and brand reliability is reinforced.
+                            Additionally, in cases of product fraud, responsible parties can be quickly identified.</p>
+                        
+                        <p><strong>What challenges do blockchain-based traceability systems face?</strong><br>The implementation of blockchain
+                            technology may require high initial investment costs. Additionally, technical challenges may arise in scaling and
+                            integrating the systems. Issues such as data privacy and processing capacity can also hinder the widespread adoption
+                            of these systems.</p>
+                        
+                        <p><strong>What innovations can be expected in traceability systems with the development of image processing
+                                technology?</strong><br>Advancements in image processing technology may bring faster and more accurate product
+                            recognition and classification capabilities. This will allow traceability systems to operate more effectively and
+                            quickly. Particularly, the integration of artificial intelligence and machine learning can further enhance these
+                            processes.</p>
+
+                        
+                        
+                        
+                     
+                        
+                       
+                        
+                    </div>
+    
+                    
+                </div>
+    
+                <!-- END main-content -->
+    
+                <div class="col-md-12 col-lg-4 sidebar text-white">
+    
+                    <!-- END sidebar-box -->
+                    <div class="sidebar-box sticky-effectox" style="max-height: 70vh; overflow: auto;">
+                        <h3 class="heading text-white">Popular Posts</h3>
+                        <div class="post-entry-sidebar">
+    
+                            <ul>
+                                <li>
+                                    <a href="erp-integration-with-artificial-intelligence-how-to-increase-efficiency-in-your-business.html">
+                                        <div class=" wow fadeIn" data-wow-delay="0.3s">
+                                            <div class="case-item position-relative overflow-hidden rounded mb-2">
+                                                <img class="img-fluid" src="blog/ERP Integration with Artificial Intelligence How to Increase Efficiency in Your Business.jpg" alt="">
+                                                <a class="case-overlay text-decoration-none" href="erp-integration-with-artificial-intelligence-how-to-increase-efficiency-in-your-business.html">
+                                                    
+                                                    <h5 class="lh-base text-white mb-3">
+                                                        ERP Integration with Artificial Intelligence How to Increase Efficiency in Your Business
+                                                    </h5>
+                                                    <span class="btn btn-square btn-primary"><i
+                                                            class="fa fa-arrow-right"></i></span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="packaging-sorting-and-error-detection-increase-efficiency-with-ai.html">
+                                        <div class=" wow fadeIn" data-wow-delay="0.3s">
+                                            <div class="case-item position-relative overflow-hidden rounded mb-2">
+                                                <img class="img-fluid" src="blog/Packaging Sorting and Error Detection Increase Efficiency with AI.jpg" alt="">
+                                                <a class="case-overlay text-decoration-none" href="packaging-sorting-and-error-detection-increase-efficiency-with-ai.html">
+                                                    
+                                                    <h5 class="lh-base text-white mb-3">
+                                                        Packaging Sorting and Error Detection Increase Efficiency with AI
+                                                    </h5>
+                                                    <span class="btn btn-square btn-primary"><i
+                                                            class="fa fa-arrow-right"></i></span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                               
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- END sidebar-box -->
+    
+                </div>
+                <!-- END sidebar -->
+                <div style="height: 100px;" class="cakinti"></div>
+                
+            </div>
+        </div>
+    </section>
+
+
+    
+
+
+
+ 
+
+
+    <!-- Newsletter Start -->
+    <div class="container-fluid bg-darkorbit newsletter">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="display-none col-md-5 ps-lg-0 pt-5 pt-md-0 text-start wow fadeIn" data-wow-delay="0.3s">
+                    <img class="img-fluid" src="img/newsletter.png" alt="">
+                </div>
+                <div class="col-md-7  newsletter-text wow fadeIn" data-wow-delay="0.5s">
+                    <div class="btn btn-sm border rounded-pill text-white px-3 mb-3">Newsletter</div>
+                    <h1 class="text-white mb-4">Let's subscribe the newsletter</h1>
+                    <div class="position-relative w-100 mt-3 mb-2">
+                        <input class="form-control border-0 rounded-pill w-100 ps-4 pe-5" type="text"
+                            placeholder="Enter Your Email" style="height: 48px;">
+                        <button type="button" class="btn shadow-none position-absolute top-0 end-0 mt-1 me-2"><i
+                                class="fa fa-paper-plane text-primary fs-4"></i></button>
+                    </div>
+                    <small class="text-white-50">You accept our privacy policy by providing your email address.</small>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Newsletter End -->
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-primarybit text-white-50 footer pt-5">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.1s">
+                    <a href="index.html" class="d-inline-block mb-3">
+                        <img style="width: 200px;" src="img/logo.svg" alt="logo">
+                    </a>
+                     
+                </div>
+                 <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.3s">
+                    <h5 class="text-white mb-4">Popular Link</h5>
+                    <a class="btn btn-link" href="about.html">About Us</a>
+                    <a class="btn btn-link" href="contact.html">Contact Us</a>
+                    <a class="btn btn-link" href="privacy.html">Privacy Policy</a>
+                    <a class="btn btn-link" href="terms.html">Terms & Condition</a>
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.5s">
+                    <h5 class="text-white mb-4">Our Services</h5>
+                    <a class="btn btn-link" href="bottling.html">Bottling</a>
+                    <a class="btn btn-link" href="erp-integration.html">ERP Integration</a>
+                    <a class="btn btn-link" href="packaging.html">Packaging</a>
+                    <a class="btn btn-link" href="fmcg.html">FMCG</a>
+                    <a class="btn btn-link" href="line-tracking.html">Line Tracking</a>
+                    <a class="btn btn-link" href="safety.html">Safety</a>
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.7s">
+                    <h5 class="text-white mb-4">Get In Touch</h5>
+                    <p><i style="width: 10px;" class="fa fa-map-marker-alt me-3"></i>Sakarya, TURKEY</p>
+                    <p><a style="color:#ffffff80; text-decoration:none" href="tel:+905464208480"><i style="width: 10px;"
+                                class="fa fa-phone me-3"></i>0 546 420 84 80</a></p>
+                
+                    <p><a style="color:#ffffff80; text-decoration:none" href="mailto:hello@vercosai.com"><i style="width: 10px;" class="fa fa-envelope me-3"></i>hello@vercosai.com</a></p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-outline-light btn-social" href="https://x.com/vercos_ai"><i class="fab fa-x-twitter"></i></a>
+                     
+                        <a class="btn btn-outline-light btn-social" href="https://youtube.com/@vercosai"><i class="fab fa-youtube"></i></a>
+                       
+                        <a class="btn btn-outline-light btn-social" href="https://www.linkedin.com/company/vercosai/"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container wow fadeIn" data-wow-delay="0.1s">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="border-bottom" href="https://vercosai.com/en">VercosAI</a>, All Right Reserved.
+
+                        
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <div class="footer-menu">
+                            <a href="https://vercosai.com/en">Home</a>
+ 
+                            <a href="https://vercosai.com/en/contact.html">Help</a>
+                            <a href="https://vercosai.com/en/FAQs.html">FAQs</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-dark btn-lg back-to-top pt-2"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

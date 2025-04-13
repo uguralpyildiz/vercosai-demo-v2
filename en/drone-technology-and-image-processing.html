@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Drone Technology and Image Processing | VercosAI Digital Transformation</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Ubuntu:wght@500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <script src="https://kit.fontawesome.com/607e4879ac.js" crossorigin="anonymous"></script>
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Navbar Start -->
+    <div class="container-fluid sticky-top ">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-dark p-0">
+                <a href="index.html" class="navbar-brand">
+                    <img  src="img/logo.svg" alt="logo">
+                </a>
+                <button type="button" class="navbar-toggler ms-auto me-0" data-bs-toggle="collapse"
+                    data-bs-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav ms-auto">
+                        <a href="index.html" class="nav-item nav-link ">Home</a>
+                        <div class="nav-item dropdown">
+                            <a style="cursor:pointer" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Solutions</a>
+                            <div class="dropdown-menu bg-primary mt-2">
+                                <a href="packaging.html" class="dropdown-item">Packaging</a>
+                                <a href="erp-integration.html" class="dropdown-item">ERP Integration</a>
+                                <a href="bottling.html" class="dropdown-item">Bottling</a>
+                                <a href="fmcg.html" class="dropdown-item">FMCG</a>
+                                <a href="line-tracking.html" class="dropdown-item">Line Tracking</a>
+                                <a href="safety.html" class="dropdown-item">Safety</a>
+                            </div>
+                        </div>
+                        <a href="capabilities.html" class="nav-item nav-link">Capabilities</a>
+                        <a href="about.html" class="nav-item nav-link">About Us</a>
+                        <a href="blog.html" class="nav-item nav-link active">Blog</a>
+                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                        <a href="https://vercosai.com/drone-teknolojisi-ve-goruntu-isleme.html" class="lang nav-item nav-link"><i class="fa-solid fa-globe"></i> TR</a>
+                    </div>
+                    
+                </div>
+            <script>
+                    document.addEventListener("DOMContentLoaded", function () {
+    var lastScrollPosition = window.scrollY || document.documentElement.scrollTop;
+
+    // Sayfa içinde herhangi bir yere tıklandığında çalışacak kod
+    document.addEventListener("click", function (event) {
+        var clickover = event.target;
+        var navbarCollapse = document.querySelector("#navbarCollapse");
+        var isOpened = navbarCollapse.classList.contains("show"); // Bootstrap 5'te "show" class'ı kullanılıyor
+        var isNavbarToggle = clickover.closest(".navbar-toggler");
+        var isDropdownToggle = clickover.closest(".dropdown-toggle"); // Dropdown menüsü açma butonunu kontrol et
+        var isDropdownMenu = clickover.closest(".dropdown-menu"); // Dropdown menüsünü kontrol et
+
+        // Navbar sadece dropdown ve navbar-toggler dışındaki alanlara tıklandığında kapanacak
+        if (isOpened && !isNavbarToggle && !isDropdownMenu && !isDropdownToggle) {
+            document.querySelector("button.navbar-toggler").click();
+            // Sayfa pozisyonunu sıfırla
+            lastScrollPosition = window.scrollY || document.documentElement.scrollTop;
+        }
+    });
+
+    // Dropdown'un kapanmaması için varsayılan kapanma davranışını engelle
+    var dropdowns = document.querySelectorAll('.dropdown-menu');
+    dropdowns.forEach(function (dropdown) {
+        dropdown.addEventListener('click', function (event) {
+            event.stopPropagation(); // Tıklama olayı diğer elemanlara yayılmasın
+        });
+    });
+
+    // Sayfa kaydırıldığında navbar'ı kapat, ancak son pozisyondan itibaren 100px kaydırılınca
+    window.addEventListener('scroll', function () {
+        var navbarCollapse = document.querySelector("#navbarCollapse");
+        var isOpened = navbarCollapse.classList.contains("show");
+
+        // Mevcut kaydırma pozisyonunu kontrol et
+        var currentScrollPosition = window.scrollY || document.documentElement.scrollTop;
+
+        // Eğer navbar açıksa ve son kaydedilen pozisyondan 100px fazla kaydırılmışsa navbar'ı kapat
+        if (isOpened && Math.abs(currentScrollPosition - lastScrollPosition) > 200) {
+            document.querySelector("button.navbar-toggler").click();
+            // Yeni pozisyonu kaydet
+            lastScrollPosition = currentScrollPosition;
+        }
+    });
+});
+
+
+
+
+
+
+                </script>
+            </nav>
+        </div>
+    </div>
+    <!-- Navbar End -->
+
+    <!-- Hero Start -->
+    <div class="container-fluid pt-5 bg-darkorbit hero-header">
+        <div class="container pt-5">
+            <div class="row g-5 pt-5">
+                <div class="col-lg-6 align-self-center text-center text-lg-start mb-lg-5">
+                    <h3 style="color: #fff;">Drone Technology and Image Processing
+                    </h3>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center justify-content-lg-start mb-0">
+                            <li class="breadcrumb-item"><a class="text-white" href="index.html">Home</a></li>
+                            <li class="breadcrumb-item"><a class="text-white" href="#">Recent publication</a></li>
+                            <li class="breadcrumb-item text-white active" aria-current="page"><b>Drone Technology and Image Processing</b></li>
+                        </ol>
+                    <script>
+                    document.addEventListener("DOMContentLoaded", function () {
+    var lastScrollPosition = window.scrollY || document.documentElement.scrollTop;
+
+    // Sayfa içinde herhangi bir yere tıklandığında çalışacak kod
+    document.addEventListener("click", function (event) {
+        var clickover = event.target;
+        var navbarCollapse = document.querySelector("#navbarCollapse");
+        var isOpened = navbarCollapse.classList.contains("show"); // Bootstrap 5'te "show" class'ı kullanılıyor
+        var isNavbarToggle = clickover.closest(".navbar-toggler");
+        var isDropdownToggle = clickover.closest(".dropdown-toggle"); // Dropdown menüsü açma butonunu kontrol et
+        var isDropdownMenu = clickover.closest(".dropdown-menu"); // Dropdown menüsünü kontrol et
+
+        // Navbar sadece dropdown ve navbar-toggler dışındaki alanlara tıklandığında kapanacak
+        if (isOpened && !isNavbarToggle && !isDropdownMenu && !isDropdownToggle) {
+            document.querySelector("button.navbar-toggler").click();
+            // Sayfa pozisyonunu sıfırla
+            lastScrollPosition = window.scrollY || document.documentElement.scrollTop;
+        }
+    });
+
+    // Dropdown'un kapanmaması için varsayılan kapanma davranışını engelle
+    var dropdowns = document.querySelectorAll('.dropdown-menu');
+    dropdowns.forEach(function (dropdown) {
+        dropdown.addEventListener('click', function (event) {
+            event.stopPropagation(); // Tıklama olayı diğer elemanlara yayılmasın
+        });
+    });
+
+    // Sayfa kaydırıldığında navbar'ı kapat, ancak son pozisyondan itibaren 100px kaydırılınca
+    window.addEventListener('scroll', function () {
+        var navbarCollapse = document.querySelector("#navbarCollapse");
+        var isOpened = navbarCollapse.classList.contains("show");
+
+        // Mevcut kaydırma pozisyonunu kontrol et
+        var currentScrollPosition = window.scrollY || document.documentElement.scrollTop;
+
+        // Eğer navbar açıksa ve son kaydedilen pozisyondan 100px fazla kaydırılmışsa navbar'ı kapat
+        if (isOpened && Math.abs(currentScrollPosition - lastScrollPosition) > 200) {
+            document.querySelector("button.navbar-toggler").click();
+            // Yeni pozisyonu kaydet
+            lastScrollPosition = currentScrollPosition;
+        }
+    });
+});
+
+
+
+
+
+
+                </script>
+            </nav>
+                    <div class="views-container">
+                        <span style="padding: 10px;" class="pill-skill rounded-pill text-center">
+                        <i class="fa fa-eye"></i> 302 Views
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <!-- Hero End -->
+
+    <section style="padding-top: 50px; background: #27462c !important;" class="section bg-darkorbit">
+        <div class="container">
+    
+            <div class="row blog-entries element-animate">
+    
+                <div class="col-md-12 col-lg-8 main-content">
+    
+                    <div class="post-content-body">
+                        <h4>20/03/20254</h4>
+
+                        
+                        <h4>Drone Technology and Image Processing: The Future of Aerial Monitoring Systems</h4>
+                        <p>Drone technology has made impressive advancements in recent years, particularly with its image processing capabilities.
+                        In this article, we explore the intersection of these two dynamic fields and how this integration can revolutionize
+                        various industries. From the fundamental concepts of modern drone systems to their widespread applications, data
+                        analysis techniques, and innovative approaches, this article provides an in-depth look at how drone and image processing
+                        technologies create a powerful synergy when combined. We invite you to explore this exciting technological development
+                        and reflect on potential use cases through this content.</p>
+                        <img style="width: 100%; margin-bottom: 55px; border-radius: 10px;" src="new/2.jpg"
+                            alt="">
+                        
+                        <h4>Basic Concepts and Applications</h4>
+                        <p>Drone technology and image processing are gaining increasing popularity. These technologies have the potential to
+                            enhance efficiency and reduce operational costs across many different sectors. Drone technology refers to small and
+                            lightweight aerial vehicles with remote-controlled or autonomous flight capabilities. Image processing, on the other
+                            hand, involves software methods that allow various analyses to be performed on images captured by these devices.</p>
+                        <p>Drones are highly effective in aerial inspection applications. For example, they are used in tasks such as
+                            photographing large areas from the air, inspecting critical infrastructure, or damage assessment after natural
+                            disasters. Autonomous systems minimize human intervention, providing faster and risk-free operations. Image
+                            processing technologies allow meaningful data to be extracted from the images obtained, enabling more informed
+                            decision-making.</p>
+                        <p>In the industrial inspection sector, drones are also widely used. In particular, sectors such as construction,
+                            energy, and agriculture require regular monitoring of large areas and complex structures. Drones stand out with
+                            their ability to provide real-time imagery quickly and safely in such challenging environments. Image processing
+                            then analyzes the collected data and provides early warnings about potential problems.</p>
+                        
+                        <h4>Image Processing Techniques in Drone Systems and Use Scenarios</h4>
+                        <p>Advances in drone technology and image processing are paving the way for revolutionary applications in various
+                            industries. These technologies, particularly when used in aerial inspection and autonomous systems, enable us to
+                            accomplish tasks that were previously impossible.</p>
+                        <p>The image processing techniques underlying drone systems are diverse. These techniques mainly include object
+                            recognition, tracking, and classification. Object recognition enables drones to perceive their surroundings and
+                            recognize specific objects, which is critical in tasks such as search-and-rescue missions to detect missing persons.
+                        </p>
+                        <p>Another important application of image processing is in mapping and 3D modeling. Drones can capture high-resolution
+                            images of terrestrial or urban areas to create digital maps of these regions. This opens up a wide range of
+                            applications, from urban planning to environmental monitoring.</p>
+                        <p>In the agricultural sector, advanced image processing sensors placed on drones allow monitoring of plant health and
+                            increased productivity. These systems observe the health of vegetation and ensure that necessary interventions are
+                            made in a timely manner.</p>
+                        <p>In construction and industrial inspection, image processing techniques are utilized. Drones can capture photographs
+                            of buildings, whether they are under construction or existing structures, offering a more detailed analysis of
+                            structural defects, potential risks, and other important points that need to be monitored.</p>
+                        <p>This wide range of use scenarios is continually increasing the effectiveness of drone technology and image processing
+                            in the business world. These technologies provide safer, more efficient, and cost-effective solutions while also
+                            minimizing human intervention in challenging and dangerous field conditions.</p>
+                        
+                        <h4>Data Analysis with Drone Technology and Image Processing</h4>
+                        <p>Drone technology and image processing are revolutionizing data analysis processes. Especially in autonomous systems
+                            and industrial inspection, the data collected using these technologies is processed and transformed into more
+                            meaningful and usable information. Drones are equipped with various sensors and cameras, enabling them to capture
+                            detailed imagery over large areas. These images are analyzed using image processing algorithms, and the results are
+                            then presented to the relevant parties.</p>
+                        <p>Image processing techniques play a critical role in processing the raw data collected by drones. For instance, in the
+                            agricultural sector, images obtained by drones can be used to perform plant health analysis. These analyses can
+                            detect the vitality of vegetation and signs of disease. Additionally, this data can assist in planning activities
+                            such as irrigation and fertilization more efficiently.</p>
+                        <p>In industrial inspection applications, drone technology can be used to continuously monitor structural integrity and
+                            safety. Drones can regularly inspect hard-to-reach structures, bridges, and high-rise buildings. Image processing
+                            algorithms detect cracks and damages on these structures, becoming part of early warning systems.</p>
+                        <p>In summary, in aerial inspection and security areas, drones provide fast and efficient monitoring of large areas. In
+                            tasks such as monitoring critical infrastructure and boundaries, drone technology and image processing systems have
+                            become indispensable tools. These systems enable data to be processed faster and more accurately, contributing
+                            significantly to decision-making processes.</p>
+                        
+                        <h4>Innovative Approaches in Drone Technology</h4>
+                        <p>Innovative approaches in drone technology and image processing have the potential to revolutionize the fields of
+                            aerial and industrial inspections. Particularly, the development of autonomous systems is expanding the usage areas
+                            of drones and enabling them to perform more complex tasks.</p>
+                        <p>For example, autonomous drones can follow pre-programmed routes to perform aerial inspections of large areas. These
+                            systems, equipped with image processing technology, can examine agricultural areas or critical infrastructure in
+                            detail. In this way, timely intervention can prevent potential problems, reducing costs and increasing efficiency.
+                        </p>
+                        <p>Furthermore, in industrial inspections, drones can enter dangerous or hard-to-reach areas, eliminating risky human
+                            interventions. Drones equipped with high-resolution cameras and advanced image processing algorithms play a
+                            significant role in detecting structural damages or leaks.</p>
+                        <p>Another promising approach is inter-drone communication and coordination systems. This enables multiple drones to
+                            work synchronously, inspecting large areas more quickly and efficiently. These developments are especially important
+                            in large-scale projects that require comprehensive surveillance and tracking.</p>
+                        <p>These innovative approaches in drone technology are transforming drones into far more than just tools for aerial
+                            photography and videography, changing the face of the industry. Thanks to these technological advancements, drones
+                            are becoming indispensable in an increasing number of sectors and creating new job opportunities.</p>
+                        
+                        <h4>Frequently Asked Questions</h4>
+                        
+                        <p><strong>What is drone technology and how does it work?</strong><br>
+                            Drone technology consists of remotely controlled, automatic, or semi-automatic aerial vehicles equipped with various
+                            control systems, sensors, and cameras. These vehicles are flown and operated through ground-based controllers or
+                            computer systems to perform their tasks.</p>
+                        
+                        <p><strong>What role does image processing technology play in drone usage?</strong><br>
+                            Image processing technology allows drones to analyze the images they capture and process various data. With this
+                            technology, drones can be used effectively in a wide variety of fields such as search-and-rescue, mapping,
+                            agriculture, and construction.</p>
+                        
+                        <p><strong>What is the place of drone and image processing technology in aerial inspection systems?</strong><br>
+                            Aerial inspection systems are critical in ensuring security in areas with heavy traffic and around airports. Drones
+                            can perform fast and effective surveillance and inspection in these systems, quickly detecting dangerous situations
+                            and reporting them to the relevant authorities.</p>
+                        
+                        <p><strong>What contributions might drone technology make to aerial inspection systems in the future?</strong><br>
+                            In the future, with improvements supported by artificial intelligence and more advanced image processing algorithms,
+                            drones will be able to perform more complex tasks and further automate aerial inspection systems. This will enhance
+                            the efficiency of air traffic control and minimize potential hazards.</p>
+                        
+                        <p><strong>What are other potential use areas for drone technology?</strong><br>
+                            Drone technology has a wide range of applications, from military surveillance to land management in agriculture and
+                            emergency medical supply transportation in healthcare. It is also an effective tool in areas such as fire
+                            monitoring, crime tracking, and rapid intervention during natural disasters.</p>
+
+                        
+                        
+                     
+                        
+                       
+                        
+                    </div>
+    
+                    
+                </div>
+    
+                <!-- END main-content -->
+    
+                <div class="col-md-12 col-lg-4 sidebar text-white">
+    
+                    <!-- END sidebar-box -->
+                    <div class="sidebar-box sticky-effectox" style="max-height: 70vh; overflow: auto;">
+                        <h3 class="heading text-white">Popular Posts</h3>
+                        <div class="post-entry-sidebar">
+    
+                            <ul>
+                                <li>
+                                    <a href="erp-integration-with-artificial-intelligence-how-to-increase-efficiency-in-your-business.html">
+                                        <div class=" wow fadeIn" data-wow-delay="0.3s">
+                                            <div class="case-item position-relative overflow-hidden rounded mb-2">
+                                                <img class="img-fluid" src="blog/ERP Integration with Artificial Intelligence How to Increase Efficiency in Your Business.jpg" alt="">
+                                                <a class="case-overlay text-decoration-none" href="erp-integration-with-artificial-intelligence-how-to-increase-efficiency-in-your-business.html">
+                                                    
+                                                    <h5 class="lh-base text-white mb-3">
+                                                        ERP Integration with Artificial Intelligence How to Increase Efficiency in Your Business
+                                                    </h5>
+                                                    <span class="btn btn-square btn-primary"><i
+                                                            class="fa fa-arrow-right"></i></span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="packaging-sorting-and-error-detection-increase-efficiency-with-ai.html">
+                                        <div class=" wow fadeIn" data-wow-delay="0.3s">
+                                            <div class="case-item position-relative overflow-hidden rounded mb-2">
+                                                <img class="img-fluid" src="blog/Packaging Sorting and Error Detection Increase Efficiency with AI.jpg" alt="">
+                                                <a class="case-overlay text-decoration-none" href="packaging-sorting-and-error-detection-increase-efficiency-with-ai.html">
+                                                    
+                                                    <h5 class="lh-base text-white mb-3">
+                                                        Packaging Sorting and Error Detection Increase Efficiency with AI
+                                                    </h5>
+                                                    <span class="btn btn-square btn-primary"><i
+                                                            class="fa fa-arrow-right"></i></span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                               
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- END sidebar-box -->
+    
+                </div>
+                <!-- END sidebar -->
+                <div style="height: 100px;" class="cakinti"></div>
+                
+            </div>
+        </div>
+    </section>
+
+
+    
+
+
+
+ 
+
+
+    <!-- Newsletter Start -->
+    <div class="container-fluid bg-darkorbit newsletter">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="display-none col-md-5 ps-lg-0 pt-5 pt-md-0 text-start wow fadeIn" data-wow-delay="0.3s">
+                    <img class="img-fluid" src="img/newsletter.png" alt="">
+                </div>
+                <div class="col-md-7  newsletter-text wow fadeIn" data-wow-delay="0.5s">
+                    <div class="btn btn-sm border rounded-pill text-white px-3 mb-3">Newsletter</div>
+                    <h1 class="text-white mb-4">Let's subscribe the newsletter</h1>
+                    <div class="position-relative w-100 mt-3 mb-2">
+                        <input class="form-control border-0 rounded-pill w-100 ps-4 pe-5" type="text"
+                            placeholder="Enter Your Email" style="height: 48px;">
+                        <button type="button" class="btn shadow-none position-absolute top-0 end-0 mt-1 me-2"><i
+                                class="fa fa-paper-plane text-primary fs-4"></i></button>
+                    </div>
+                    <small class="text-white-50">You accept our privacy policy by providing your email address.</small>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Newsletter End -->
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-primarybit text-white-50 footer pt-5">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.1s">
+                    <a href="index.html" class="d-inline-block mb-3">
+                        <img style="width: 200px;" src="img/logo.svg" alt="logo">
+                    </a>
+                     
+                </div>
+                 <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.3s">
+                    <h5 class="text-white mb-4">Popular Link</h5>
+                    <a class="btn btn-link" href="about.html">About Us</a>
+                    <a class="btn btn-link" href="contact.html">Contact Us</a>
+                    <a class="btn btn-link" href="privacy.html">Privacy Policy</a>
+                    <a class="btn btn-link" href="terms.html">Terms & Condition</a>
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.5s">
+                    <h5 class="text-white mb-4">Our Services</h5>
+                    <a class="btn btn-link" href="bottling.html">Bottling</a>
+                    <a class="btn btn-link" href="erp-integration.html">ERP Integration</a>
+                    <a class="btn btn-link" href="packaging.html">Packaging</a>
+                    <a class="btn btn-link" href="fmcg.html">FMCG</a>
+                    <a class="btn btn-link" href="line-tracking.html">Line Tracking</a>
+                    <a class="btn btn-link" href="safety.html">Safety</a>
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.7s">
+                    <h5 class="text-white mb-4">Get In Touch</h5>
+                    <p><i style="width: 10px;" class="fa fa-map-marker-alt me-3"></i>Sakarya, TURKEY</p>
+                    <p><a style="color:#ffffff80; text-decoration:none" href="tel:+905464208480"><i style="width: 10px;"
+                                class="fa fa-phone me-3"></i>0 546 420 84 80</a></p>
+                
+                    <p><a style="color:#ffffff80; text-decoration:none" href="mailto:hello@vercosai.com"><i style="width: 10px;" class="fa fa-envelope me-3"></i>hello@vercosai.com</a></p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-outline-light btn-social" href="https://x.com/vercos_ai"><i class="fab fa-x-twitter"></i></a>
+                     
+                        <a class="btn btn-outline-light btn-social" href="https://youtube.com/@vercosai"><i class="fab fa-youtube"></i></a>
+                       
+                        <a class="btn btn-outline-light btn-social" href="https://www.linkedin.com/company/vercosai/"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container wow fadeIn" data-wow-delay="0.1s">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="border-bottom" href="https://vercosai.com/en">VercosAI</a>, All Right Reserved.
+
+                        
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <div class="footer-menu">
+                            <a href="https://vercosai.com/en">Home</a>
+ 
+                            <a href="https://vercosai.com/en/contact.html">Help</a>
+                            <a href="https://vercosai.com/en/FAQs.html">FAQs</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-dark btn-lg back-to-top pt-2"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
