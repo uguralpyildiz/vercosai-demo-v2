@@ -541,8 +541,9 @@
  
 
 
+    <iframe name="dummyframe" id="dummyframe" style="display: none;"></iframe>
     <!-- Newsletter Start -->
-    <div class="container-fluid bg-darkorbit newsletter">
+    <form action="https://formspree.io/f/mrbqbazd" method="POST" target="dummyframe" class="container-fluid bg-darkorbit newsletter">
         <div class="container">
             <div class="row g-5 align-items-center">
                 <div class="display-none col-md-5 ps-lg-0 pt-5 pt-md-0 text-start wow fadeIn" data-wow-delay="0.3s">
@@ -552,17 +553,44 @@
                     <div class="btn btn-sm border rounded-pill text-white px-3 mb-3">Haber Bülteni</div>
                     <h1 class="text-white mb-4">Haber Bültenimize Abone Ol!</h1>
                     <div class="position-relative w-100 mt-3 mb-2">
-                        <input class="form-control border-0 rounded-pill w-100 ps-4 pe-5" type="text"
+                        <input name="email"  class="form-control border-0 rounded-pill w-100 ps-4 pe-5" type="email"
                             placeholder="Mail Adresiniz" style="height: 48px;">
-                        <button type="button" class="btn shadow-none position-absolute top-0 end-0 mt-1 me-2"><i
+                        <button type="submit" class="btn shadow-none position-absolute top-0 end-0 mt-1 me-2"><i style="color: #395b40  !important;"
                                 class="fa fa-paper-plane text-primary fs-4"></i></button>
                     </div>
                     <small class="text-white-50">Abone olarak gizlilik ve şartlarımızı kabul etmiş olursunuz.</small>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- Newsletter End -->
+    </form>
+
+    <script>
+        document.querySelector('form').addEventListener('submit', function (e) {
+            e.preventDefault(); // Formu otomatik göndermesin, biz kontrol edeceğiz.
+
+            // Formu manuel gönder
+            this.submit();
+
+            // Başarı mesajı oluştur
+            const successMessage = document.createElement('small');
+            successMessage.textContent = 'Abone olduğunuz için teşekkürler!';
+            successMessage.style.color = '#ffffff';
+            successMessage.className = 'form-success-message';
+
+            // Eğer daha önce eklendiyse tekrar eklememesi için kontrol
+            if (!document.querySelector('.form-success-message')) {
+                this.querySelector('.newsletter-text').appendChild(successMessage);
+            }
+
+            // Inputu temizle
+            this.querySelector('input[name="email"]').value = '';
+
+            // 20 saniye sonra mesajı kaldır
+            setTimeout(() => {
+                successMessage.remove();
+            }, 20000); // 20.000 ms = 20 saniye
+        });
+    </script>
 
 
     <!-- Footer Start -->
