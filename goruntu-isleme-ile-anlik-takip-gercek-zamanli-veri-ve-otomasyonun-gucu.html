@@ -1,0 +1,529 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Görüntü İşleme ile Anlık Takip Gerçek Zamanlı Veri ve Otomasyonun Gücü | VercosAI Dijital Dönüşüm </title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Ubuntu:wght@500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <script src="https://kit.fontawesome.com/607e4879ac.js" crossorigin="anonymous"></script>
+    <link href="css/style.css" rel="stylesheet">
+<meta http-equiv="Content-Language" content="tr"></head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Yükleniyor... </span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Navbar Start -->
+    <div class="container-fluid sticky-top ">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-dark p-0">
+                <a href="index.html" class="navbar-brand">
+                    <img  src="img/logo.svg" alt="logo">
+                </a>
+                <button type="button" class="navbar-toggler ms-auto me-0" data-bs-toggle="collapse"
+                    data-bs-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav ms-auto">
+                        <a href="index.html" class="nav-item nav-link">Ana Sayfa</a>
+                        <div class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle " data-bs-toggle="dropdown">Çözümlerimiz</a>
+                            <div class="dropdown-menu bg-primary mt-2">
+                                <a href="Ambalajlama.html" class="dropdown-item">Ambalajlama</a>
+                                <a href="erp-entegrasyonu.html" class="dropdown-item">ERP Entegrasyonu</a>
+                                <a href="siseleme.html" class="dropdown-item">Şişeleme</a>
+                                <a href="htm.html" class="dropdown-item">Hızlı Tüketim Ürünleri</a>
+                                <a href="hat-takibi.html" class="dropdown-item">Hat Takibi</a>
+                                <a href="isg.html" class="dropdown-item">İş Güvenliği</a>
+                            </div>
+                        </div>
+                         <a href="yetenekler.html" class="nav-item nav-link">Yeteneklerimiz</a>
+                        <a href="hakkimizda.html" class="nav-item nav-link">Hakkımızda</a>
+                        <a href="blog.html" class="nav-item nav-link active">Blog </a>
+                        <a href="iletisim.html" class="nav-item nav-link">İletişim</a>
+                        <a href="https://vercosai.com/en/instant-tracking-real-time-data-and-the-power-of-automation-with-image-processing.html" class="lang nav-item nav-link"><i class="fa-solid fa-globe"></i> EN</a>
+                    </div>
+                    
+                </div>
+            <script>
+                    document.addEventListener("DOMContentLoaded", function () {
+    var lastScrollPosition = window.scrollY || document.documentElement.scrollTop;
+
+    // Sayfa içinde herhangi bir yere tıklandığında çalışacak kod
+    document.addEventListener("click", function (event) {
+        var clickover = event.target;
+        var navbarCollapse = document.querySelector("#navbarCollapse");
+        var isOpened = navbarCollapse.classList.contains("show"); // Bootstrap 5'te "show" class'ı kullanılıyor
+        var isNavbarToggle = clickover.closest(".navbar-toggler");
+        var isDropdownToggle = clickover.closest(".dropdown-toggle"); // Dropdown menüsü açma butonunu kontrol et
+        var isDropdownMenu = clickover.closest(".dropdown-menu"); // Dropdown menüsünü kontrol et
+
+        // Navbar sadece dropdown ve navbar-toggler dışındaki alanlara tıklandığında kapanacak
+        if (isOpened && !isNavbarToggle && !isDropdownMenu && !isDropdownToggle) {
+            document.querySelector("button.navbar-toggler").click();
+            // Sayfa pozisyonunu sıfırla
+            lastScrollPosition = window.scrollY || document.documentElement.scrollTop;
+        }
+    });
+
+    // Dropdown'un kapanmaması için varsayılan kapanma davranışını engelle
+    var dropdowns = document.querySelectorAll('.dropdown-menu');
+    dropdowns.forEach(function (dropdown) {
+        dropdown.addEventListener('click', function (event) {
+            event.stopPropagation(); // Tıklama olayı diğer elemanlara yayılmasın
+        });
+    });
+
+    // Sayfa kaydırıldığında navbar'ı kapat, ancak son pozisyondan itibaren 100px kaydırılınca
+    window.addEventListener('scroll', function () {
+        var navbarCollapse = document.querySelector("#navbarCollapse");
+        var isOpened = navbarCollapse.classList.contains("show");
+
+        // Mevcut kaydırma pozisyonunu kontrol et
+        var currentScrollPosition = window.scrollY || document.documentElement.scrollTop;
+
+        // Eğer navbar açıksa ve son kaydedilen pozisyondan 100px fazla kaydırılmışsa navbar'ı kapat
+        if (isOpened && Math.abs(currentScrollPosition - lastScrollPosition) > 200) {
+            document.querySelector("button.navbar-toggler").click();
+            // Yeni pozisyonu kaydet
+            lastScrollPosition = currentScrollPosition;
+        }
+    });
+});
+
+
+
+
+
+
+                </script>
+            </nav>
+        </div>
+    </div>
+    <!-- Navbar End -->
+
+    <!-- Hero Start -->
+    <div class="container-fluid pt-5 bg-darkorbit hero-header">
+        <div class="container pt-5">
+            <div class="row g-5 pt-5">
+                <div class="col-lg-6 align-self-center text-center text-lg-start mb-lg-5">
+                   
+                    <h3 style="color: #fff;">Görüntü İşleme ile Anlık Takip Gerçek Zamanlı Veri ve Otomasyonun Gücü </h3>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center justify-content-lg-start mb-0">
+                            <li class="breadcrumb-item"><a class="text-white" href="index.html">Ana Sayfa </a></li>
+                            <li class="breadcrumb-item"><a class="text-white" href="#">Blog </a></li>
+                            <li class="breadcrumb-item"><a class="text-white" href="#">Görüntü İşleme ile An...</a></li>
+                    
+                        </ol>
+                    <script>
+                    document.addEventListener("DOMContentLoaded", function () {
+    var lastScrollPosition = window.scrollY || document.documentElement.scrollTop;
+
+    // Sayfa içinde herhangi bir yere tıklandığında çalışacak kod
+    document.addEventListener("click", function (event) {
+        var clickover = event.target;
+        var navbarCollapse = document.querySelector("#navbarCollapse");
+        var isOpened = navbarCollapse.classList.contains("show"); // Bootstrap 5'te "show" class'ı kullanılıyor
+        var isNavbarToggle = clickover.closest(".navbar-toggler");
+        var isDropdownToggle = clickover.closest(".dropdown-toggle"); // Dropdown menüsü açma butonunu kontrol et
+        var isDropdownMenu = clickover.closest(".dropdown-menu"); // Dropdown menüsünü kontrol et
+
+        // Navbar sadece dropdown ve navbar-toggler dışındaki alanlara tıklandığında kapanacak
+        if (isOpened && !isNavbarToggle && !isDropdownMenu && !isDropdownToggle) {
+            document.querySelector("button.navbar-toggler").click();
+            // Sayfa pozisyonunu sıfırla
+            lastScrollPosition = window.scrollY || document.documentElement.scrollTop;
+        }
+    });
+
+    // Dropdown'un kapanmaması için varsayılan kapanma davranışını engelle
+    var dropdowns = document.querySelectorAll('.dropdown-menu');
+    dropdowns.forEach(function (dropdown) {
+        dropdown.addEventListener('click', function (event) {
+            event.stopPropagation(); // Tıklama olayı diğer elemanlara yayılmasın
+        });
+    });
+
+    // Sayfa kaydırıldığında navbar'ı kapat, ancak son pozisyondan itibaren 100px kaydırılınca
+    window.addEventListener('scroll', function () {
+        var navbarCollapse = document.querySelector("#navbarCollapse");
+        var isOpened = navbarCollapse.classList.contains("show");
+
+        // Mevcut kaydırma pozisyonunu kontrol et
+        var currentScrollPosition = window.scrollY || document.documentElement.scrollTop;
+
+        // Eğer navbar açıksa ve son kaydedilen pozisyondan 100px fazla kaydırılmışsa navbar'ı kapat
+        if (isOpened && Math.abs(currentScrollPosition - lastScrollPosition) > 200) {
+            document.querySelector("button.navbar-toggler").click();
+            // Yeni pozisyonu kaydet
+            lastScrollPosition = currentScrollPosition;
+        }
+    });
+});
+
+
+
+
+
+
+                </script>
+            </nav>
+                    <div class="views-container">
+                        <span style="padding: 10px;" class="pill-skill rounded-pill text-center">
+                        <i class="fa fa-eye"></i> 102 görüntüleme  </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <!-- Hero End -->
+
+<section style="padding-top: 50px; background: #27462c !important;" class="section bg-darkorbit">
+    <div class="container">
+
+        <div class="row blog-entries element-animate">
+
+            <div class="col-md-12 col-lg-8 main-content">
+
+                <div class="post-content-body">
+                    <h4>25/04/2025</h4>
+
+                    <h4>Gerçek Zamanlı İzleme Teknolojisinin Temelleri: Görüntü İşleme Nasıl Çalışır?</h4>
+                    <p>
+                        Dünyada teknoloji ile entegre olmayan hemen hemen hiçbir sektör kalmadı. Bu bağlamda, görüntü işleme teknolojisi
+                        kullanarak gerçek zamanlı izleme çözümleri, pek çok alanda devrim yaratıyor. Bu rehberde yenilikçi teknolojinin
+                        temellerini, işleyiş biçimini ve sanayiden güvenlik sistemlerine kadar geniş bir kullanım alanında nasıl fark
+                        yarattığını ele alacağız. Gerçek zamanlı izleme teknolojileri, veri entegrasyonu ve otomasyon sayesinde, işletmelerin
+                        verimliliğini nasıl maksimize ettiğini detaylandıracağız. Ayrıca, bu sistemlerin etkin kullanım yollarını da sizlerle
+                        paylaşacağız. Gelin, görüntü işleme destekli gerçek zamanlı izleme sistemlerinin iş dünyasına nasıl değer kattığını
+                        keşfedelim.
+                    </p>
+                    <img style="width: 100%; margin-bottom: 55px; border-radius: 10px;" src="/1052025/Görüntü İşleme ile Anlık Takip Gerçek Zamanlı Veri ve Otomasyonun Gücü.jpg" alt="">
+                   
+                    <h4>Gerçek Zamanlı İzleme Teknolojileriyle Devrimsel Gelişmeler</h4>
+                    <p>Gerçek zamanlı izleme teknolojileri, özellikle görüntü işleme sistemleri aracılığıyla, çeşitli endüstrilerde devrim
+                        yaratmaktadır. Görüntü işleme, dijital kamera veya sensörler tarafından yakalanan görseller üzerinden bilgisayar
+                        algoritmaları kullanarak veri işleme sürecidir. Bu süreç, görüntüden anlam çıkarma ve karar verme mekanizmalarını
+                        içerir, böylece sistemler anlık olarak tepki gösterebilir.</p>
+                    <p>Temelde, görüntü işleme; renk, ışık ve hareket gibi özellikleri tanımlama ve analiz etme yeteneği üzerine kuruludur.
+                        Bu teknoloji, özellikle üretim hattı analizi ve line tracking gibi alanlarda kullanılarak, hataları tespit etme,
+                        kalite kontrolü ve otomasyon süreçlerinin optimizasyonunda önemli rol oynar. Çeşitli algoritmalar ve matematiksel
+                        işlemler, gerçek zamanlı olarak verileri işler ve uygulamaların doğru şekilde çalışmasını sağlar.</p>
+                    <p>Bu sistemler, yüksek hızlı kamera teknolojileri ile donatılmıştır ki bu sayede yüzlerce hatta binlerce kareyi
+                        saniyede işleyebilir. Dolayısıyla, gerçek zamanlı izleme sağlayarak üretim sürecindeki anormallikleri veya
+                        potansiyel tehditleri anında tespit edip, müdahale etme kapasitesine sahip olurlar. Bu da üretim sürekliliği ve
+                        güvenliğini artırır.</p>
+                    <p>Görüntü işleme teknolojilerinin kurulumu ve yönetimi, sistemin başarılı bir şekilde entegrasyonu ve kullanılması için
+                        önemli ayrıntılar içerir. Donanım ve yazılım gereksinimlerinin doğru bir şekilde tasarlanması ve uygulanması, bu
+                        sistemlerin verimliliğini maksimize eder. Böylece, gerçek zamanlı izleme ve otomasyon süreçleri, tahmin edilen
+                        performans seviyelerinde çalışabilir.</p>
+                    
+                    <h4>Gerçek Zamanlı İzleme Uygulamaları: Sanayi ve Güvenlik Sistemlerinde Devrim</h4>
+                    <p>Sanayi sektöründe gerçek zamanlı izleme teknolojisinin uygulanması, üretim süreçlerinin daha verimli ve kontrollü bir
+                        şekilde yönetilmesini sağlamaktadır. Bu teknoloji, özellikle üretim hattı analizi ve hata tespiti konularında devrim
+                        yaratmıştır. Gerçek zamanlı veriler, üretim hatlarında meydana gelen aksaklıkları anında tespit ederek, duruş
+                        sürelerini minimuma indirger ve üretim kapasitesini maksimize eder.</p>
+                    <p>Güvenlik sistemlerinde ise gerçek zamanlı izleme, yüksek çözünürlüklü görüntü işleme sistemleri sayesinde, özellikle
+                        kalabalık alanlarda ve kritik tesislerde güvenliği üst düzeye çıkarır. Kameralar aracılığıyla elde edilen
+                        görüntüler, anlık olarak işlenir ve herhangi bir tehdit unsuru hızla belirlenir. Bu süreç, güvenlik güçlerine
+                        müdahale sürelerini kısaltma konusunda önemli avantajlar sağlar.</p>
+                    <p>Sanayi alanında gerçek zamanlı izleme sistemlerinin bir diğer önemli uygulaması ise line tracking sistemleridir. Bu
+                        sistemler, montaj hatlarında ürünlerin doğru bir şekilde ilerlemesini sağlar ve herhangi bir sapma olduğunda
+                        otomatik düzeltmeler yaparak süreci iyileştirir. Böylece hem ürün kalitesi artar hem de israf azalır.</p>
+                    <p>Gerçek zamanlı izleme teknolojisi, sanayi ve güvenlik sistemlerindeki uygulamalarıyla iş süreçlerini optimize etmek,
+                        güvenliği artırmak ve operasyonel maliyetleri düşürmek için kritik bir role sahiptir. Bu teknolojinin entegrasyonu,
+                        endüstrilerin geleceğini şekillendirmede anahtar bir faktör olarak öne çıkmaktadır.</p>
+                    
+                    <h4>Veri Entegrasyonu ve Otomasyon: Gerçek Zamanlı İzleme ile Verimliliği Artırma</h4>
+                    <p>Gerçek zamanlı izleme sistemleri, üretim hattı analizi, güvenlik sistemleri ve pek çok diğer alanda verimliliği
+                        artırmanın anahtarını sunar. Bu sistemler, gelişmiş görüntü işleme sistemleri kullanarak, verileri toplar ve işler.
+                        Ardından, bu veriler otomasyon sistemleri ile entegre edilerek, iş süreçleri optimize edilir ve karar verme
+                        süreçleri hızlandırılır.</p>
+                    <p>Görüntü işleme tabanlı izleme sistemleri, üretim hatlarında kritik rol oynar. Örnek vermek gerekirse, bir üretim
+                        bandındaki her bir ürünün kalitesini sürekli olarak kontrol edebilir ve hatalı ürünleri belirleyip, ayrıştırabilir.
+                        Bu tür bir line tracking uygulaması, malzeme israfını azaltırken, genel üretim kalitesini de maksimize eder.</p>
+                    <p>Ek olarak, bu sistemler makine öğrenimi ve yapay zeka teknolojileri ile entegre edildiğinde, otomasyon daha da ileri
+                        bir seviyeye taşınır. Görüntü işleme sistemleri tarafından toplanan veriler, algoritmalar tarafından analiz
+                        edilerek, makinaların kendilerini gerçek zamanlı olarak ayarlaması sağlanabilir.</p>
+                    <p>Bu entegrasyon, özellikle karmaşık üretim ve montaj işlemleri gerçekleştiren sanayi kollarında büyük önem
+                        taşımaktadır. Verimlilik, hız ve kalite gibi unsurların hepsi, görüntü işleme ve otomasyon teknolojilerinin
+                        entegrasyonuyla maksimum seviyeye çıkarılabilir.</p>
+                    <p>Bu tür entegre sistemlerin kurulumu, öncelikle detaylı bir sistem analizi ve ihtiyaç tespiti gerektirir. Ancak
+                        yapılan yatırım, işletmelerin uzun vadede rekabet avantajı sağlamasına ve işletme maliyetlerini düşürmesine olanak
+                        tanır. Bu nedenle, mevcut teknolojik gelişmeleri takip etmek ve gerektiğinde bu sistemlere yatırım yapmak,
+                        işletmeler için stratejik bir önem taşır.</p>
+                    
+                    <h4>Gerçek Zamanlı İzleme Sistemlerini Etkin Kullanma</h4>
+                    <p>Gerçek zamanlı izleme sistemlerinin etkin kullanımı, işletmelerin operasyonlarını daha verimli ve etkin bir şekilde
+                        yönetmelerine olanak tanır. Bu teknoloji, özellikle üretim, güvenlik ve hizmet sektörlerinde büyük avantajlar
+                        sağlar. Etkin kullanım için öncelikle sistemlerin doğru kurulumu ve çalışanların bu sistemler hakkında yeterince
+                        bilgilendirilmesi gerekmektedir.</p>
+                    <p>Birinci adım, gerçek zamanlı izlemenin gereksinimleri ve hedefleri belirlemektir. Bu hedefler, sistemden
+                        beklentilerin net bir şekilde tanımlanmasını sağlar ve doğru teknoloji seçiminde yol gösterici olur. Örneğin, üretim
+                        hattı analizi için kullanılacak bir sistemde, hız ve hatasız üretim kapasitesi öncelikli hedefler arasında olabilir.
+                    </p>
+                    <p>İkinci adım, sistemlerin entegrasyonudur. Görüntü işleme sistemleri, diğer otomasyon sistemi bileşenleriyle uyum
+                        içinde çalışmalıdır. Bu bütünleşme, veri akışının kesintisiz ve etkin bir şekilde yönetilmesini sağlar. Entegrasyon
+                        aşamasında, sistemlerin karşılıklı olarak veri alışverişi yapabilmesi ve bu verilerin doğru analiz edilmesi önem
+                        taşır.</p>
+                    <p>Üçüncü ve son adım, sürekli izleme ve değerlendirmedir. Görüntü işleme tabanlı izleme sistemleri, gerçek zamanlı
+                        olarak veri sağlar; bu yüzden bu verilerin düzenli olarak analiz edilmesi ve sistem performansının değerlendirilmesi
+                        gerekir. Böylece, sistemin verimliliğini artırabilecek ayarlamalar yapılabilir ve olası sorunlar hızla tespit
+                        edilerek çözülebilir.</p>
+                    
+                    <h4>Sık Sorulan Sorular</h4>
+                    <p><strong>Görüntü işleme nedir ve nasıl çalışır?</strong><br>Görüntü işleme, dijital görüntüler üzerinde matematiksel
+                        işlemler uygulayarak bilgi çıkarma, görüntü iyileştirme ve analiz yapma sürecidir. Bu işlem genellikle bilgisayar
+                        yazılımları aracılığıyla otomatik olarak yürütülür.</p>
+                    
+                    <p><strong>Gerçek zamanlı veri işleme neden önemlidir?</strong><br>Gerçek zamanlı veri işleme, hızlı veri akışları
+                        içerisinden anında bilgi elde edilmesini sağlar, böylece işletmeler ve sistemler anlık verilere dayanarak hızlı ve
+                        etkili kararlar alabilir.</p>
+                    
+                    <p><strong>Görüntü işleme ile anlık takip nasıl gerçekleştirilir?</strong><br>Görüntü işleme teknolojileri, kameralardan
+                        alınan görüntüleri analiz ederek nesneleri, insanları veya belirli hareketleri anında tanıyabilir ve takip edebilir.
+                        Bu süreç genellikle özel algoritmalar ve yapay zeka teknikleri kullanılarak yapılır.</p>
+                    
+                    <p><strong>Bu teknoloji hangi sektörlerde kullanılmaktadır?</strong><br>Güvenlik, sağlık, otomotiv, üretim ve perakende
+                        gibi birçok farklı sektör, görüntü işleme teknolojisinden anlık takip ve analiz için yararlanmaktadır.</p>
+                    
+                    <p><strong>Gerçek zamanlı görüntü işleme ve otomasyon arasındaki ilişki nedir?</strong><br>Gerçek zamanlı görüntü
+                        işleme, otomasyon sistemlerinin çevresel değişikliklere hızla adapte olmasını sağlar, bu sayede otomatik sistemler
+                        daha akıllı ve etkili çalışır.</p>
+                    
+                    <p><strong>Görüntü işleme ile elde edilen veriler nasıl değerlendirilir?</strong><br>Elde edilen veriler, önceden
+                        tanımlanmış algoritmalar ve yapay zeka modelleri kullanılarak analiz edilir. Bu süreçte, verilerden anlamlı sonuçlar
+                        çıkartılır ve ilgili eylemler için karar verme süreçleri desteklenir.</p>
+                    
+                    <p><strong>Görüntü işleme teknolojisinin geleceği nasıl görünüyor?</strong><br>Görüntü işleme teknolojisi, yapay zeka ve
+                        makine öğrenmesi ile birlikte gelişmeye devam edecektir. Bu gelişmeler, daha akıllı ve bağımsız sistemlerin ortaya
+                        çıkmasını sağlayacak, böylece teknolojinin daha geniş uygulama alanları olacaktır.</p>
+
+                    
+
+                    
+
+
+                </div>
+
+            </div>
+
+            <!-- END main-content -->
+
+            <div class="col-md-12 col-lg-4 sidebar text-white">
+
+                <!-- END sidebar-box -->
+                <div class="sidebar-box sticky-effectox" style="max-height: 70vh; overflow: auto;">
+                    <h3 class="heading text-white">Popüler Bloglar </h3>
+                    <div class="post-entry-sidebar">
+                
+                        <ul>
+                            <li>
+                                <a
+                                    href="is-guvenligi-ve-verimlilikte-yapay-zeka-destegi-kkd-kontrolu-insan-tespiti-ve-makine-yonetimi.html">
+                                    <div class=" wow fadeIn" data-wow-delay="0.3s">
+                                        <div class="case-item position-relative overflow-hidden rounded mb-2">
+                                            <img class="img-fluid"
+                                                src="blog/Artificial Intelligence Support in Work Safety and Productivity PPE Control, Human Detection and Machine Management.jpg"
+                                                alt="">
+                                            <a class="case-overlay text-decoration-none"
+                                                href="is-guvenligi-ve-verimlilikte-yapay-zeka-destegi-kkd-kontrolu-insan-tespiti-ve-makine-yonetimi.html">
+                
+                                                <h5 class="lh-base text-white mb-3">İş Güvenliği ve üretkenlik KKD kontrolünde Yapay Zeka Desteği, İnsan 
+                                                    Algılama ve Makine Yönetimi  </h5>
+                                                <span class="btn btn-square btn-primary"><i class="fa fa-arrow-right"></i></span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="yapay-zeka-ile-erp-entegasyonu-isletmenizde-verimliligi-nasil-artirabilirsiniz.html">
+                                    <div class=" wow fadeIn" data-wow-delay="0.3s">
+                                        <div class="case-item position-relative overflow-hidden rounded mb-2">
+                                            <img class="img-fluid"
+                                                src="blog/ERP Integration with Artificial Intelligence How to Increase Efficiency in Your Business.jpg" alt="">
+                                            <a class="case-overlay text-decoration-none"
+                                                href="yapay-zeka-ile-erp-entegasyonu-isletmenizde-verimliligi-nasil-artirabilirsiniz.html">
+                
+                                                <h5 class="lh-base text-white mb-3">Yapay Zeka ile ERP Entegrasyonu İşinizde verimliliği Nasıl Artırırsınız  </h5>
+                                                <span class="btn btn-square btn-primary"><i class="fa fa-arrow-right"></i></span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                
+                        </ul>
+                    </div>
+                </div>
+                <!-- END sidebar-box -->
+
+            </div>
+            <!-- END sidebar -->
+                <div style="height: 100px;" class="cakinti"></div>
+             <div style="height: 100px;" class="height"></div>
+
+        </div>
+    </div>
+</section>
+
+     
+
+
+
+
+ 
+
+
+    <!-- Newsletter Start -->
+    <div class="container-fluid bg-darkorbit newsletter">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="display-none col-md-5 ps-lg-0 pt-5 pt-md-0 text-start wow fadeIn" data-wow-delay="0.3s">
+                    <img class="img-fluid" src="img/newsletter.png" alt="">
+                </div>
+                <div class="col-md-7  newsletter-text wow fadeIn" data-wow-delay="0.5s">
+                    <div class="btn btn-sm border rounded-pill text-white px-3 mb-3">Haber B&#252;lteni</div>
+                    <h1 class="text-white mb-4">Haber B&#252;ltenimize Abone Ol!</h1>
+                    <div class="position-relative w-100 mt-3 mb-2">
+                        <input class="form-control border-0 rounded-pill w-100 ps-4 pe-5" type="text"
+                            placeholder="Mail Adresiniz" style="height: 48px;">
+                        <button type="button" class="btn shadow-none position-absolute top-0 end-0 mt-1 me-2"><i
+                                class="fa fa-paper-plane text-primary fs-4"></i></button>
+                    </div>
+                    <small class="text-white-50">Abone olarak gizlilik ve şartlarımızı kabul etmiş olursunuz.</small>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Newsletter End -->
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-primarybit text-white-50 footer pt-5">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.1s">
+                    <a href="index.html" class="d-inline-block mb-3">
+                        <img style="width: 200px;" src="img/logo.svg" alt="logo">
+                    </a>
+                     
+                </div>
+                 <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.3s">
+                    <h5 class="text-white mb-4">Pop&#252;ler Linkler</h5>
+                    <a class="btn btn-link" href="hakkimizda.html">Hakkımızda</a>
+                    <a class="btn btn-link" href="iletisim.html">İletişim</a>
+                    <a class="btn btn-link" href="gizlilik.html">Gizlilik Politikası</a>
+                    <a class="btn btn-link" href="sartlar.html">Şartlar &amp; Koşullar</a>
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.5s">
+                    <h5 class="text-white mb-4">&#199;&#246;z&#252;mlerimiz</h5>
+                    <a class="btn btn-link" href="siseleme.html">Şişeleme</a>
+                    <a class="btn btn-link" href="erp-entegrasyonu.html">ERP Entegrasyonu</a>
+                    <a class="btn btn-link" href="Ambalajlama.html">Ambalajlama</a>
+                    <a class="btn btn-link" href="htm.html">Hızlı T&#252;ketim &#220;r&#252;nleri</a>
+                    <a class="btn btn-link" href="hat-takibi.html">Hat Takibi</a>
+                    <a class="btn btn-link" href="isg.html">İş G&#252;venliği</a>
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.7s">
+                    <h5 class="text-white mb-4">İletişime Ge&#231;</h5>
+                    <p><i style="width: 10px;" class="fa fa-map-marker-alt me-3"></i>Sakarya, TURKEY</p>
+                    <p><a style="color:#ffffff80; text-decoration:none" href="tel:+905464208480"><i style="width: 10px;"
+                                class="fa fa-phone me-3"></i>0 546 420 84 80</a></p>
+                
+                    <p><a style="color:#ffffff80; text-decoration:none" href="mailto:hello@vercosai.com"><i style="width: 10px;" class="fa fa-envelope me-3"></i>hello@vercosai.com</a></p>
+                    <div class="d-flex pt-2">
+                       <a class="btn btn-outline-light btn-social" href="https://www.x.com/Vercos_AI"><i class="fab fa-x-twitter"></i></a>
+                     
+                        <a class="btn btn-outline-light btn-social" href="https://www.youtube.com/@vercosai"><i class="fab fa-youtube"></i></a>
+                       
+                        <a class="btn btn-outline-light btn-social" href="https://www.linkedin.com/company/vercosai"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container wow fadeIn" data-wow-delay="0.1s">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">&#169; <a class="border-bottom" href="https://vercosai.com">VercosAI</a>, T&#252;m Hakları Saklıdır. </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <div class="footer-menu"><a href="https://vercosai.com/">Ana Sayfa</a>
+                            <a href="https://vercosai.com/cookies.html">&#199;erezler</a>
+                            <a href="https://vercosai.com/iletisim.html">Yardım</a>
+                            <a href="sss.html">S.S.S</a> </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-dark btn-lg back-to-top pt-2"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

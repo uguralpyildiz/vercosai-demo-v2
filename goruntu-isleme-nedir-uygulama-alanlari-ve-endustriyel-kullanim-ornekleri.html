@@ -1,0 +1,536 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Görüntü İşleme Nedir Uygulama Alanları ve Endüstriyel Kullanım Örnekleri | VercosAI Dijital Dönüşüm </title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Ubuntu:wght@500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <script src="https://kit.fontawesome.com/607e4879ac.js" crossorigin="anonymous"></script>
+    <link href="css/style.css" rel="stylesheet">
+<meta http-equiv="Content-Language" content="tr"></head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Yükleniyor... </span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Navbar Start -->
+    <div class="container-fluid sticky-top ">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-dark p-0">
+                <a href="index.html" class="navbar-brand">
+                    <img  src="img/logo.svg" alt="logo">
+                </a>
+                <button type="button" class="navbar-toggler ms-auto me-0" data-bs-toggle="collapse"
+                    data-bs-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav ms-auto">
+                        <a href="index.html" class="nav-item nav-link">Ana Sayfa</a>
+                        <div class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle " data-bs-toggle="dropdown">Çözümlerimiz</a>
+                            <div class="dropdown-menu bg-primary mt-2">
+                                <a href="Ambalajlama.html" class="dropdown-item">Ambalajlama</a>
+                                <a href="erp-entegrasyonu.html" class="dropdown-item">ERP Entegrasyonu</a>
+                                <a href="siseleme.html" class="dropdown-item">Şişeleme</a>
+                                <a href="htm.html" class="dropdown-item">Hızlı Tüketim Ürünleri</a>
+                                <a href="hat-takibi.html" class="dropdown-item">Hat Takibi</a>
+                                <a href="isg.html" class="dropdown-item">İş Güvenliği</a>
+                            </div>
+                        </div>
+                         <a href="yetenekler.html" class="nav-item nav-link">Yeteneklerimiz</a>
+                        <a href="hakkimizda.html" class="nav-item nav-link">Hakkımızda</a>
+                        <a href="blog.html" class="nav-item nav-link active">Blog </a>
+                        <a href="iletisim.html" class="nav-item nav-link">İletişim</a>
+                        <a href="https://vercosai.com/en/what-is-image-processing-applications-and-industrial-use-cases.html" class="lang nav-item nav-link"><i class="fa-solid fa-globe"></i> EN</a>
+                    </div>
+                    
+                </div>
+            <script>
+                    document.addEventListener("DOMContentLoaded", function () {
+    var lastScrollPosition = window.scrollY || document.documentElement.scrollTop;
+
+    // Sayfa içinde herhangi bir yere tıklandığında çalışacak kod
+    document.addEventListener("click", function (event) {
+        var clickover = event.target;
+        var navbarCollapse = document.querySelector("#navbarCollapse");
+        var isOpened = navbarCollapse.classList.contains("show"); // Bootstrap 5'te "show" class'ı kullanılıyor
+        var isNavbarToggle = clickover.closest(".navbar-toggler");
+        var isDropdownToggle = clickover.closest(".dropdown-toggle"); // Dropdown menüsü açma butonunu kontrol et
+        var isDropdownMenu = clickover.closest(".dropdown-menu"); // Dropdown menüsünü kontrol et
+
+        // Navbar sadece dropdown ve navbar-toggler dışındaki alanlara tıklandığında kapanacak
+        if (isOpened && !isNavbarToggle && !isDropdownMenu && !isDropdownToggle) {
+            document.querySelector("button.navbar-toggler").click();
+            // Sayfa pozisyonunu sıfırla
+            lastScrollPosition = window.scrollY || document.documentElement.scrollTop;
+        }
+    });
+
+    // Dropdown'un kapanmaması için varsayılan kapanma davranışını engelle
+    var dropdowns = document.querySelectorAll('.dropdown-menu');
+    dropdowns.forEach(function (dropdown) {
+        dropdown.addEventListener('click', function (event) {
+            event.stopPropagation(); // Tıklama olayı diğer elemanlara yayılmasın
+        });
+    });
+
+    // Sayfa kaydırıldığında navbar'ı kapat, ancak son pozisyondan itibaren 100px kaydırılınca
+    window.addEventListener('scroll', function () {
+        var navbarCollapse = document.querySelector("#navbarCollapse");
+        var isOpened = navbarCollapse.classList.contains("show");
+
+        // Mevcut kaydırma pozisyonunu kontrol et
+        var currentScrollPosition = window.scrollY || document.documentElement.scrollTop;
+
+        // Eğer navbar açıksa ve son kaydedilen pozisyondan 100px fazla kaydırılmışsa navbar'ı kapat
+        if (isOpened && Math.abs(currentScrollPosition - lastScrollPosition) > 200) {
+            document.querySelector("button.navbar-toggler").click();
+            // Yeni pozisyonu kaydet
+            lastScrollPosition = currentScrollPosition;
+        }
+    });
+});
+
+
+
+
+
+
+                </script>
+            </nav>
+        </div>
+    </div>
+    <!-- Navbar End -->
+
+    <!-- Hero Start -->
+    <div class="container-fluid pt-5 bg-darkorbit hero-header">
+        <div class="container pt-5">
+            <div class="row g-5 pt-5">
+                <div class="col-lg-6 align-self-center text-center text-lg-start mb-lg-5">
+                   
+                    <h3 style="color: #fff;">Görüntü İşleme Nedir Uygulama Alanları ve Endüstriyel Kullanım Örnekleri </h3>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center justify-content-lg-start mb-0">
+                            <li class="breadcrumb-item"><a class="text-white" href="index.html">Ana Sayfa </a></li>
+                            <li class="breadcrumb-item"><a class="text-white" href="#">Blog </a></li>
+                            <li class="breadcrumb-item"><a class="text-white" href="#">Görüntü İşleme Nedir Uygula...</a></li>
+                    
+                        </ol>
+                    <script>
+                    document.addEventListener("DOMContentLoaded", function () {
+    var lastScrollPosition = window.scrollY || document.documentElement.scrollTop;
+
+    // Sayfa içinde herhangi bir yere tıklandığında çalışacak kod
+    document.addEventListener("click", function (event) {
+        var clickover = event.target;
+        var navbarCollapse = document.querySelector("#navbarCollapse");
+        var isOpened = navbarCollapse.classList.contains("show"); // Bootstrap 5'te "show" class'ı kullanılıyor
+        var isNavbarToggle = clickover.closest(".navbar-toggler");
+        var isDropdownToggle = clickover.closest(".dropdown-toggle"); // Dropdown menüsü açma butonunu kontrol et
+        var isDropdownMenu = clickover.closest(".dropdown-menu"); // Dropdown menüsünü kontrol et
+
+        // Navbar sadece dropdown ve navbar-toggler dışındaki alanlara tıklandığında kapanacak
+        if (isOpened && !isNavbarToggle && !isDropdownMenu && !isDropdownToggle) {
+            document.querySelector("button.navbar-toggler").click();
+            // Sayfa pozisyonunu sıfırla
+            lastScrollPosition = window.scrollY || document.documentElement.scrollTop;
+        }
+    });
+
+    // Dropdown'un kapanmaması için varsayılan kapanma davranışını engelle
+    var dropdowns = document.querySelectorAll('.dropdown-menu');
+    dropdowns.forEach(function (dropdown) {
+        dropdown.addEventListener('click', function (event) {
+            event.stopPropagation(); // Tıklama olayı diğer elemanlara yayılmasın
+        });
+    });
+
+    // Sayfa kaydırıldığında navbar'ı kapat, ancak son pozisyondan itibaren 100px kaydırılınca
+    window.addEventListener('scroll', function () {
+        var navbarCollapse = document.querySelector("#navbarCollapse");
+        var isOpened = navbarCollapse.classList.contains("show");
+
+        // Mevcut kaydırma pozisyonunu kontrol et
+        var currentScrollPosition = window.scrollY || document.documentElement.scrollTop;
+
+        // Eğer navbar açıksa ve son kaydedilen pozisyondan 100px fazla kaydırılmışsa navbar'ı kapat
+        if (isOpened && Math.abs(currentScrollPosition - lastScrollPosition) > 200) {
+            document.querySelector("button.navbar-toggler").click();
+            // Yeni pozisyonu kaydet
+            lastScrollPosition = currentScrollPosition;
+        }
+    });
+});
+
+
+
+
+
+
+                </script>
+            </nav>
+                    <div class="views-container">
+                        <span style="padding: 10px;" class="pill-skill rounded-pill text-center">
+                        <i class="fa fa-eye"></i> 232 görüntüleme  </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <!-- Hero End -->
+
+<section style="padding-top: 50px; background: #27462c !important;" class="section bg-darkorbit">
+    <div class="container">
+
+        <div class="row blog-entries element-animate">
+
+            <div class="col-md-12 col-lg-8 main-content">
+
+                <div class="post-content-body">
+                    <h4>22/04/2025</h4>
+
+                    <h4>Görüntü İşleme Teknolojisinin Temelleri ve Genel Bakış</h4>
+                    <p>
+                        Görüntü işleme teknolojisi, dijital bilginin ve görsel içeriğin anlaşılması ve analiz edilmesi süreci olarak günümüzde
+                        teknolojinin vazgeçilmez bir parçası haline gelmiştir. Bu yazımızda, görüntü işleme teknolojisinin temellerini ele
+                        alıyor, tıptan güvenlik sektörüne kadar geniş bir yelpazede uygulanabilirliğini ve endüstriyel alandaki dönüştürücü
+                        etkilerini inceliyoruz. Çeşitli endüstrilerde nasıl devrim yarattığını örneklerle gösterdiğimiz bu rehber, görüntü
+                        işleme projeleri geliştirirken dikkate alınması gereken önerilerle tamamlanıyor. Gelin, görüntü işlemenin günlük
+                        yaşamımızdaki ve iş süreçlerindeki rolünü daha yakından inceleyelim.
+                    </p>
+                    <img style="width: 100%; margin-bottom: 55px; border-radius: 10px;" src="/1052025/Görüntü İşleme Nedir Uygulama Alanları ve Endüstriyel Kullanım Örnekleri.jpg" alt="">
+                   
+
+                    <h4>Görüntü İşleme Nedir?</h4>
+                    <p>Görüntü işleme, dijital görüntüler üzerinde çeşitli işlemler yaparak bilgi elde etme sürecidir. Bu işlemler,
+                        görüntüyü iyileştirmek, bazı özelliklerini değiştirmek ya da görüntüden bazı bilgileri çıkarmak için yapılır.
+                        Görüntü işleme hem analog hem de dijital yöntemlerle gerçekleştirilebilir, ancak günümüzde dijital görüntü işleme
+                        daha yaygın olarak kullanılmaktadır.</p>
+                    <p>Bu teknoloji, matematiksel işlemler ve algoritmalar kullanarak görüntülerin işlenmesini içerir. İşlem yapılacak olan
+                        görüntü bilgisayar tarafından anlaşılabilir pikseller ve diziler olarak ifade edilir. Her piksel, bir veya daha
+                        fazla sayısal değerle temsil edilir ve bu değerler görüntünün rengini ve parlaklığını gösterir. Görüntü işleme
+                        algoritmaları bu değerleri kullanarak gerekli işlemleri gerçekleştirir.</p>
+                    <p>Bu teknolojinin kullanım alanları oldukça geniştir ve yapay zeka ile üretim otomasyonu gibi çeşitli modern
+                        teknolojilerle entegre edilebilmektedir. Endüstriyel görüntü işleme, özellikle üretim hatlarında kalite kontrolü
+                        gibi süreçlerde önemli bir rol oynamaktadır. Makinaların görüntüleri analiz etmesi ve sınıflandırması sayesinde,
+                        hatalı ürünlerin otomatik olarak ayırt edilmesi ve işleme süreçlerinin optimize edilmesi mümkün hale gelmektedir.
+                    </p>
+                    <p>Görüntü işleme algoritmalarının geliştirilmesi, bu teknolojinin etkinliğini ve kullanım alanlarını sürekli olarak
+                        artırmaktadır. Bu algoritmalara örnek olarak kenar belirleme, renk filtreleme, gürültü azaltma ve görüntü
+                        segmentasyonu verilebilir. Her bir algoritma, belirli bir görüntü işleme ihtiyacına yönelik olarak tasarlanmıştır ve
+                        çeşitli uygulama alanlarında farklı işlevler görebilir. Bu sayede görüntü işleme teknolojisi, pek çok farklı
+                        sektörde devrim yaratma potansiyeline sahiptir.</p>
+                    
+                    <h4>Görüntü İşleme Uygulama Alanları: Tıptan Güvenliğe Kadar</h4>
+                    <p>Görüntü işleme teknolojisi, çok çeşitli sektörlerde devrim yaratma potansiyeline sahiptir, özellikle tıp ve güvenlik
+                        en dikkat çekici alanlardandır. Tıbbi görüntüleme, hastalıkların erken teşhisi ve tedavi süreçlerinin
+                        iyileştirilmesinde kritik bir role sahiptir. MR, CT taramaları ve röntgen gibi dijital görüntüler, yapay zeka
+                        destekli analizler sayesinde daha hızlı ve doğru şekilde değerlendirilebilmektedir.</p>
+                    <p>Bu teknoloji, güvenlik alanında da önemli iyileştirmeler sağlamaktadır. Örneğin, havaalanlarındaki güvenlik
+                        taramalarında yapay zeka destekli görüntü işleme sistemleri, tehdit içeren unsurları çok daha hızlı bir şekilde
+                        saptayabilmekte ve bu da genel güvenliğin artırılmasına yardımcı olmaktadır. Aynı zamanda, şehir güvenliği için
+                        kullanılan gözetleme kameraları, suç analizi ve önleme süreçlerini otomatikleştirebilmektedir.</p>
+                    <p>Ayrıca, otomotiv endüstrisinde sürücüsüz araç teknolojileri de görüntü işlemeden büyük ölçüde faydalanmaktadır.
+                        Araçlar çevrelerini algılamak ve tehlikeli durumlara tepki vermek için karmaşık görüntü işleme algoritmalarından
+                        yararlanır. Bu algoritmalara dayalı sistemler, otomobil güvenliğini artırarak yollardaki kazaların önlenmesine
+                        katkıda bulunmaktadır.</p>
+                    <p>Özellikle askeri teknolojilerde, görüntü işleme sistemleri, drone ve diğer izleme ekipmanlarındaki tanıma ve izleme
+                        yeteneklerini geliştirerek savunma stratejilerinin etkinliğini artırmaktadır. Bu sistemler, düşman hedeflerini
+                        tespit edebilme ve izleyebilme konusunda kritik olan verileri sağlar.</p>
+                    
+                    <h4>Endüstriyel Kullanımlar: Görüntü İşleme Nasıl Devrim Yaratıyor?</h4>
+                    <p>Günümüzde görüntü işleme teknolojisi, endüstriyel alanda bir devrim niteliğinde ilerlemeler sağlamaktadır. Özellikle
+                        otomasyon, kalite kontrol ve üretim hızının arttırılması gibi konularda işletmelere büyük katkılar sunmaktadır.
+                        Endüstriyel görüntü işleme, makinelerin insan gözünün yerini alarak daha hızlı ve hatasız üretim yapabilmesine
+                        olanak tanır.</p>
+                    <p>Endüstriyel görüntü işleme sistemleri, çeşitli sensörler ve kameralar vasıtasıyla elde edilen görüntüler üzerinden
+                        yüksek doğrulukla analiz yapabilme yeteneğine sahiptir. Bu sistemler, üretim bandında meydana gelen arızaları
+                        önceden tespit edebilir, ürün kalitesini sürekli olarak kontrol edebilir ve hatta paketleme süreçlerini otomatize
+                        edebilir.</p>
+                    <p>Kalite kontrol uygulamaları, yapay zeka ile desteklenen görüntü işleme teknikleri sayesinde oldukça gelişmiştir. Bu
+                        teknikler, her bir ürünün detaylı bir şekilde incelenmesini sağlar, böylece üretim hataları minimuma indirgenir.
+                        Ayrıca, üretim sürecindeki verimliliği artırmak ve maliyetleri düşürmek adına kritik öneme sahiptir.</p>
+                    <p>Üretim otomasyonundaki devrim, robotların ve otomatik kontrol sistemlerinin, görüntü işleme teknolojileri ile entegre
+                        edilmesiyle daha da ilerlemiştir. Bu entegrasyon, makinelerin kendilerini sürekli olarak yenilemelerine ve üretim
+                        süreçlerini daha esnek hale getirmelerine olanak tanımaktadır.</p>
+                    <p>Görüntü işleme kullanılarak geliştirilen bu süreçler, endüstriyel tesislerde verimliliği artırmanın yanı sıra iş
+                        güvenliğini de maksimum seviyeye çıkarmaktadır. Makineler, potansiyel tehlikeleri erkenden algılayabilir ve insan
+                        müdahalesini gerektirmeyen durumlarda otomatik olarak durabilir. Bu, özellikle tehlikeli veya erişilmesi zor
+                        ortamlarda çalışan işçiler için büyük bir güvenlik önlemi olarak ön plana çıkmaktadır.</p>
+                    
+                    <h4>Başarılı Görüntü İşleme Projeleri İçin Öneriler</h4>
+                    <p>Görüntü işleme teknolojisinin başarılı bir şekilde uygulanması, projenin başından sonuna kadar özenli bir planlama ve
+                        yönetim gerektirir. İlk adım, projenin amacını ve hedeflerini net bir şekilde belirlemek olmalıdır. Bu, projenin
+                        kapsamını sınırlar ve ilerleme ölçümlerinin yapılabilmesi için bir temel oluşturur.</p>
+                    <p>Projeye başlarken, kullanılacak görüntü işleme algoritmalarının seçimi kritik öneme sahiptir. Bu seçim, uygulama
+                        alanına ve çözülmek istenen probleme göre değişkenlik gösterir. Örneğin, yapay zeka destekli algoritmalar, özellikle
+                        tıbbi görüntüleme veya güvenlik sistemlerinde daha etkin sonuçlar verebilmektedir. Algoritma seçimi aynı zamanda
+                        projenin performansını ve işlem hızını doğrudan etkiler.</p>
+                    <p>Veri kalitesi, görüntü işleme projelerinde başarı için bir diğer temel faktördür. Kullanılan verilerin yüksek
+                        çözünürlüklü ve çeşitli olması, algoritmaların daha doğru sonuçlar üretmesine olanak tanır. Veri toplama süreci, bu
+                        nedenle dikkatle yönetilmeli ve veri setlerinin sürekli olarak güncellenmesi ve iyileştirilmesi sağlanmalıdır.</p>
+                    <p>Projelerin uygulama aşamasında, entegrasyon ve ölçeklenebilirlik gibi teknik detaylar önem kazanır. Özellikle
+                        endüstriyel görüntü işleme ve üretim otomasyonu projelerinde sistemlerin mevcut üretim hatlarına entegre edilmesi,
+                        projenin başarısı için kritiktir. Aynı zamanda, sistemlerin gelecekteki teknoloji değişikliklerine ve ihtiyaçlarına
+                        uyum sağlayabilecek şekilde tasarlanması uzun vadede fayda sağlar.</p>
+                    <p>Her görüntü işleme projesi, sürekli bir test ve optimizasyon sürecini gerektirir. Sistemlerin gerçek dünya
+                        koşullarında doğru bir şekilde çalışıp çalışmadığını test etmek ve gerekli ayarlamaları yapmak, projenin etkinliğini
+                        artırır ve olası hataları en aza indirir. Projenin farklı aşamalarında yapılacak düzenli değerlendirmeler, başarıyı
+                        yakalamak için vazgeçilmezdir.</p>
+                    
+                    <h4>Sık Sorulan Sorular</h4>
+                    <h4>Görüntü işleme nedir?</h4>
+                    <p>Görüntü işleme, dijital görüntüleri analiz ederek bilgi çıkarmayı amaçlayan bir bilgisayar teknolojisi dalıdır. Bu
+                        süreç, görüntüler üzerinde çeşitli işlemler gerçekleştirerek, görüntülerin geliştirilmesi, dönüştürülmesi veya bilgi
+                        çıkarımında bulunulması amacıyla kullanılır.</p>
+                    
+                    <h4>Görüntü işleme teknolojileri hangi alanlarda kullanılır?</h4>
+                    <p>Görüntü işleme teknolojileri tıbbi görüntüleme, uydu fotoğrafları analizi, video izleme sistemleri, yüz tanıma
+                        sistemleri ve otomatik plaka tanıma sistemleri gibi çok çeşitli alanlarda kullanılır.</p>
+                    
+                    <h4>Endüstriyel alanda görüntü işleme nasıl kullanılır?</h4>
+                    <p>Endüstriyel alanda görüntü işleme, ürünlerin kalite kontrolünden, üretim hatalarının tespitine, robotik sistemlerin
+                        görüntü tabanlı yönlendirilmesinden, paketleme süreçlerine kadar birçok farklı süreçte kullanılır. Örneğin, üretim
+                        bandındaki bir kamera aracılığıyla, ürünlerin doğru şekilde sıralandığını veya kusurlu olup olmadığını kontrol etmek
+                        için kullanılabilir.</p>
+                    
+                    <h4>Görüntü işlemede kullanılan başlıca yöntemler nelerdir?</h4>
+                    <p>Görüntü işlemede kullanılan başlıca yöntemler arasında kenar belirleme, görüntü filtreleme, morfolojik işlemler,
+                        histogram eşitleme ve dönüşüm işlemleri gibi teknikler bulunmaktadır.</p>
+                    
+                    <h4>Yapay zeka ve görüntü işleme arasındaki ilişki nedir?</h4>
+                    <p>Görüntü işleme, yapay zeka uygulamalarının temel bileşenlerinden biridir, özellikle derin öğrenme teknikleri ile
+                        birleştirildiğinde. Yapay zeka modelleri, görüntülerden öğrenerek, nesne tanıma, sınıflandırma ve görüntü analizi
+                        gibi görevlerde yüksek başarı sağlamaktadır.</p>
+                    
+                    <h4>Görüntü işlemede gelecekteki trendler neler olabilir?</h4>
+                    <p>Görüntü işlemede gelecekteki trendler arasında; artan verimlilik ve doğruluk için yapay zeka ve makine öğrenmesi
+                        tekniklerinin daha fazla entegrasyonu, artırılmış ve sanal gerçeklik uygulamalarında daha gelişmiş kullanımı, ve
+                        otomasyon süreçlerinde daha ileri düzey görüntü analiz sistemlerinin devreye alınması öne çıkmaktadır.</p>
+
+
+                    
+
+
+                </div>
+
+            </div>
+
+            <!-- END main-content -->
+
+            <div class="col-md-12 col-lg-4 sidebar text-white">
+
+                <!-- END sidebar-box -->
+                <div class="sidebar-box sticky-effectox" style="max-height: 70vh; overflow: auto;">
+                    <h3 class="heading text-white">Popüler Bloglar </h3>
+                    <div class="post-entry-sidebar">
+                
+                        <ul>
+                            <li>
+                                <a
+                                    href="is-guvenligi-ve-verimlilikte-yapay-zeka-destegi-kkd-kontrolu-insan-tespiti-ve-makine-yonetimi.html">
+                                    <div class=" wow fadeIn" data-wow-delay="0.3s">
+                                        <div class="case-item position-relative overflow-hidden rounded mb-2">
+                                            <img class="img-fluid"
+                                                src="blog/Artificial Intelligence Support in Work Safety and Productivity PPE Control, Human Detection and Machine Management.jpg"
+                                                alt="">
+                                            <a class="case-overlay text-decoration-none"
+                                                href="is-guvenligi-ve-verimlilikte-yapay-zeka-destegi-kkd-kontrolu-insan-tespiti-ve-makine-yonetimi.html">
+                
+                                                <h5 class="lh-base text-white mb-3">İş Güvenliği ve üretkenlik KKD kontrolünde Yapay Zeka Desteği, İnsan 
+                                                    Algılama ve Makine Yönetimi  </h5>
+                                                <span class="btn btn-square btn-primary"><i class="fa fa-arrow-right"></i></span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="yapay-zeka-ile-erp-entegasyonu-isletmenizde-verimliligi-nasil-artirabilirsiniz.html">
+                                    <div class=" wow fadeIn" data-wow-delay="0.3s">
+                                        <div class="case-item position-relative overflow-hidden rounded mb-2">
+                                            <img class="img-fluid"
+                                                src="blog/ERP Integration with Artificial Intelligence How to Increase Efficiency in Your Business.jpg" alt="">
+                                            <a class="case-overlay text-decoration-none"
+                                                href="yapay-zeka-ile-erp-entegasyonu-isletmenizde-verimliligi-nasil-artirabilirsiniz.html">
+                
+                                                <h5 class="lh-base text-white mb-3">Yapay Zeka ile ERP Entegrasyonu İşinizde verimliliği Nasıl Artırırsınız  </h5>
+                                                <span class="btn btn-square btn-primary"><i class="fa fa-arrow-right"></i></span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                
+                        </ul>
+                    </div>
+                </div>
+                <!-- END sidebar-box -->
+
+            </div>
+            <!-- END sidebar -->
+                <div style="height: 100px;" class="cakinti"></div>
+             <div style="height: 100px;" class="height"></div>
+
+        </div>
+    </div>
+</section>
+
+     
+
+
+
+
+ 
+
+
+    <!-- Newsletter Start -->
+    <div class="container-fluid bg-darkorbit newsletter">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="display-none col-md-5 ps-lg-0 pt-5 pt-md-0 text-start wow fadeIn" data-wow-delay="0.3s">
+                    <img class="img-fluid" src="img/newsletter.png" alt="">
+                </div>
+                <div class="col-md-7  newsletter-text wow fadeIn" data-wow-delay="0.5s">
+                    <div class="btn btn-sm border rounded-pill text-white px-3 mb-3">Haber B&#252;lteni</div>
+                    <h1 class="text-white mb-4">Haber B&#252;ltenimize Abone Ol!</h1>
+                    <div class="position-relative w-100 mt-3 mb-2">
+                        <input class="form-control border-0 rounded-pill w-100 ps-4 pe-5" type="text"
+                            placeholder="Mail Adresiniz" style="height: 48px;">
+                        <button type="button" class="btn shadow-none position-absolute top-0 end-0 mt-1 me-2"><i
+                                class="fa fa-paper-plane text-primary fs-4"></i></button>
+                    </div>
+                    <small class="text-white-50">Abone olarak gizlilik ve şartlarımızı kabul etmiş olursunuz.</small>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Newsletter End -->
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-primarybit text-white-50 footer pt-5">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.1s">
+                    <a href="index.html" class="d-inline-block mb-3">
+                        <img style="width: 200px;" src="img/logo.svg" alt="logo">
+                    </a>
+                     
+                </div>
+                 <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.3s">
+                    <h5 class="text-white mb-4">Pop&#252;ler Linkler</h5>
+                    <a class="btn btn-link" href="hakkimizda.html">Hakkımızda</a>
+                    <a class="btn btn-link" href="iletisim.html">İletişim</a>
+                    <a class="btn btn-link" href="gizlilik.html">Gizlilik Politikası</a>
+                    <a class="btn btn-link" href="sartlar.html">Şartlar &amp; Koşullar</a>
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.5s">
+                    <h5 class="text-white mb-4">&#199;&#246;z&#252;mlerimiz</h5>
+                    <a class="btn btn-link" href="siseleme.html">Şişeleme</a>
+                    <a class="btn btn-link" href="erp-entegrasyonu.html">ERP Entegrasyonu</a>
+                    <a class="btn btn-link" href="Ambalajlama.html">Ambalajlama</a>
+                    <a class="btn btn-link" href="htm.html">Hızlı T&#252;ketim &#220;r&#252;nleri</a>
+                    <a class="btn btn-link" href="hat-takibi.html">Hat Takibi</a>
+                    <a class="btn btn-link" href="isg.html">İş G&#252;venliği</a>
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.7s">
+                    <h5 class="text-white mb-4">İletişime Ge&#231;</h5>
+                    <p><i style="width: 10px;" class="fa fa-map-marker-alt me-3"></i>Sakarya, TURKEY</p>
+                    <p><a style="color:#ffffff80; text-decoration:none" href="tel:+905464208480"><i style="width: 10px;"
+                                class="fa fa-phone me-3"></i>0 546 420 84 80</a></p>
+                
+                    <p><a style="color:#ffffff80; text-decoration:none" href="mailto:hello@vercosai.com"><i style="width: 10px;" class="fa fa-envelope me-3"></i>hello@vercosai.com</a></p>
+                    <div class="d-flex pt-2">
+                       <a class="btn btn-outline-light btn-social" href="https://www.x.com/Vercos_AI"><i class="fab fa-x-twitter"></i></a>
+                     
+                        <a class="btn btn-outline-light btn-social" href="https://www.youtube.com/@vercosai"><i class="fab fa-youtube"></i></a>
+                       
+                        <a class="btn btn-outline-light btn-social" href="https://www.linkedin.com/company/vercosai"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container wow fadeIn" data-wow-delay="0.1s">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">&#169; <a class="border-bottom" href="https://vercosai.com">VercosAI</a>, T&#252;m Hakları Saklıdır. </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <div class="footer-menu"><a href="https://vercosai.com/">Ana Sayfa</a>
+                            <a href="https://vercosai.com/cookies.html">&#199;erezler</a>
+                            <a href="https://vercosai.com/iletisim.html">Yardım</a>
+                            <a href="sss.html">S.S.S</a> </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-dark btn-lg back-to-top pt-2"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
