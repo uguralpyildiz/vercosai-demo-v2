@@ -1,0 +1,611 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Instant Tracking, Real-Time Data, and the Power of Automation with Image Processing | VercosAI Digital Transformation</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Ubuntu:wght@500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <script src="https://kit.fontawesome.com/607e4879ac.js" crossorigin="anonymous"></script>
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Navbar Start -->
+    <div class="container-fluid sticky-top ">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-dark p-0">
+                <a href="index.html" class="navbar-brand">
+                    <img src="img/logo.svg" alt="logo">
+                </a>
+                <button type="button" class="navbar-toggler ms-auto me-0" data-bs-toggle="collapse"
+                    data-bs-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav ms-auto">
+                        <a href="index.html" class="nav-item nav-link ">Home</a>
+                        <div class="nav-item dropdown">
+                            <a style="cursor:pointer" class="nav-link dropdown-toggle"
+                                data-bs-toggle="dropdown">Solutions</a>
+                            <div class="dropdown-menu bg-primary mt-2">
+                                <a href="packaging.html" class="dropdown-item">Packaging</a>
+                                <a href="erp-integration.html" class="dropdown-item">ERP Integration</a>
+                                <a href="bottling.html" class="dropdown-item">Bottling</a>
+                                <a href="fmcg.html" class="dropdown-item">FMCG</a>
+                                <a href="line-tracking.html" class="dropdown-item">Line Tracking</a>
+                                <a href="safety.html" class="dropdown-item">Safety</a>
+                            </div>
+                        </div>
+                        <a href="capabilities.html" class="nav-item nav-link">Capabilities</a>
+                        <a href="about.html" class="nav-item nav-link">About Us</a>
+                        <a href="blog.html" class="nav-item nav-link active">Blog</a>
+                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                        <a href="https://vercosai.com/goruntu-isleme-ile-anlik-takip-gercek-zamanli-veri-ve-otomasyonun-gucu.html" class="lang nav-item nav-link"><i
+                                class="fa-solid fa-globe"></i> TR</a>
+                    </div>
+
+                </div>
+                <script>
+                    document.addEventListener("DOMContentLoaded", function () {
+                        var lastScrollPosition = window.scrollY || document.documentElement.scrollTop;
+
+                        // Sayfa içinde herhangi bir yere tıklandığında çalışacak kod
+                        document.addEventListener("click", function (event) {
+                            var clickover = event.target;
+                            var navbarCollapse = document.querySelector("#navbarCollapse");
+                            var isOpened = navbarCollapse.classList.contains("show"); // Bootstrap 5'te "show" class'ı kullanılıyor
+                            var isNavbarToggle = clickover.closest(".navbar-toggler");
+                            var isDropdownToggle = clickover.closest(".dropdown-toggle"); // Dropdown menüsü açma butonunu kontrol et
+                            var isDropdownMenu = clickover.closest(".dropdown-menu"); // Dropdown menüsünü kontrol et
+
+                            // Navbar sadece dropdown ve navbar-toggler dışındaki alanlara tıklandığında kapanacak
+                            if (isOpened && !isNavbarToggle && !isDropdownMenu && !isDropdownToggle) {
+                                document.querySelector("button.navbar-toggler").click();
+                                // Sayfa pozisyonunu sıfırla
+                                lastScrollPosition = window.scrollY || document.documentElement.scrollTop;
+                            }
+                        });
+
+                        // Dropdown'un kapanmaması için varsayılan kapanma davranışını engelle
+                        var dropdowns = document.querySelectorAll('.dropdown-menu');
+                        dropdowns.forEach(function (dropdown) {
+                            dropdown.addEventListener('click', function (event) {
+                                event.stopPropagation(); // Tıklama olayı diğer elemanlara yayılmasın
+                            });
+                        });
+
+                        // Sayfa kaydırıldığında navbar'ı kapat, ancak son pozisyondan itibaren 100px kaydırılınca
+                        window.addEventListener('scroll', function () {
+                            var navbarCollapse = document.querySelector("#navbarCollapse");
+                            var isOpened = navbarCollapse.classList.contains("show");
+
+                            // Mevcut kaydırma pozisyonunu kontrol et
+                            var currentScrollPosition = window.scrollY || document.documentElement.scrollTop;
+
+                            // Eğer navbar açıksa ve son kaydedilen pozisyondan 100px fazla kaydırılmışsa navbar'ı kapat
+                            if (isOpened && Math.abs(currentScrollPosition - lastScrollPosition) > 200) {
+                                document.querySelector("button.navbar-toggler").click();
+                                // Yeni pozisyonu kaydet
+                                lastScrollPosition = currentScrollPosition;
+                            }
+                        });
+                    });
+
+
+
+
+
+
+                </script>
+            </nav>
+        </div>
+    </div>
+    <!-- Navbar End -->
+
+    <!-- Hero Start -->
+    <div class="container-fluid pt-5 bg-darkorbit hero-header">
+        <div class="container pt-5">
+            <div class="row g-5 pt-5">
+                <div class="col-lg-6 align-self-center text-center text-lg-start mb-lg-5">
+                    <h3 style="color: #fff;">Instant Tracking, Real-Time Data, and the Power of Automation with Image Processing
+                    </h3>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center justify-content-lg-start mb-0">
+                            <li class="breadcrumb-item"><a class="text-white" href="index.html">Home</a></li>
+                            <li class="breadcrumb-item"><a class="text-white" href="#">Recent publication</a></li>
+                            <li class="breadcrumb-item text-white active" aria-current="page"><b>Instant Tracking, Real-Time Dat...</b></li>
+                        </ol>
+                        <script>
+                            document.addEventListener("DOMContentLoaded", function () {
+                                var lastScrollPosition = window.scrollY || document.documentElement.scrollTop;
+
+                                // Sayfa içinde herhangi bir yere tıklandığında çalışacak kod
+                                document.addEventListener("click", function (event) {
+                                    var clickover = event.target;
+                                    var navbarCollapse = document.querySelector("#navbarCollapse");
+                                    var isOpened = navbarCollapse.classList.contains("show"); // Bootstrap 5'te "show" class'ı kullanılıyor
+                                    var isNavbarToggle = clickover.closest(".navbar-toggler");
+                                    var isDropdownToggle = clickover.closest(".dropdown-toggle"); // Dropdown menüsü açma butonunu kontrol et
+                                    var isDropdownMenu = clickover.closest(".dropdown-menu"); // Dropdown menüsünü kontrol et
+
+                                    // Navbar sadece dropdown ve navbar-toggler dışındaki alanlara tıklandığında kapanacak
+                                    if (isOpened && !isNavbarToggle && !isDropdownMenu && !isDropdownToggle) {
+                                        document.querySelector("button.navbar-toggler").click();
+                                        // Sayfa pozisyonunu sıfırla
+                                        lastScrollPosition = window.scrollY || document.documentElement.scrollTop;
+                                    }
+                                });
+
+                                // Dropdown'un kapanmaması için varsayılan kapanma davranışını engelle
+                                var dropdowns = document.querySelectorAll('.dropdown-menu');
+                                dropdowns.forEach(function (dropdown) {
+                                    dropdown.addEventListener('click', function (event) {
+                                        event.stopPropagation(); // Tıklama olayı diğer elemanlara yayılmasın
+                                    });
+                                });
+
+                                // Sayfa kaydırıldığında navbar'ı kapat, ancak son pozisyondan itibaren 100px kaydırılınca
+                                window.addEventListener('scroll', function () {
+                                    var navbarCollapse = document.querySelector("#navbarCollapse");
+                                    var isOpened = navbarCollapse.classList.contains("show");
+
+                                    // Mevcut kaydırma pozisyonunu kontrol et
+                                    var currentScrollPosition = window.scrollY || document.documentElement.scrollTop;
+
+                                    // Eğer navbar açıksa ve son kaydedilen pozisyondan 100px fazla kaydırılmışsa navbar'ı kapat
+                                    if (isOpened && Math.abs(currentScrollPosition - lastScrollPosition) > 200) {
+                                        document.querySelector("button.navbar-toggler").click();
+                                        // Yeni pozisyonu kaydet
+                                        lastScrollPosition = currentScrollPosition;
+                                    }
+                                });
+                            });
+
+
+
+
+
+
+                        </script>
+                    </nav>
+                    <div class="views-container">
+                        <span style="padding: 10px;" class="pill-skill rounded-pill text-center">
+                            <i class="fa fa-eye"></i> 102 Views
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Hero End -->
+
+    <section style="padding-top: 50px; background: #27462c !important;" class="section bg-darkorbit">
+        <div class="container">
+
+            <div class="row blog-entries element-animate">
+
+                <div class="col-md-12 col-lg-8 main-content">
+
+                    <div class="post-content-body">
+                        <h4>25/04/2025</h4>
+
+
+                        <h4>Fundamentals of Real-Time Surveillance Technology: How Image Processing Works</h4>
+                        <p>
+                            There is almost no sector left in the world that is not integrated with technology. In this context, real-time
+                            monitoring solutions using image processing technology are revolutionizing many areas. In this guide, we will discuss
+                            the basics of innovative technology, its operation and how it makes a difference in a wide range of areas from industry
+                            to security systems. We will detail how businesses maximize their efficiency through real-time monitoring technologies,
+                            data integration and automation. We will also share with you the effective ways to use these systems. Let's discover how
+                            image processing-supported real-time monitoring systems add value to the business world.
+
+                        </p>
+                        <img style="width: 100%; margin-bottom: 55px; border-radius: 10px;" src="/1052025/Görüntü İşleme ile Anlık Takip Gerçek Zamanlı Veri ve Otomasyonun Gücü.jpg" alt="">
+
+                        
+                        <h4>Revolutionary Developments Through Real-Time Monitoring Technologies</h4>
+                        <p>
+                            Real-time monitoring technologies, especially through image processing systems, are revolutionizing various
+                            industries. Image processing is the procedure of using computer algorithms to analyze data from visuals captured by
+                            digital cameras or sensors. This process includes interpreting images and making decisions, allowing systems to
+                            respond instantly.
+                        </p>
+                        <p>
+                            Fundamentally, image processing is built on the ability to identify and analyze features such as color, light, and
+                            motion. This technology plays a vital role in areas like production line analysis and line tracking by detecting
+                            defects, enabling quality control, and optimizing automation processes. Various algorithms and mathematical
+                            operations process data in real time, ensuring accurate system performance.
+                        </p>
+                        <p>
+                            These systems are equipped with high-speed camera technologies that can process hundreds or even thousands of frames
+                            per second. Thus, by providing real-time monitoring, they are capable of instantly detecting and responding to
+                            abnormalities or potential threats in the production process. This enhances both production continuity and safety.
+                        </p>
+                        <p>
+                            The installation and management of image processing technologies include important details for successful
+                            integration and use. Properly designing and implementing both hardware and software requirements maximizes the
+                            efficiency of these systems. As a result, real-time monitoring and automation processes can operate at expected
+                            performance levels.
+                        </p>
+                        
+                        <h4>Real-Time Monitoring Applications: A Revolution in Industry and Security Systems</h4>
+                        <p>
+                            In the industrial sector, applying real-time monitoring technology enables more efficient and controlled management
+                            of production processes. This technology has revolutionized areas such as production line analysis and error
+                            detection. Real-time data instantly identifies malfunctions in production lines, minimizing downtime and maximizing
+                            capacity.
+                        </p>
+                        <p>
+                            In security systems, real-time monitoring—thanks to high-resolution image processing—significantly enhances safety,
+                            especially in crowded areas and critical facilities. Images captured by cameras are processed instantly, and any
+                            potential threats are quickly identified. This process offers major advantages by reducing response time for
+                            security forces.
+                        </p>
+                        <p>
+                            Another important industrial application of real-time monitoring is line tracking systems. These systems ensure
+                            proper product flow along assembly lines and make automatic corrections in case of deviations, improving the overall
+                            process. This not only increases product quality but also reduces waste.
+                        </p>
+                        <p>
+                            Real-time monitoring technology plays a critical role in optimizing business processes, enhancing safety, and
+                            lowering operational costs across industrial and security systems. Its integration stands out as a key factor in
+                            shaping the future of industries.
+                        </p>
+                        
+                        <h4>Data Integration and Automation: Boosting Efficiency with Real-Time Monitoring</h4>
+                        <p>
+                            Real-time monitoring systems offer the key to increased efficiency in production line analysis, security systems,
+                            and many other areas. These systems collect and process data using advanced image processing technologies. The
+                            resulting data is then integrated with automation systems to optimize workflows and speed up decision-making
+                            processes.
+                        </p>
+                        <p>
+                            Image processing-based monitoring systems play a critical role on production lines. For example, they can
+                            continuously inspect each product's quality on a production belt, detect defective items, and remove them. Such line
+                            tracking applications reduce material waste and maximize overall production quality.
+                        </p>
+                        <p>
+                            Moreover, when these systems are integrated with machine learning and artificial intelligence technologies,
+                            automation reaches an even more advanced level. The data collected by image processing systems can be analyzed by
+                            algorithms, allowing machines to adjust themselves in real time.
+                        </p>
+                        <p>
+                            This integration is especially important in industrial branches that carry out complex manufacturing and assembly
+                            operations. Efficiency, speed, and quality can all be maximized through the combination of image processing and
+                            automation technologies.
+                        </p>
+                        <p>
+                            Establishing such integrated systems requires a detailed system analysis and needs assessment at the outset.
+                            However, the investment pays off by providing businesses with long-term competitive advantages and reduced operating
+                            costs. Therefore, keeping up with technological developments and investing in these systems when needed is
+                            strategically vital for businesses.
+                        </p>
+                        
+                        <h4>Effectively Using Real-Time Monitoring Systems</h4>
+                        <p>
+                            Effective use of real-time monitoring systems allows businesses to manage their operations more efficiently and
+                            effectively. This technology offers significant advantages, particularly in production, security, and service
+                            sectors. Proper system installation and adequate training for staff are essential for effective use.
+                        </p>
+                        <p>
+                            The first step is identifying the requirements and goals of real-time monitoring. These goals help clearly define
+                            system expectations and guide the selection of the right technology. For example, for a system used in production
+                            line analysis, speed and error-free production capacity might be top priorities.
+                        </p>
+                        <p>
+                            The second step is system integration. Image processing systems must work in harmony with other automation
+                            components. This integration ensures seamless and effective data flow. During integration, it's crucial that systems
+                            can exchange data and that this data is analyzed correctly.
+                        </p>
+                        <p>
+                            The third and final step is continuous monitoring and evaluation. Image processing-based monitoring systems provide
+                            real-time data, so this data should be regularly analyzed and system performance evaluated. This way, adjustments
+                            can be made to improve efficiency and quickly resolve potential issues.
+                        </p>
+                        
+                        <h4>Frequently Asked Questions</h4>
+                        <p><strong>What is image processing and how does it work?</strong><br>
+                            Image processing is the procedure of applying mathematical operations on digital images to extract information,
+                            enhance visuals, and perform analysis. This is usually done automatically using computer software.</p>
+                        
+                        <p><strong>Why is real-time data processing important?</strong><br>
+                            Real-time data processing enables instant access to information from rapid data flows, allowing businesses and
+                            systems to make fast and effective decisions based on live data.</p>
+                        
+                        <p><strong>How is real-time tracking achieved through image processing?</strong><br>
+                            Image processing technologies can instantly recognize and track objects, people, or specific movements by analyzing
+                            images from cameras. This process typically uses specialized algorithms and AI techniques.</p>
+                        
+                        <p><strong>Which industries use this technology?</strong><br>
+                            Many sectors such as security, healthcare, automotive, manufacturing, and retail use image processing technologies
+                            for real-time tracking and analysis.</p>
+                        
+                        <p><strong>What is the relationship between real-time image processing and automation?</strong><br>
+                            Real-time image processing allows automation systems to quickly adapt to environmental changes, making automated
+                            systems more intelligent and effective.</p>
+                        
+                        <p><strong>How is the data obtained through image processing evaluated?</strong><br>
+                            The data is analyzed using pre-defined algorithms and AI models. Meaningful insights are extracted from this data to
+                            support decision-making processes for relevant actions.</p>
+                        
+                        <p><strong>What does the future of image processing technology look like?</strong><br>
+                            Image processing will continue to evolve alongside artificial intelligence and machine learning. These advancements
+                            will lead to the development of smarter and more autonomous systems with broader application areas.</p>
+
+
+
+
+
+
+                    </div>
+
+
+                </div>
+
+                <!-- END main-content -->
+
+                <div class="col-md-12 col-lg-4 sidebar text-white">
+
+                    <!-- END sidebar-box -->
+                    <div class="sidebar-box sticky-effectox" style="max-height: 70vh; overflow: auto;">
+                        <h3 class="heading text-white">Popular Posts</h3>
+                        <div class="post-entry-sidebar">
+
+                            <ul>
+                                <li>
+                                    <a
+                                        href="erp-integration-with-artificial-intelligence-how-to-increase-efficiency-in-your-business.html">
+                                        <div class=" wow fadeIn" data-wow-delay="0.3s">
+                                            <div class="case-item position-relative overflow-hidden rounded mb-2">
+                                                <img class="img-fluid"
+                                                    src="blog/ERP Integration with Artificial Intelligence How to Increase Efficiency in Your Business.jpg"
+                                                    alt="">
+                                                <a class="case-overlay text-decoration-none"
+                                                    href="erp-integration-with-artificial-intelligence-how-to-increase-efficiency-in-your-business.html">
+
+                                                    <h5 class="lh-base text-white mb-3">
+                                                        ERP Integration with Artificial Intelligence How to Increase
+                                                        Efficiency in Your Business
+                                                    </h5>
+                                                    <span class="btn btn-square btn-primary"><i
+                                                            class="fa fa-arrow-right"></i></span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="packaging-sorting-and-error-detection-increase-efficiency-with-ai.html">
+                                        <div class=" wow fadeIn" data-wow-delay="0.3s">
+                                            <div class="case-item position-relative overflow-hidden rounded mb-2">
+                                                <img class="img-fluid"
+                                                    src="blog/Packaging Sorting and Error Detection Increase Efficiency with AI.jpg"
+                                                    alt="">
+                                                <a class="case-overlay text-decoration-none"
+                                                    href="packaging-sorting-and-error-detection-increase-efficiency-with-ai.html">
+
+                                                    <h5 class="lh-base text-white mb-3">
+                                                        Packaging Sorting and Error Detection Increase Efficiency with
+                                                        AI
+                                                    </h5>
+                                                    <span class="btn btn-square btn-primary"><i
+                                                            class="fa fa-arrow-right"></i></span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- END sidebar-box -->
+
+                </div>
+                <!-- END sidebar -->
+                <div style="height: 100px;" class="cakinti"></div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+    <iframe name="dummyframe" id="dummyframe" style="display: none;"></iframe>
+    <!-- Newsletter Start -->
+    <form action="https://formspree.io/f/mrbqbazd" method="POST" target="dummyframe"
+        class="container-fluid bg-darkorbit newsletter">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="display-none col-md-5 ps-lg-0 pt-5 pt-md-0 text-start wow fadeIn" data-wow-delay="0.3s">
+                    <img class="img-fluid" src="img/newsletter.png" alt="">
+                </div>
+                <div class="col-md-7  newsletter-text wow fadeIn" data-wow-delay="0.5s">
+                    <div class="btn btn-sm border rounded-pill text-white px-3 mb-3">Newsletter</div>
+                    <h1 class="text-white mb-4">Let's subscribe the newsletter</h1>
+                    <div class="position-relative w-100 mt-3 mb-2">
+                        <input name="email" class="form-control border-0 rounded-pill w-100 ps-4 pe-5" type="email"
+                            placeholder="Enter Your Email" style="height: 48px;">
+                        <button type="submit" class="btn shadow-none position-absolute top-0 end-0 mt-1 me-2"><i
+                                style="color: #395b40  !important;"
+                                class="fa fa-paper-plane text-primary fs-4"></i></button>
+                    </div>
+                    <small class="text-white-50">You accept our privacy policy by providing your email address.</small>
+                </div>
+            </div>
+        </div>
+    </form>
+    <!-- Newsletter End -->
+    <script>
+        document.querySelector('form').addEventListener('submit', function (e) {
+            e.preventDefault(); // Formu otomatik göndermesin, biz kontrol edeceğiz.
+
+            // Formu manuel gönder
+            this.submit();
+
+            // Başarı mesajı oluştur
+            const successMessage = document.createElement('small');
+            successMessage.textContent = 'Thank you for subscribing!';
+            successMessage.style.color = '#ffffff';
+            successMessage.className = 'form-success-message';
+
+            // Eğer daha önce eklendiyse tekrar eklememesi için kontrol
+            if (!document.querySelector('.form-success-message')) {
+                this.querySelector('.newsletter-text').appendChild(successMessage);
+            }
+
+            // Inputu temizle
+            this.querySelector('input[name="email"]').value = '';
+
+            // 20 saniye sonra mesajı kaldır
+            setTimeout(() => {
+                successMessage.remove();
+            }, 20000); // 20.000 ms = 20 saniye
+        });
+    </script>
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-primarybit text-white-50 footer pt-5">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.1s">
+                    <a href="index.html" class="d-inline-block mb-3">
+                        <img style="width: 200px;" src="img/logo.svg" alt="logo">
+                    </a>
+
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.3s">
+                    <h5 class="text-white mb-4">Popular Link</h5>
+                    <a class="btn btn-link" href="about.html">About Us</a>
+                    <a class="btn btn-link" href="contact.html">Contact Us</a>
+                    <a class="btn btn-link" href="privacy.html">Privacy Policy</a>
+                    <a class="btn btn-link" href="terms.html">Terms & Condition</a>
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.5s">
+                    <h5 class="text-white mb-4">Our Services</h5>
+                    <a class="btn btn-link" href="bottling.html">Bottling</a>
+                    <a class="btn btn-link" href="erp-integration.html">ERP Integration</a>
+                    <a class="btn btn-link" href="packaging.html">Packaging</a>
+                    <a class="btn btn-link" href="fmcg.html">FMCG</a>
+                    <a class="btn btn-link" href="line-tracking.html">Line Tracking</a>
+                    <a class="btn btn-link" href="safety.html">Safety</a>
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.7s">
+                    <h5 class="text-white mb-4">Get In Touch</h5>
+                    <p><i style="width: 10px;" class="fa fa-map-marker-alt me-3"></i>Sakarya, TURKEY</p>
+                    <p><a style="color:#ffffff80; text-decoration:none" href="tel:+905464208480"><i style="width: 10px;"
+                                class="fa fa-phone me-3"></i>0 546 420 84 80</a></p>
+
+                    <p><a style="color:#ffffff80; text-decoration:none" href="mailto:hello@vercosai.com"><i
+                                style="width: 10px;" class="fa fa-envelope me-3"></i>hello@vercosai.com</a></p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-outline-light btn-social" href="https://x.com/vercos_ai"><i
+                                class="fab fa-x-twitter"></i></a>
+
+                        <a class="btn btn-outline-light btn-social" href="https://youtube.com/@vercosai"><i
+                                class="fab fa-youtube"></i></a>
+
+                        <a class="btn btn-outline-light btn-social" href="https://www.linkedin.com/company/vercosai/"><i
+                                class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container wow fadeIn" data-wow-delay="0.1s">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="border-bottom" href="https://vercosai.com/en">VercosAI</a>, All Right Reserved.
+
+
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <div class="footer-menu">
+                            <a href="https://vercosai.com/en">Home</a>
+
+                            <a href="https://vercosai.com/en/contact.html">Help</a>
+                            <a href="https://vercosai.com/en/FAQs.html">FAQs</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-dark btn-lg back-to-top pt-2"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

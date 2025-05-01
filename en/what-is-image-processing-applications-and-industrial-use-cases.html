@@ -1,0 +1,629 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>What is Image Processing? Applications and Industrial Use Cases | VercosAI Digital Transformation</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Ubuntu:wght@500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <script src="https://kit.fontawesome.com/607e4879ac.js" crossorigin="anonymous"></script>
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Navbar Start -->
+    <div class="container-fluid sticky-top ">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-dark p-0">
+                <a href="index.html" class="navbar-brand">
+                    <img src="img/logo.svg" alt="logo">
+                </a>
+                <button type="button" class="navbar-toggler ms-auto me-0" data-bs-toggle="collapse"
+                    data-bs-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav ms-auto">
+                        <a href="index.html" class="nav-item nav-link ">Home</a>
+                        <div class="nav-item dropdown">
+                            <a style="cursor:pointer" class="nav-link dropdown-toggle"
+                                data-bs-toggle="dropdown">Solutions</a>
+                            <div class="dropdown-menu bg-primary mt-2">
+                                <a href="packaging.html" class="dropdown-item">Packaging</a>
+                                <a href="erp-integration.html" class="dropdown-item">ERP Integration</a>
+                                <a href="bottling.html" class="dropdown-item">Bottling</a>
+                                <a href="fmcg.html" class="dropdown-item">FMCG</a>
+                                <a href="line-tracking.html" class="dropdown-item">Line Tracking</a>
+                                <a href="safety.html" class="dropdown-item">Safety</a>
+                            </div>
+                        </div>
+                        <a href="capabilities.html" class="nav-item nav-link">Capabilities</a>
+                        <a href="about.html" class="nav-item nav-link">About Us</a>
+                        <a href="blog.html" class="nav-item nav-link active">Blog</a>
+                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                        <a href="https://vercosai.com/goruntu-isleme-nedir-uygulama-alanlari-ve-endustriyel-kullanim-ornekleri.html" class="lang nav-item nav-link"><i
+                                class="fa-solid fa-globe"></i> TR</a>
+                    </div>
+
+                </div>
+                <script>
+                    document.addEventListener("DOMContentLoaded", function () {
+                        var lastScrollPosition = window.scrollY || document.documentElement.scrollTop;
+
+                        // Sayfa içinde herhangi bir yere tıklandığında çalışacak kod
+                        document.addEventListener("click", function (event) {
+                            var clickover = event.target;
+                            var navbarCollapse = document.querySelector("#navbarCollapse");
+                            var isOpened = navbarCollapse.classList.contains("show"); // Bootstrap 5'te "show" class'ı kullanılıyor
+                            var isNavbarToggle = clickover.closest(".navbar-toggler");
+                            var isDropdownToggle = clickover.closest(".dropdown-toggle"); // Dropdown menüsü açma butonunu kontrol et
+                            var isDropdownMenu = clickover.closest(".dropdown-menu"); // Dropdown menüsünü kontrol et
+
+                            // Navbar sadece dropdown ve navbar-toggler dışındaki alanlara tıklandığında kapanacak
+                            if (isOpened && !isNavbarToggle && !isDropdownMenu && !isDropdownToggle) {
+                                document.querySelector("button.navbar-toggler").click();
+                                // Sayfa pozisyonunu sıfırla
+                                lastScrollPosition = window.scrollY || document.documentElement.scrollTop;
+                            }
+                        });
+
+                        // Dropdown'un kapanmaması için varsayılan kapanma davranışını engelle
+                        var dropdowns = document.querySelectorAll('.dropdown-menu');
+                        dropdowns.forEach(function (dropdown) {
+                            dropdown.addEventListener('click', function (event) {
+                                event.stopPropagation(); // Tıklama olayı diğer elemanlara yayılmasın
+                            });
+                        });
+
+                        // Sayfa kaydırıldığında navbar'ı kapat, ancak son pozisyondan itibaren 100px kaydırılınca
+                        window.addEventListener('scroll', function () {
+                            var navbarCollapse = document.querySelector("#navbarCollapse");
+                            var isOpened = navbarCollapse.classList.contains("show");
+
+                            // Mevcut kaydırma pozisyonunu kontrol et
+                            var currentScrollPosition = window.scrollY || document.documentElement.scrollTop;
+
+                            // Eğer navbar açıksa ve son kaydedilen pozisyondan 100px fazla kaydırılmışsa navbar'ı kapat
+                            if (isOpened && Math.abs(currentScrollPosition - lastScrollPosition) > 200) {
+                                document.querySelector("button.navbar-toggler").click();
+                                // Yeni pozisyonu kaydet
+                                lastScrollPosition = currentScrollPosition;
+                            }
+                        });
+                    });
+
+
+
+
+
+
+                </script>
+            </nav>
+        </div>
+    </div>
+    <!-- Navbar End -->
+
+    <!-- Hero Start -->
+    <div class="container-fluid pt-5 bg-darkorbit hero-header">
+        <div class="container pt-5">
+            <div class="row g-5 pt-5">
+                <div class="col-lg-6 align-self-center text-center text-lg-start mb-lg-5">
+                    <h3 style="color: #fff;">What is Image Processing? Applications and Industrial Use Cases
+                    </h3>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center justify-content-lg-start mb-0">
+                            <li class="breadcrumb-item"><a class="text-white" href="index.html">Home</a></li>
+                            <li class="breadcrumb-item"><a class="text-white" href="#">Recent publication</a></li>
+                            <li class="breadcrumb-item text-white active" aria-current="page"><b>What is Image Processing? </b></li>
+                        </ol>
+                        <script>
+                            document.addEventListener("DOMContentLoaded", function () {
+                                var lastScrollPosition = window.scrollY || document.documentElement.scrollTop;
+
+                                // Sayfa içinde herhangi bir yere tıklandığında çalışacak kod
+                                document.addEventListener("click", function (event) {
+                                    var clickover = event.target;
+                                    var navbarCollapse = document.querySelector("#navbarCollapse");
+                                    var isOpened = navbarCollapse.classList.contains("show"); // Bootstrap 5'te "show" class'ı kullanılıyor
+                                    var isNavbarToggle = clickover.closest(".navbar-toggler");
+                                    var isDropdownToggle = clickover.closest(".dropdown-toggle"); // Dropdown menüsü açma butonunu kontrol et
+                                    var isDropdownMenu = clickover.closest(".dropdown-menu"); // Dropdown menüsünü kontrol et
+
+                                    // Navbar sadece dropdown ve navbar-toggler dışındaki alanlara tıklandığında kapanacak
+                                    if (isOpened && !isNavbarToggle && !isDropdownMenu && !isDropdownToggle) {
+                                        document.querySelector("button.navbar-toggler").click();
+                                        // Sayfa pozisyonunu sıfırla
+                                        lastScrollPosition = window.scrollY || document.documentElement.scrollTop;
+                                    }
+                                });
+
+                                // Dropdown'un kapanmaması için varsayılan kapanma davranışını engelle
+                                var dropdowns = document.querySelectorAll('.dropdown-menu');
+                                dropdowns.forEach(function (dropdown) {
+                                    dropdown.addEventListener('click', function (event) {
+                                        event.stopPropagation(); // Tıklama olayı diğer elemanlara yayılmasın
+                                    });
+                                });
+
+                                // Sayfa kaydırıldığında navbar'ı kapat, ancak son pozisyondan itibaren 100px kaydırılınca
+                                window.addEventListener('scroll', function () {
+                                    var navbarCollapse = document.querySelector("#navbarCollapse");
+                                    var isOpened = navbarCollapse.classList.contains("show");
+
+                                    // Mevcut kaydırma pozisyonunu kontrol et
+                                    var currentScrollPosition = window.scrollY || document.documentElement.scrollTop;
+
+                                    // Eğer navbar açıksa ve son kaydedilen pozisyondan 100px fazla kaydırılmışsa navbar'ı kapat
+                                    if (isOpened && Math.abs(currentScrollPosition - lastScrollPosition) > 200) {
+                                        document.querySelector("button.navbar-toggler").click();
+                                        // Yeni pozisyonu kaydet
+                                        lastScrollPosition = currentScrollPosition;
+                                    }
+                                });
+                            });
+
+
+
+
+
+
+                        </script>
+                    </nav>
+                    <div class="views-container">
+                        <span style="padding: 10px;" class="pill-skill rounded-pill text-center">
+                            <i class="fa fa-eye"></i> 232 Views
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Hero End -->
+
+    <section style="padding-top: 50px; background: #27462c !important;" class="section bg-darkorbit">
+        <div class="container">
+
+            <div class="row blog-entries element-animate">
+
+                <div class="col-md-12 col-lg-8 main-content">
+
+                    <div class="post-content-body">
+                        <h4>22/04/2025</h4>
+
+
+                        <h4>Fundamentals and Overview of Image Processing Technology</h4>
+                        <p>
+                            Image processing technology has become an indispensable part of technology today, as the process of understanding and
+                            analyzing digital information and visual content. In this article, we cover the basics of image processing technology,
+                            examine its applicability in a wide range from medicine to the security sector, and its transformative effects in the
+                            industrial field. This guide, which shows how it has revolutionized various industries with examples, is completed with
+                            recommendations to consider when developing image processing projects. Let's take a closer look at the role of image
+                            processing in our daily lives and business processes.
+                        </p>
+                        <img style="width: 100%; margin-bottom: 55px; border-radius: 10px;" src="/1052025/Görüntü İşleme Nedir Uygulama Alanları ve Endüstriyel Kullanım Örnekleri.jpg" alt="">
+
+                        <h4>What is Image Processing?</h4>
+                        <p>
+                            Image processing is the process of obtaining information by performing various operations on digital images. These
+                            operations are done to enhance the image, modify certain features, or extract specific data from the image. Image
+                            processing can be carried out using both analog and digital methods; however, digital image processing is more
+                            widely used today.
+                        </p>
+                        <p>
+                            This technology involves processing images using mathematical operations and algorithms. The image to be processed
+                            is represented by pixels and arrays that computers can interpret. Each pixel is represented by one or more numerical
+                            values, indicating the color and brightness of the image. Image processing algorithms perform necessary operations
+                            using these values.
+                        </p>
+                        <p>
+                            This technology has a wide range of applications and can be integrated with various modern technologies like
+                            artificial intelligence and production automation. Industrial image processing plays a crucial role in processes
+                            such as quality control on production lines. With machines analyzing and classifying images, defective products can
+                            be automatically identified, and processing stages can be optimized.
+                        </p>
+                        <p>
+                            The development of image processing algorithms constantly increases the effectiveness and application areas of this
+                            technology. Examples of these algorithms include edge detection, color filtering, noise reduction, and image
+                            segmentation. Each algorithm is designed for a specific image processing need and can serve different functions in
+                            various applications. Thus, image processing technology holds revolutionary potential across many industries.
+                        </p>
+                        
+                        <h4>Application Areas of Image Processing: From Medicine to Security</h4>
+                        <p>
+                            Image processing technology has the potential to revolutionize a wide variety of sectors, especially medicine and
+                            security. In medical imaging, it plays a critical role in the early diagnosis of diseases and improving treatment
+                            processes. Digital images like MRIs, CT scans, and X-rays can be evaluated more quickly and accurately through
+                            AI-powered analysis.
+                        </p>
+                        <p>
+                            This technology also brings significant advancements in the field of security. For example, AI-powered image
+                            processing systems in airport security screenings can detect threats much faster, helping to improve overall safety.
+                            Similarly, surveillance cameras used for urban safety can automate crime analysis and prevention processes.
+                        </p>
+                        <p>
+                            In the automotive industry, self-driving car technologies heavily rely on image processing. Vehicles use complex
+                            image processing algorithms to perceive their environment and respond to hazardous situations. These systems
+                            contribute to road safety by helping prevent accidents.
+                        </p>
+                        <p>
+                            In military technologies, image processing systems enhance the detection and tracking capabilities of drones and
+                            other surveillance equipment, increasing the effectiveness of defense strategies. These systems provide critical
+                            data for identifying and tracking enemy targets.
+                        </p>
+                        
+                        <h4>Industrial Uses: How Image Processing is Creating a Revolution</h4>
+                        <p>
+                            Today, image processing technology is driving revolutionary advancements in the industrial sector. It provides great
+                            benefits in areas such as automation, quality control, and increasing production speed. Industrial image processing
+                            allows machines to replace the human eye, enabling faster and more accurate production.
+                        </p>
+                        <p>
+                            Industrial image processing systems can perform high-accuracy analyses on images captured through various sensors
+                            and cameras. These systems can detect malfunctions on production lines in advance, continuously monitor product
+                            quality, and even automate packaging processes.
+                        </p>
+                        <p>
+                            Quality control applications have significantly advanced thanks to AI-supported image processing techniques. These
+                            techniques allow each product to be examined in detail, minimizing production errors. They are also critically
+                            important for improving production efficiency and reducing costs.
+                        </p>
+                        <p>
+                            The revolution in production automation has progressed even further with the integration of robots and automatic
+                            control systems using image processing technologies. This integration allows machines to continuously update
+                            themselves and makes production processes more flexible.
+                        </p>
+                        <p>
+                            These processes developed using image processing not only improve efficiency in industrial facilities but also
+                            maximize workplace safety. Machines can detect potential hazards early and automatically stop operations in
+                            situations that do not require human intervention. This is a major safety measure, especially for workers operating
+                            in hazardous or hard-to-reach environments.
+                        </p>
+                        
+                        <h4>Recommendations for Successful Image Processing Projects</h4>
+                        <p>
+                            Successful implementation of image processing technology requires careful planning and management from start to
+                            finish. The first step should be to clearly define the project's purpose and objectives. This limits the scope of
+                            the project and provides a foundation for measuring progress.
+                        </p>
+                        <p>
+                            At the beginning of the project, choosing the appropriate image processing algorithms is of critical importance.
+                            This choice varies based on the application area and the problem being addressed. For example, AI-supported
+                            algorithms can deliver more effective results in medical imaging or security systems. The choice of algorithm also
+                            directly impacts project performance and processing speed.
+                        </p>
+                        <p>
+                            Data quality is another fundamental factor for success in image processing projects. High-resolution and diverse
+                            data enable algorithms to produce more accurate results. Therefore, the data collection process should be managed
+                            carefully, and datasets should be regularly updated and improved.
+                        </p>
+                        <p>
+                            During the implementation phase, technical details such as integration and scalability become important. Especially
+                            in industrial image processing and production automation projects, integrating systems into existing production
+                            lines is critical for success. At the same time, designing systems to adapt to future technological changes and
+                            needs provides long-term benefits.
+                        </p>
+                        <p>
+                            Every image processing project requires continuous testing and optimization. Testing whether systems operate
+                            correctly under real-world conditions and making necessary adjustments increase project efficiency and minimize
+                            potential errors. Regular evaluations during different stages of the project are indispensable for achieving
+                            success.
+                        </p>
+                        
+                        <h4>Frequently Asked Questions</h4>
+                        
+                        <h4>What is image processing?</h4>
+                        <p>
+                            Image processing is a branch of computer technology aimed at analyzing digital images to extract information. This
+                            process is used to enhance, transform, or extract insights from images through various operations.
+                        </p>
+                        
+                        <h4>In which fields is image processing technology used?</h4>
+                        <p>
+                            Image processing technologies are used in diverse areas such as medical imaging, satellite image analysis, video
+                            surveillance systems, facial recognition systems, and automatic license plate recognition.
+                        </p>
+                        
+                        <h4>How is image processing used in industrial applications?</h4>
+                        <p>
+                            In industrial fields, image processing is used in various processes including product quality control, error
+                            detection in production, vision-based robotic guidance, and packaging. For example, a camera on the production line
+                            can be used to check whether products are correctly aligned or defective.
+                        </p>
+                        
+                        <h4>What are the main techniques used in image processing?</h4>
+                        <p>
+                            Main techniques used in image processing include edge detection, image filtering, morphological operations,
+                            histogram equalization, and transformation operations.
+                        </p>
+                        
+                        <h4>What is the relationship between artificial intelligence and image processing?</h4>
+                        <p>
+                            Image processing is one of the core components of AI applications, especially when combined with deep learning
+                            techniques. AI models achieve high success in tasks such as object recognition, classification, and image analysis
+                            by learning from images.
+                        </p>
+                        
+                        <h4>What are future trends in image processing?</h4>
+                        <p>
+                            Future trends in image processing include deeper integration of AI and machine learning for increased efficiency and
+                            accuracy, more advanced use in augmented and virtual reality applications, and the implementation of higher-level
+                            image analysis systems in automation processes.
+                        </p>
+
+
+
+
+
+
+
+                    </div>
+
+
+                </div>
+
+                <!-- END main-content -->
+
+                <div class="col-md-12 col-lg-4 sidebar text-white">
+
+                    <!-- END sidebar-box -->
+                    <div class="sidebar-box sticky-effectox" style="max-height: 70vh; overflow: auto;">
+                        <h3 class="heading text-white">Popular Posts</h3>
+                        <div class="post-entry-sidebar">
+
+                            <ul>
+                                <li>
+                                    <a
+                                        href="erp-integration-with-artificial-intelligence-how-to-increase-efficiency-in-your-business.html">
+                                        <div class=" wow fadeIn" data-wow-delay="0.3s">
+                                            <div class="case-item position-relative overflow-hidden rounded mb-2">
+                                                <img class="img-fluid"
+                                                    src="blog/ERP Integration with Artificial Intelligence How to Increase Efficiency in Your Business.jpg"
+                                                    alt="">
+                                                <a class="case-overlay text-decoration-none"
+                                                    href="erp-integration-with-artificial-intelligence-how-to-increase-efficiency-in-your-business.html">
+
+                                                    <h5 class="lh-base text-white mb-3">
+                                                        ERP Integration with Artificial Intelligence How to Increase
+                                                        Efficiency in Your Business
+                                                    </h5>
+                                                    <span class="btn btn-square btn-primary"><i
+                                                            class="fa fa-arrow-right"></i></span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="packaging-sorting-and-error-detection-increase-efficiency-with-ai.html">
+                                        <div class=" wow fadeIn" data-wow-delay="0.3s">
+                                            <div class="case-item position-relative overflow-hidden rounded mb-2">
+                                                <img class="img-fluid"
+                                                    src="blog/Packaging Sorting and Error Detection Increase Efficiency with AI.jpg"
+                                                    alt="">
+                                                <a class="case-overlay text-decoration-none"
+                                                    href="packaging-sorting-and-error-detection-increase-efficiency-with-ai.html">
+
+                                                    <h5 class="lh-base text-white mb-3">
+                                                        Packaging Sorting and Error Detection Increase Efficiency with
+                                                        AI
+                                                    </h5>
+                                                    <span class="btn btn-square btn-primary"><i
+                                                            class="fa fa-arrow-right"></i></span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- END sidebar-box -->
+
+                </div>
+                <!-- END sidebar -->
+                <div style="height: 100px;" class="cakinti"></div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+    <iframe name="dummyframe" id="dummyframe" style="display: none;"></iframe>
+    <!-- Newsletter Start -->
+    <form action="https://formspree.io/f/mrbqbazd" method="POST" target="dummyframe"
+        class="container-fluid bg-darkorbit newsletter">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="display-none col-md-5 ps-lg-0 pt-5 pt-md-0 text-start wow fadeIn" data-wow-delay="0.3s">
+                    <img class="img-fluid" src="img/newsletter.png" alt="">
+                </div>
+                <div class="col-md-7  newsletter-text wow fadeIn" data-wow-delay="0.5s">
+                    <div class="btn btn-sm border rounded-pill text-white px-3 mb-3">Newsletter</div>
+                    <h1 class="text-white mb-4">Let's subscribe the newsletter</h1>
+                    <div class="position-relative w-100 mt-3 mb-2">
+                        <input name="email" class="form-control border-0 rounded-pill w-100 ps-4 pe-5" type="email"
+                            placeholder="Enter Your Email" style="height: 48px;">
+                        <button type="submit" class="btn shadow-none position-absolute top-0 end-0 mt-1 me-2"><i
+                                style="color: #395b40  !important;"
+                                class="fa fa-paper-plane text-primary fs-4"></i></button>
+                    </div>
+                    <small class="text-white-50">You accept our privacy policy by providing your email address.</small>
+                </div>
+            </div>
+        </div>
+    </form>
+    <!-- Newsletter End -->
+    <script>
+        document.querySelector('form').addEventListener('submit', function (e) {
+            e.preventDefault(); // Formu otomatik göndermesin, biz kontrol edeceğiz.
+
+            // Formu manuel gönder
+            this.submit();
+
+            // Başarı mesajı oluştur
+            const successMessage = document.createElement('small');
+            successMessage.textContent = 'Thank you for subscribing!';
+            successMessage.style.color = '#ffffff';
+            successMessage.className = 'form-success-message';
+
+            // Eğer daha önce eklendiyse tekrar eklememesi için kontrol
+            if (!document.querySelector('.form-success-message')) {
+                this.querySelector('.newsletter-text').appendChild(successMessage);
+            }
+
+            // Inputu temizle
+            this.querySelector('input[name="email"]').value = '';
+
+            // 20 saniye sonra mesajı kaldır
+            setTimeout(() => {
+                successMessage.remove();
+            }, 20000); // 20.000 ms = 20 saniye
+        });
+    </script>
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-primarybit text-white-50 footer pt-5">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.1s">
+                    <a href="index.html" class="d-inline-block mb-3">
+                        <img style="width: 200px;" src="img/logo.svg" alt="logo">
+                    </a>
+
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.3s">
+                    <h5 class="text-white mb-4">Popular Link</h5>
+                    <a class="btn btn-link" href="about.html">About Us</a>
+                    <a class="btn btn-link" href="contact.html">Contact Us</a>
+                    <a class="btn btn-link" href="privacy.html">Privacy Policy</a>
+                    <a class="btn btn-link" href="terms.html">Terms & Condition</a>
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.5s">
+                    <h5 class="text-white mb-4">Our Services</h5>
+                    <a class="btn btn-link" href="bottling.html">Bottling</a>
+                    <a class="btn btn-link" href="erp-integration.html">ERP Integration</a>
+                    <a class="btn btn-link" href="packaging.html">Packaging</a>
+                    <a class="btn btn-link" href="fmcg.html">FMCG</a>
+                    <a class="btn btn-link" href="line-tracking.html">Line Tracking</a>
+                    <a class="btn btn-link" href="safety.html">Safety</a>
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.7s">
+                    <h5 class="text-white mb-4">Get In Touch</h5>
+                    <p><i style="width: 10px;" class="fa fa-map-marker-alt me-3"></i>Sakarya, TURKEY</p>
+                    <p><a style="color:#ffffff80; text-decoration:none" href="tel:+905464208480"><i style="width: 10px;"
+                                class="fa fa-phone me-3"></i>0 546 420 84 80</a></p>
+
+                    <p><a style="color:#ffffff80; text-decoration:none" href="mailto:hello@vercosai.com"><i
+                                style="width: 10px;" class="fa fa-envelope me-3"></i>hello@vercosai.com</a></p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-outline-light btn-social" href="https://x.com/vercos_ai"><i
+                                class="fab fa-x-twitter"></i></a>
+
+                        <a class="btn btn-outline-light btn-social" href="https://youtube.com/@vercosai"><i
+                                class="fab fa-youtube"></i></a>
+
+                        <a class="btn btn-outline-light btn-social" href="https://www.linkedin.com/company/vercosai/"><i
+                                class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container wow fadeIn" data-wow-delay="0.1s">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="border-bottom" href="https://vercosai.com/en">VercosAI</a>, All Right Reserved.
+
+
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <div class="footer-menu">
+                            <a href="https://vercosai.com/en">Home</a>
+
+                            <a href="https://vercosai.com/en/contact.html">Help</a>
+                            <a href="https://vercosai.com/en/FAQs.html">FAQs</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-dark btn-lg back-to-top pt-2"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

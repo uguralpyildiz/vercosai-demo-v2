@@ -1,0 +1,570 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>The New Paradigm of Personalized and Smart Manufacturing in Industry 5.0 | VercosAI Digital Transformation</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Ubuntu:wght@500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <script src="https://kit.fontawesome.com/607e4879ac.js" crossorigin="anonymous"></script>
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Navbar Start -->
+    <div class="container-fluid sticky-top ">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-dark p-0">
+                <a href="index.html" class="navbar-brand">
+                    <img src="img/logo.svg" alt="logo">
+                </a>
+                <button type="button" class="navbar-toggler ms-auto me-0" data-bs-toggle="collapse"
+                    data-bs-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav ms-auto">
+                        <a href="index.html" class="nav-item nav-link ">Home</a>
+                        <div class="nav-item dropdown">
+                            <a style="cursor:pointer" class="nav-link dropdown-toggle"
+                                data-bs-toggle="dropdown">Solutions</a>
+                            <div class="dropdown-menu bg-primary mt-2">
+                                <a href="packaging.html" class="dropdown-item">Packaging</a>
+                                <a href="erp-integration.html" class="dropdown-item">ERP Integration</a>
+                                <a href="bottling.html" class="dropdown-item">Bottling</a>
+                                <a href="fmcg.html" class="dropdown-item">FMCG</a>
+                                <a href="line-tracking.html" class="dropdown-item">Line Tracking</a>
+                                <a href="safety.html" class="dropdown-item">Safety</a>
+                            </div>
+                        </div>
+                        <a href="capabilities.html" class="nav-item nav-link">Capabilities</a>
+                        <a href="about.html" class="nav-item nav-link">About Us</a>
+                        <a href="blog.html" class="nav-item nav-link active">Blog</a>
+                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                        <a href="https://vercosai.com/endustri-5-0-kisisellestirilmis-ve-akilli-uretimin-yeni-paradigmasi.html" class="lang nav-item nav-link"><i
+                                class="fa-solid fa-globe"></i> TR</a>
+                    </div>
+
+                </div>
+                <script>
+                    document.addEventListener("DOMContentLoaded", function () {
+                        var lastScrollPosition = window.scrollY || document.documentElement.scrollTop;
+
+                        // Sayfa içinde herhangi bir yere tıklandığında çalışacak kod
+                        document.addEventListener("click", function (event) {
+                            var clickover = event.target;
+                            var navbarCollapse = document.querySelector("#navbarCollapse");
+                            var isOpened = navbarCollapse.classList.contains("show"); // Bootstrap 5'te "show" class'ı kullanılıyor
+                            var isNavbarToggle = clickover.closest(".navbar-toggler");
+                            var isDropdownToggle = clickover.closest(".dropdown-toggle"); // Dropdown menüsü açma butonunu kontrol et
+                            var isDropdownMenu = clickover.closest(".dropdown-menu"); // Dropdown menüsünü kontrol et
+
+                            // Navbar sadece dropdown ve navbar-toggler dışındaki alanlara tıklandığında kapanacak
+                            if (isOpened && !isNavbarToggle && !isDropdownMenu && !isDropdownToggle) {
+                                document.querySelector("button.navbar-toggler").click();
+                                // Sayfa pozisyonunu sıfırla
+                                lastScrollPosition = window.scrollY || document.documentElement.scrollTop;
+                            }
+                        });
+
+                        // Dropdown'un kapanmaması için varsayılan kapanma davranışını engelle
+                        var dropdowns = document.querySelectorAll('.dropdown-menu');
+                        dropdowns.forEach(function (dropdown) {
+                            dropdown.addEventListener('click', function (event) {
+                                event.stopPropagation(); // Tıklama olayı diğer elemanlara yayılmasın
+                            });
+                        });
+
+                        // Sayfa kaydırıldığında navbar'ı kapat, ancak son pozisyondan itibaren 100px kaydırılınca
+                        window.addEventListener('scroll', function () {
+                            var navbarCollapse = document.querySelector("#navbarCollapse");
+                            var isOpened = navbarCollapse.classList.contains("show");
+
+                            // Mevcut kaydırma pozisyonunu kontrol et
+                            var currentScrollPosition = window.scrollY || document.documentElement.scrollTop;
+
+                            // Eğer navbar açıksa ve son kaydedilen pozisyondan 100px fazla kaydırılmışsa navbar'ı kapat
+                            if (isOpened && Math.abs(currentScrollPosition - lastScrollPosition) > 200) {
+                                document.querySelector("button.navbar-toggler").click();
+                                // Yeni pozisyonu kaydet
+                                lastScrollPosition = currentScrollPosition;
+                            }
+                        });
+                    });
+
+
+
+
+
+
+                </script>
+            </nav>
+        </div>
+    </div>
+    <!-- Navbar End -->
+
+    <!-- Hero Start -->
+    <div class="container-fluid pt-5 bg-darkorbit hero-header">
+        <div class="container pt-5">
+            <div class="row g-5 pt-5">
+                <div class="col-lg-6 align-self-center text-center text-lg-start mb-lg-5">
+                    <h3 style="color: #fff;">The New Paradigm of Personalized and Smart Manufacturing in Industry 5.0
+                    </h3>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center justify-content-lg-start mb-0">
+                            <li class="breadcrumb-item"><a class="text-white" href="index.html">Home</a></li>
+                            <li class="breadcrumb-item"><a class="text-white" href="#">Recent publication</a></li>
+                            <li class="breadcrumb-item text-white active" aria-current="page"><b>The New Paradigm of Person...</b></li>
+                        </ol>
+                        <script>
+                            document.addEventListener("DOMContentLoaded", function () {
+                                var lastScrollPosition = window.scrollY || document.documentElement.scrollTop;
+
+                                // Sayfa içinde herhangi bir yere tıklandığında çalışacak kod
+                                document.addEventListener("click", function (event) {
+                                    var clickover = event.target;
+                                    var navbarCollapse = document.querySelector("#navbarCollapse");
+                                    var isOpened = navbarCollapse.classList.contains("show"); // Bootstrap 5'te "show" class'ı kullanılıyor
+                                    var isNavbarToggle = clickover.closest(".navbar-toggler");
+                                    var isDropdownToggle = clickover.closest(".dropdown-toggle"); // Dropdown menüsü açma butonunu kontrol et
+                                    var isDropdownMenu = clickover.closest(".dropdown-menu"); // Dropdown menüsünü kontrol et
+
+                                    // Navbar sadece dropdown ve navbar-toggler dışındaki alanlara tıklandığında kapanacak
+                                    if (isOpened && !isNavbarToggle && !isDropdownMenu && !isDropdownToggle) {
+                                        document.querySelector("button.navbar-toggler").click();
+                                        // Sayfa pozisyonunu sıfırla
+                                        lastScrollPosition = window.scrollY || document.documentElement.scrollTop;
+                                    }
+                                });
+
+                                // Dropdown'un kapanmaması için varsayılan kapanma davranışını engelle
+                                var dropdowns = document.querySelectorAll('.dropdown-menu');
+                                dropdowns.forEach(function (dropdown) {
+                                    dropdown.addEventListener('click', function (event) {
+                                        event.stopPropagation(); // Tıklama olayı diğer elemanlara yayılmasın
+                                    });
+                                });
+
+                                // Sayfa kaydırıldığında navbar'ı kapat, ancak son pozisyondan itibaren 100px kaydırılınca
+                                window.addEventListener('scroll', function () {
+                                    var navbarCollapse = document.querySelector("#navbarCollapse");
+                                    var isOpened = navbarCollapse.classList.contains("show");
+
+                                    // Mevcut kaydırma pozisyonunu kontrol et
+                                    var currentScrollPosition = window.scrollY || document.documentElement.scrollTop;
+
+                                    // Eğer navbar açıksa ve son kaydedilen pozisyondan 100px fazla kaydırılmışsa navbar'ı kapat
+                                    if (isOpened && Math.abs(currentScrollPosition - lastScrollPosition) > 200) {
+                                        document.querySelector("button.navbar-toggler").click();
+                                        // Yeni pozisyonu kaydet
+                                        lastScrollPosition = currentScrollPosition;
+                                    }
+                                });
+                            });
+
+
+
+
+
+
+                        </script>
+                    </nav>
+                    <div class="views-container">
+                        <span style="padding: 10px;" class="pill-skill rounded-pill text-center">
+                            <i class="fa fa-eye"></i> 322 Views
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Hero End -->
+
+    <section style="padding-top: 50px; background: #27462c !important;" class="section bg-darkorbit">
+        <div class="container">
+
+            <div class="row blog-entries element-animate">
+
+                <div class="col-md-12 col-lg-8 main-content">
+
+                    <div class="post-content-body">
+                        <h4>01/05/2025</h4>
+
+
+                        <h4>Industry 5.0 The Future of Personalized and Smart Manufacturing</h4>
+                        <p>
+                            Following the innovations and automation technologies brought by Industry 4.0, the business world now stands on the
+                            threshold of Industry 5.0; this new era represents the unique intersection of personalized and smart manufacturing
+                            techniques. This article outlines this new industrial era and shows how companies can remain competitive in the future.
+                            We examine in detail the basic principles and approaches of Industry 5.0, innovative solutions supported by practical
+                            examples, and the impact of smart manufacturing on industries. Get ready to learn what awaits us on this transformation
+                            journey. We will provide information on the future of personalized manufacturing and Industry 5.0, basic principles,
+                            practical examples, and the impact of smart manufacturing on industries.
+                        </p>
+                        <img style="width: 100%; margin-bottom: 55px; border-radius: 10px;" src="/1052025/Endüstri 5.0 Kişiselleştirilmiş ve Akıllı Üretimin Geleceği.jpg" alt="">
+
+                        <h4>Industry 5.0: A New Era of Human-Machine Collaboration</h4>
+                        <p>Industry 5.0 offers a personalized approach to production by redefining the collaboration between humans and
+                            machines. This evolution is particularly characterized by the integration of artificial intelligence and robotic
+                            systems. Unlike previous industrial revolutions, this new wave uses technology not only to enhance efficiency but
+                            also to promote a human-centric approach that minimizes social and environmental impacts.</p>
+                        <p>With this transformation, smart factories and manufacturing technologies advance further, increasing flexibility and
+                            adaptability. Technologies developed within the framework of Industry 5.0 are designed to align production lines
+                            with human workers to enhance workplace safety and operational efficiency.</p>
+                        <p>Personalized production processes, which boost businesses' ability to respond quickly to customization and customer
+                            demands, play a defining role in market dynamics. Personalized manufacturing is critical for meeting customer needs
+                            more directly and increasing the marketability of products.</p>
+                        <p>Moreover, image processing technologies have the potential to enhance product quality by making error analysis and
+                            quality control processes on production lines more efficient. These technologies are one of the cornerstones of
+                            Industry 5.0 and are becoming an indispensable part of smart production processes.</p>
+                        
+                        <h4>Core Principles and Approaches: How Industry 5.0 Works</h4>
+                        <p>The core principles of Industry 5.0 focus on placing the human factor at the center, built upon the integration of
+                            personalized production and smart factories. This approach is designed to respond directly to customer needs and
+                            expectations. In personalized production, flexible and customized products are developed based on each customer’s
+                            specific requirements.</p>
+                        <p>Technological advancements form the foundation of this new industrial phase. In particular, artificial intelligence
+                            and manufacturing technologies are used to enhance the efficiency of production processes and reduce errors. AI
+                            provides continuous improvement and adaptation by analyzing the data required to maintain optimal performance on
+                            production lines.</p>
+                        <p>Another crucial aspect of technology is image processing. This technology is essential for providing precise control
+                            during production and maintaining quality standards. When integrated with robotic systems, image processing enables
+                            early detection of defective parts and correction within the process.</p>
+                        <p>Thus, smart factories take on a structure that continually improves and optimizes their internal dynamics. This
+                            structure not only ensures energy savings but also enhances continuity and quality in production. In conclusion,
+                            Industry 5.0 is defined not only by technological advancements but also by the integration of these technologies
+                            with a human-centric approach.</p>
+                        
+                        <h4>Industry 5.0 and Innovation Through Practical Examples</h4>
+                        <p>We can examine various examples to see how Industry 5.0, through the integration of personalized and smart
+                            manufacturing systems, is applied across different industrial sectors. For instance, in the automotive sector,
+                            sensors and AI-supported systems optimize the interaction between robots and human workers on assembly lines,
+                            allowing for more personalized production. This integration reduces costs and accelerates production processes.</p>
+                        <p>Another example can be found within the framework of smart factories. These factories make production lines more
+                            interactive by combining manufacturing technologies with IoT (Internet of Things) solutions. This increases
+                            machine-to-machine interaction on the production line, reducing breakdowns and ensuring continuity in manufacturing.
+                        </p>
+                        <p>In the clothing industry, companies adopting personalized manufacturing are able to produce customized garments based
+                            on consumers’ body measurements. Using AI-powered image processing technologies, data provided by customers online
+                            is instantly processed on dedicated production lines. This not only shortens processing time but also helps avoid
+                            waste.</p>
+                        <p>These examples clearly demonstrate how Industry 5.0 is transforming production across various sectors and increasing
+                            business competitiveness. By integrating smart technologies, the personalized manufacturing process is reshaping the
+                            face of industrial innovation and redefining business models.</p>
+                        
+                        <h4>Industrial Transformation: The Impact of Smart Manufacturing</h4>
+                        <p>The transformation initiated by Industry 5.0 is profoundly affecting business processes. Smart manufacturing systems,
+                            particularly through the integration of artificial intelligence and image processing technologies, are making
+                            production lines more flexible and efficient. This new approach enables environments where machines and human labor
+                            work together, resulting in more effective production processes.</p>
+                        <p>Especially personalized manufacturing changes market dynamics by enabling rapid responses to growing consumer
+                            demands. Producing products tailored to individuals not only increases customer satisfaction but also allows
+                            businesses to differentiate themselves in the market. Smart factories play a central role in this process by
+                            constantly optimizing production with their data collection and analysis capabilities.</p>
+                        <p>This transformation also encourages the adoption of sustainable manufacturing methodologies. Systems that optimize
+                            energy use and minimize waste are just a few examples of Industry 5.0’s steps toward reducing environmental impact.
+                            As a result, manufacturing technologies are evolving into structures that support sustainability both economically
+                            and environmentally.</p>
+                        <p>These forward-looking smart manufacturing approaches enhance companies’ competitive advantages and enable them to
+                            develop new strategies for market leadership. Industry 5.0 will continue to shape industrial transformation not only
+                            through technology and automation but also by introducing innovations in strategic business models and workforce
+                            dynamics.</p>
+                        
+                        <h4>Frequently Asked Questions</h4>
+                        <p><strong>What is Industry 5.0?</strong><br>Industry 5.0 is an industrial revolution that focuses on personalized and
+                            more sustainable manufacturing methods by combining human input with technological advancements.</p>
+                        <p><strong>What is the main difference between Industry 4.0 and Industry 5.0?</strong><br>While Industry 4.0 focuses
+                            mainly on automation and data exchange technologies, Industry 5.0 aims to integrate human intelligence and
+                            creativity with technology, adding a more personal touch to business processes.</p>
+                        <p><strong>What innovations does Industry 5.0 bring to manufacturing?</strong><br>It introduces technological tools that
+                            facilitate personalized product manufacturing, promotes collaboration between robots and humans, and aims to improve
+                            efficiency in processes. It also emphasizes environmental awareness by encouraging green production.</p>
+                        <p><strong>Which technologies does Industry 5.0 use?</strong><br>It uses artificial intelligence, robotics, IoT
+                            (Internet of Things), big data analytics, and many other smart technologies to transform business processes.</p>
+                        <p><strong>How will Industry 5.0 impact the labor market?</strong><br>It may reshape the labor market by adding more
+                            creative and analytical roles. With increased human-machine collaboration, new job opportunities will emerge, and
+                            the nature of some traditional jobs will change.</p>
+                        <p><strong>How will Industry 5.0 contribute to sustainability?</strong><br>By adopting production processes and methods
+                            that aim to reduce environmental impact, it will make significant contributions to sustainability. Energy efficiency
+                            and waste reduction will be priorities.</p>
+                        <p><strong>How should Turkey prepare for Industry 5.0?</strong><br>Turkey should develop the necessary technological
+                            infrastructure, adapt its education systems to this new revolution, promote cross-sector collaboration, and increase
+                            investments in innovation and R&D to transition to Industry 5.0.</p>
+
+
+
+
+
+
+
+                    </div>
+
+
+                </div>
+
+                <!-- END main-content -->
+
+                <div class="col-md-12 col-lg-4 sidebar text-white">
+
+                    <!-- END sidebar-box -->
+                    <div class="sidebar-box sticky-effectox" style="max-height: 70vh; overflow: auto;">
+                        <h3 class="heading text-white">Popular Posts</h3>
+                        <div class="post-entry-sidebar">
+
+                            <ul>
+                                <li>
+                                    <a
+                                        href="erp-integration-with-artificial-intelligence-how-to-increase-efficiency-in-your-business.html">
+                                        <div class=" wow fadeIn" data-wow-delay="0.3s">
+                                            <div class="case-item position-relative overflow-hidden rounded mb-2">
+                                                <img class="img-fluid"
+                                                    src="blog/ERP Integration with Artificial Intelligence How to Increase Efficiency in Your Business.jpg"
+                                                    alt="">
+                                                <a class="case-overlay text-decoration-none"
+                                                    href="erp-integration-with-artificial-intelligence-how-to-increase-efficiency-in-your-business.html">
+
+                                                    <h5 class="lh-base text-white mb-3">
+                                                        ERP Integration with Artificial Intelligence How to Increase
+                                                        Efficiency in Your Business
+                                                    </h5>
+                                                    <span class="btn btn-square btn-primary"><i
+                                                            class="fa fa-arrow-right"></i></span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="packaging-sorting-and-error-detection-increase-efficiency-with-ai.html">
+                                        <div class=" wow fadeIn" data-wow-delay="0.3s">
+                                            <div class="case-item position-relative overflow-hidden rounded mb-2">
+                                                <img class="img-fluid"
+                                                    src="blog/Packaging Sorting and Error Detection Increase Efficiency with AI.jpg"
+                                                    alt="">
+                                                <a class="case-overlay text-decoration-none"
+                                                    href="packaging-sorting-and-error-detection-increase-efficiency-with-ai.html">
+
+                                                    <h5 class="lh-base text-white mb-3">
+                                                        Packaging Sorting and Error Detection Increase Efficiency with
+                                                        AI
+                                                    </h5>
+                                                    <span class="btn btn-square btn-primary"><i
+                                                            class="fa fa-arrow-right"></i></span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- END sidebar-box -->
+
+                </div>
+                <!-- END sidebar -->
+                <div style="height: 100px;" class="cakinti"></div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+    <iframe name="dummyframe" id="dummyframe" style="display: none;"></iframe>
+    <!-- Newsletter Start -->
+    <form action="https://formspree.io/f/mrbqbazd" method="POST" target="dummyframe"
+        class="container-fluid bg-darkorbit newsletter">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="display-none col-md-5 ps-lg-0 pt-5 pt-md-0 text-start wow fadeIn" data-wow-delay="0.3s">
+                    <img class="img-fluid" src="img/newsletter.png" alt="">
+                </div>
+                <div class="col-md-7  newsletter-text wow fadeIn" data-wow-delay="0.5s">
+                    <div class="btn btn-sm border rounded-pill text-white px-3 mb-3">Newsletter</div>
+                    <h1 class="text-white mb-4">Let's subscribe the newsletter</h1>
+                    <div class="position-relative w-100 mt-3 mb-2">
+                        <input name="email" class="form-control border-0 rounded-pill w-100 ps-4 pe-5" type="email"
+                            placeholder="Enter Your Email" style="height: 48px;">
+                        <button type="submit" class="btn shadow-none position-absolute top-0 end-0 mt-1 me-2"><i
+                                style="color: #395b40  !important;"
+                                class="fa fa-paper-plane text-primary fs-4"></i></button>
+                    </div>
+                    <small class="text-white-50">You accept our privacy policy by providing your email address.</small>
+                </div>
+            </div>
+        </div>
+    </form>
+    <!-- Newsletter End -->
+    <script>
+        document.querySelector('form').addEventListener('submit', function (e) {
+            e.preventDefault(); // Formu otomatik göndermesin, biz kontrol edeceğiz.
+
+            // Formu manuel gönder
+            this.submit();
+
+            // Başarı mesajı oluştur
+            const successMessage = document.createElement('small');
+            successMessage.textContent = 'Thank you for subscribing!';
+            successMessage.style.color = '#ffffff';
+            successMessage.className = 'form-success-message';
+
+            // Eğer daha önce eklendiyse tekrar eklememesi için kontrol
+            if (!document.querySelector('.form-success-message')) {
+                this.querySelector('.newsletter-text').appendChild(successMessage);
+            }
+
+            // Inputu temizle
+            this.querySelector('input[name="email"]').value = '';
+
+            // 20 saniye sonra mesajı kaldır
+            setTimeout(() => {
+                successMessage.remove();
+            }, 20000); // 20.000 ms = 20 saniye
+        });
+    </script>
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-primarybit text-white-50 footer pt-5">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.1s">
+                    <a href="index.html" class="d-inline-block mb-3">
+                        <img style="width: 200px;" src="img/logo.svg" alt="logo">
+                    </a>
+
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.3s">
+                    <h5 class="text-white mb-4">Popular Link</h5>
+                    <a class="btn btn-link" href="about.html">About Us</a>
+                    <a class="btn btn-link" href="contact.html">Contact Us</a>
+                    <a class="btn btn-link" href="privacy.html">Privacy Policy</a>
+                    <a class="btn btn-link" href="terms.html">Terms & Condition</a>
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.5s">
+                    <h5 class="text-white mb-4">Our Services</h5>
+                    <a class="btn btn-link" href="bottling.html">Bottling</a>
+                    <a class="btn btn-link" href="erp-integration.html">ERP Integration</a>
+                    <a class="btn btn-link" href="packaging.html">Packaging</a>
+                    <a class="btn btn-link" href="fmcg.html">FMCG</a>
+                    <a class="btn btn-link" href="line-tracking.html">Line Tracking</a>
+                    <a class="btn btn-link" href="safety.html">Safety</a>
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.7s">
+                    <h5 class="text-white mb-4">Get In Touch</h5>
+                    <p><i style="width: 10px;" class="fa fa-map-marker-alt me-3"></i>Sakarya, TURKEY</p>
+                    <p><a style="color:#ffffff80; text-decoration:none" href="tel:+905464208480"><i style="width: 10px;"
+                                class="fa fa-phone me-3"></i>0 546 420 84 80</a></p>
+
+                    <p><a style="color:#ffffff80; text-decoration:none" href="mailto:hello@vercosai.com"><i
+                                style="width: 10px;" class="fa fa-envelope me-3"></i>hello@vercosai.com</a></p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-outline-light btn-social" href="https://x.com/vercos_ai"><i
+                                class="fab fa-x-twitter"></i></a>
+
+                        <a class="btn btn-outline-light btn-social" href="https://youtube.com/@vercosai"><i
+                                class="fab fa-youtube"></i></a>
+
+                        <a class="btn btn-outline-light btn-social" href="https://www.linkedin.com/company/vercosai/"><i
+                                class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container wow fadeIn" data-wow-delay="0.1s">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="border-bottom" href="https://vercosai.com/en">VercosAI</a>, All Right Reserved.
+
+
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <div class="footer-menu">
+                            <a href="https://vercosai.com/en">Home</a>
+
+                            <a href="https://vercosai.com/en/contact.html">Help</a>
+                            <a href="https://vercosai.com/en/FAQs.html">FAQs</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-dark btn-lg back-to-top pt-2"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

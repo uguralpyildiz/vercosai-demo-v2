@@ -1,0 +1,559 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>A New Era in Quality Control with AI-Powered Image Processing in Industry | VercosAI Digital Transformation</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Ubuntu:wght@500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <script src="https://kit.fontawesome.com/607e4879ac.js" crossorigin="anonymous"></script>
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Navbar Start -->
+    <div class="container-fluid sticky-top ">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-dark p-0">
+                <a href="index.html" class="navbar-brand">
+                    <img src="img/logo.svg" alt="logo">
+                </a>
+                <button type="button" class="navbar-toggler ms-auto me-0" data-bs-toggle="collapse"
+                    data-bs-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav ms-auto">
+                        <a href="index.html" class="nav-item nav-link ">Home</a>
+                        <div class="nav-item dropdown">
+                            <a style="cursor:pointer" class="nav-link dropdown-toggle"
+                                data-bs-toggle="dropdown">Solutions</a>
+                            <div class="dropdown-menu bg-primary mt-2">
+                                <a href="packaging.html" class="dropdown-item">Packaging</a>
+                                <a href="erp-integration.html" class="dropdown-item">ERP Integration</a>
+                                <a href="bottling.html" class="dropdown-item">Bottling</a>
+                                <a href="fmcg.html" class="dropdown-item">FMCG</a>
+                                <a href="line-tracking.html" class="dropdown-item">Line Tracking</a>
+                                <a href="safety.html" class="dropdown-item">Safety</a>
+                            </div>
+                        </div>
+                        <a href="capabilities.html" class="nav-item nav-link">Capabilities</a>
+                        <a href="about.html" class="nav-item nav-link">About Us</a>
+                        <a href="blog.html" class="nav-item nav-link active">Blog</a>
+                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                        <a href="https://vercosai.com/endustride-yapay-zeka-destekli-goruntu-isleme-kalite-kontrolde-yeni-donem.html" class="lang nav-item nav-link"><i
+                                class="fa-solid fa-globe"></i> TR</a>
+                    </div>
+
+                </div>
+                <script>
+                    document.addEventListener("DOMContentLoaded", function () {
+                        var lastScrollPosition = window.scrollY || document.documentElement.scrollTop;
+
+                        // Sayfa içinde herhangi bir yere tıklandığında çalışacak kod
+                        document.addEventListener("click", function (event) {
+                            var clickover = event.target;
+                            var navbarCollapse = document.querySelector("#navbarCollapse");
+                            var isOpened = navbarCollapse.classList.contains("show"); // Bootstrap 5'te "show" class'ı kullanılıyor
+                            var isNavbarToggle = clickover.closest(".navbar-toggler");
+                            var isDropdownToggle = clickover.closest(".dropdown-toggle"); // Dropdown menüsü açma butonunu kontrol et
+                            var isDropdownMenu = clickover.closest(".dropdown-menu"); // Dropdown menüsünü kontrol et
+
+                            // Navbar sadece dropdown ve navbar-toggler dışındaki alanlara tıklandığında kapanacak
+                            if (isOpened && !isNavbarToggle && !isDropdownMenu && !isDropdownToggle) {
+                                document.querySelector("button.navbar-toggler").click();
+                                // Sayfa pozisyonunu sıfırla
+                                lastScrollPosition = window.scrollY || document.documentElement.scrollTop;
+                            }
+                        });
+
+                        // Dropdown'un kapanmaması için varsayılan kapanma davranışını engelle
+                        var dropdowns = document.querySelectorAll('.dropdown-menu');
+                        dropdowns.forEach(function (dropdown) {
+                            dropdown.addEventListener('click', function (event) {
+                                event.stopPropagation(); // Tıklama olayı diğer elemanlara yayılmasın
+                            });
+                        });
+
+                        // Sayfa kaydırıldığında navbar'ı kapat, ancak son pozisyondan itibaren 100px kaydırılınca
+                        window.addEventListener('scroll', function () {
+                            var navbarCollapse = document.querySelector("#navbarCollapse");
+                            var isOpened = navbarCollapse.classList.contains("show");
+
+                            // Mevcut kaydırma pozisyonunu kontrol et
+                            var currentScrollPosition = window.scrollY || document.documentElement.scrollTop;
+
+                            // Eğer navbar açıksa ve son kaydedilen pozisyondan 100px fazla kaydırılmışsa navbar'ı kapat
+                            if (isOpened && Math.abs(currentScrollPosition - lastScrollPosition) > 200) {
+                                document.querySelector("button.navbar-toggler").click();
+                                // Yeni pozisyonu kaydet
+                                lastScrollPosition = currentScrollPosition;
+                            }
+                        });
+                    });
+
+
+
+
+
+
+                </script>
+            </nav>
+        </div>
+    </div>
+    <!-- Navbar End -->
+
+    <!-- Hero Start -->
+    <div class="container-fluid pt-5 bg-darkorbit hero-header">
+        <div class="container pt-5">
+            <div class="row g-5 pt-5">
+                <div class="col-lg-6 align-self-center text-center text-lg-start mb-lg-5">
+                    <h3 style="color: #fff;">A New Era in Quality Control with AI-Powered Image Processing in Industry
+                    </h3>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center justify-content-lg-start mb-0">
+                            <li class="breadcrumb-item"><a class="text-white" href="index.html">Home</a></li>
+                            <li class="breadcrumb-item"><a class="text-white" href="#">Recent publication</a></li>
+                            <li class="breadcrumb-item text-white active" aria-current="page"><b>A New Era in Qua...</b></li>
+                        </ol>
+                        <script>
+                            document.addEventListener("DOMContentLoaded", function () {
+                                var lastScrollPosition = window.scrollY || document.documentElement.scrollTop;
+
+                                // Sayfa içinde herhangi bir yere tıklandığında çalışacak kod
+                                document.addEventListener("click", function (event) {
+                                    var clickover = event.target;
+                                    var navbarCollapse = document.querySelector("#navbarCollapse");
+                                    var isOpened = navbarCollapse.classList.contains("show"); // Bootstrap 5'te "show" class'ı kullanılıyor
+                                    var isNavbarToggle = clickover.closest(".navbar-toggler");
+                                    var isDropdownToggle = clickover.closest(".dropdown-toggle"); // Dropdown menüsü açma butonunu kontrol et
+                                    var isDropdownMenu = clickover.closest(".dropdown-menu"); // Dropdown menüsünü kontrol et
+
+                                    // Navbar sadece dropdown ve navbar-toggler dışındaki alanlara tıklandığında kapanacak
+                                    if (isOpened && !isNavbarToggle && !isDropdownMenu && !isDropdownToggle) {
+                                        document.querySelector("button.navbar-toggler").click();
+                                        // Sayfa pozisyonunu sıfırla
+                                        lastScrollPosition = window.scrollY || document.documentElement.scrollTop;
+                                    }
+                                });
+
+                                // Dropdown'un kapanmaması için varsayılan kapanma davranışını engelle
+                                var dropdowns = document.querySelectorAll('.dropdown-menu');
+                                dropdowns.forEach(function (dropdown) {
+                                    dropdown.addEventListener('click', function (event) {
+                                        event.stopPropagation(); // Tıklama olayı diğer elemanlara yayılmasın
+                                    });
+                                });
+
+                                // Sayfa kaydırıldığında navbar'ı kapat, ancak son pozisyondan itibaren 100px kaydırılınca
+                                window.addEventListener('scroll', function () {
+                                    var navbarCollapse = document.querySelector("#navbarCollapse");
+                                    var isOpened = navbarCollapse.classList.contains("show");
+
+                                    // Mevcut kaydırma pozisyonunu kontrol et
+                                    var currentScrollPosition = window.scrollY || document.documentElement.scrollTop;
+
+                                    // Eğer navbar açıksa ve son kaydedilen pozisyondan 100px fazla kaydırılmışsa navbar'ı kapat
+                                    if (isOpened && Math.abs(currentScrollPosition - lastScrollPosition) > 200) {
+                                        document.querySelector("button.navbar-toggler").click();
+                                        // Yeni pozisyonu kaydet
+                                        lastScrollPosition = currentScrollPosition;
+                                    }
+                                });
+                            });
+
+
+
+
+
+
+                        </script>
+                    </nav>
+                    <div class="views-container">
+                        <span style="padding: 10px;" class="pill-skill rounded-pill text-center">
+                            <i class="fa fa-eye"></i> 202 Views
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Hero End -->
+
+    <section style="padding-top: 50px; background: #27462c !important;" class="section bg-darkorbit">
+        <div class="container">
+
+            <div class="row blog-entries element-animate">
+
+                <div class="col-md-12 col-lg-8 main-content">
+
+                    <div class="post-content-body">
+                        <h4>29/04/2025</h4>
+
+
+                        <h4>Industrial Quality Control Transformed by Artificial Intelligence</h4>
+                        <p>
+                            In today’s competitive business world, maximizing quality control processes is one of the keys to business success.
+                            Industrial sectors are constantly searching for new technologies to improve productivity and quality standards. In this
+                            context, AI-supported image processing technology is revolutionizing industrial quality control processes. In this
+                            article, we will examine in detail how AI-supported image processing has transformed the industry, the working
+                            principles of this technology, and the advantages it provides. In addition, we will examine how this innovative approach
+                            can add value to businesses by showing examples of how AI is applied in quality control on a sectoral basis.
+                        </p>
+                        <img style="width: 100%; margin-bottom: 55px; border-radius: 10px;" src="/1052025/Endüstride Yapay Zeka Destekli Görüntü İşleme Kalite Kontrolde Yeni Dönem.jpg" alt="">
+
+                        <h4>Applications of Artificial Intelligence in Industry</h4>
+                        <p> The applications of artificial intelligence in industry have revolutionized processes, particularly in quality
+                            control. Traditionally time-consuming and error-prone procedures have become significantly faster and more accurate
+                            thanks to AI-powered systems. This integration ensures flawless efficiency on production lines, enhancing companies'
+                            competitiveness while also reducing operational costs. </p>
+                        <p> With the integration of AI technologies, image processing solutions have become more robust, making complex visual
+                            analyses easier to perform. These systems guarantee product quality by using algorithms to detect and classify
+                            defects during various stages of production. Furthermore, due to their continuous learning capabilities, AI models
+                            become increasingly precise and effective over time. </p>
+                        <p> Industrial image processing solutions significantly enhance quality control mechanisms, especially on high-speed
+                            production lines. Data gathered through cameras and sensors is instantly processed by AI, enabling real-time
+                            detection of production defects. This prevents faulty products from reaching the market, thereby increasing customer
+                            satisfaction and brand reliability. </p>
+                        <p> The use of AI in production line efficiency and quality control processes has become indispensable for industrial
+                            companies. With this technology, error rates are reduced, production speeds are increased, and as a result,
+                            companies save costs and gain stronger positions in the market. </p>
+                        <h4>What is AI-Powered Image Processing and How Does It Work?</h4>
+                        <p> AI-powered image processing refers to advanced technology systems that enable machines to analyze visual data with
+                            little to no human intervention. Unlike traditional image processing techniques, these systems leverage AI and
+                            machine learning algorithms to detect and interpret complex patterns and details in images. These methods are
+                            especially critical in quality control processes for detecting faults, classifying defects, and improving overall
+                            production quality. </p>
+                        <p> The working principle of these systems begins with a training dataset. Machines are trained on various images to
+                            understand what constitutes a defect and what deviates from normal conditions. After the training phase, the systems
+                            are deployed to improve real-time production efficiency and minimize errors. The images continuously captured via
+                            cameras and sensors are analyzed by AI, allowing instant detection of any deviations or defects. </p>
+                        <p> AI-powered image processing technology features high-speed capturing and real-time processing capabilities. These
+                            traits enable highly effective image processing without interrupting production line activities, ensuring maximum
+                            quality control. Additionally, with adaptability and learning capacity, these systems support ongoing improvement
+                            and optimization. </p>
+                        <h4>Advantages of Using AI in Quality Control</h4>
+                        <p> Integrating AI technologies into quality control processes significantly enhances efficiency and accuracy standards
+                            across industries. AI-powered image processing solutions, in particular, enable faster and more accurate defect
+                            detection on production lines, directly contributing to improved product quality. </p>
+                        <p> Another advantage is AI’s continuous learning ability. These systems become more effective in analyzing and
+                            preventing errors over time, improving their ability to detect even the most subtle flaws that human inspectors
+                            might miss. </p>
+                        <p> In addition, AI-based systems can operate continuously at high speeds. This is a major benefit for companies with
+                            high production volumes, as quality control can be carried out uninterrupted while the production line remains in
+                            motion. This continuity helps maximize production efficiency. </p>
+                        <p> AI helps reduce the number of defective products, resulting in cost savings. Although the initial investment may be
+                            high, the long-term gains in efficiency and reduced production of second-grade items quickly offset the cost. This
+                            can provide companies with a competitive edge in the marketplace. </p>
+                        <h4>AI Applications in Quality Control by Industry</h4>
+                        <p> Today, artificial intelligence plays a major role in transforming quality control processes across almost every
+                            industry. Particularly in the automotive, electronics, and pharmaceutical sectors, AI-powered image processing
+                            solutions have led to significant advancements in improving product quality and reducing manufacturing errors. </p>
+                        <p> In the automotive industry, AI has been integrated into advanced image analysis systems used to detect part and
+                            assembly defects. These systems thoroughly inspect each component to ensure vehicles are safer and more durable. In
+                            the electronics industry, systems that check whether miniature components on circuit boards are properly placed
+                            operate more quickly and accurately thanks to AI. </p>
+                        <p> In the pharmaceutical industry, where quality control is crucial for human health, AI-powered image processing is
+                            effectively used to minimize production error risks. AI systems that inspect whether tablets are correctly dosed and
+                            defect-free have significantly increased efficiency in this sector. </p>
+                        <p> Although the applications and benefits of AI vary across industries, it generally enhances quality and improves
+                            production line efficiency in the domains it is applied. As a result, businesses reduce costs and enhance their
+                            reputation, reaching a broader customer base. </p>
+                        <h4>Frequently Asked Questions</h4>
+                        <p><strong>What is AI-powered image processing?</strong><br> AI-powered image processing is the use of artificial
+                            intelligence technologies by computer systems to analyze and interpret images. This process is mainly used in
+                            industrial settings to enhance automation and efficiency. </p>
+                        <p><strong>What role does AI-powered image processing play in quality control?</strong><br> In quality control,
+                            AI-powered image processing rapidly and accurately analyzes products to detect surface defects, dimensional
+                            anomalies, and other quality issues. This reduces production errors and enhances product quality. </p>
+                        <p><strong>What are the advantages of this technology in industry?</strong><br> This technology lowers error rates,
+                            increases processing speed, reduces costs, and boosts workforce efficiency—contributing to the overall optimization
+                            of production processes. </p>
+                        <p><strong>Which other areas apply AI-powered image processing?</strong><br> This technology is also used in medical
+                            diagnostics, security systems, traffic monitoring, agricultural technology, and the retail sector. </p>
+                        <p><strong>Can you provide an example of AI-powered image processing in quality control?</strong><br> In the automotive
+                            industry, AI-powered camera systems can detect and classify scratches or other defects on parts within seconds
+                            during quality control inspections. </p>
+                        <p><strong>What does a company need to adopt AI-powered image processing technology?</strong><br> To implement this
+                            technology, a company needs relevant AI software, compatible hardware infrastructure, and trained personnel capable
+                            of effectively operating the system. </p>
+                        <p><strong>What is the future and potential of AI-powered image processing?</strong><br> The future of AI-powered image
+                            processing looks promising. With ongoing advancements in information technology, this technology is expected to
+                            become even more widely used—not only in industrial applications but also in daily life. </p>
+
+
+
+
+
+
+                    </div>
+
+
+                </div>
+
+                <!-- END main-content -->
+
+                <div class="col-md-12 col-lg-4 sidebar text-white">
+
+                    <!-- END sidebar-box -->
+                    <div class="sidebar-box sticky-effectox" style="max-height: 70vh; overflow: auto;">
+                        <h3 class="heading text-white">Popular Posts</h3>
+                        <div class="post-entry-sidebar">
+
+                            <ul>
+                                <li>
+                                    <a
+                                        href="erp-integration-with-artificial-intelligence-how-to-increase-efficiency-in-your-business.html">
+                                        <div class=" wow fadeIn" data-wow-delay="0.3s">
+                                            <div class="case-item position-relative overflow-hidden rounded mb-2">
+                                                <img class="img-fluid"
+                                                    src="blog/ERP Integration with Artificial Intelligence How to Increase Efficiency in Your Business.jpg"
+                                                    alt="">
+                                                <a class="case-overlay text-decoration-none"
+                                                    href="erp-integration-with-artificial-intelligence-how-to-increase-efficiency-in-your-business.html">
+
+                                                    <h5 class="lh-base text-white mb-3">
+                                                        ERP Integration with Artificial Intelligence How to Increase
+                                                        Efficiency in Your Business
+                                                    </h5>
+                                                    <span class="btn btn-square btn-primary"><i
+                                                            class="fa fa-arrow-right"></i></span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="packaging-sorting-and-error-detection-increase-efficiency-with-ai.html">
+                                        <div class=" wow fadeIn" data-wow-delay="0.3s">
+                                            <div class="case-item position-relative overflow-hidden rounded mb-2">
+                                                <img class="img-fluid"
+                                                    src="blog/Packaging Sorting and Error Detection Increase Efficiency with AI.jpg"
+                                                    alt="">
+                                                <a class="case-overlay text-decoration-none"
+                                                    href="packaging-sorting-and-error-detection-increase-efficiency-with-ai.html">
+
+                                                    <h5 class="lh-base text-white mb-3">
+                                                        Packaging Sorting and Error Detection Increase Efficiency with
+                                                        AI
+                                                    </h5>
+                                                    <span class="btn btn-square btn-primary"><i
+                                                            class="fa fa-arrow-right"></i></span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- END sidebar-box -->
+
+                </div>
+                <!-- END sidebar -->
+                <div style="height: 100px;" class="cakinti"></div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+    <iframe name="dummyframe" id="dummyframe" style="display: none;"></iframe>
+    <!-- Newsletter Start -->
+    <form action="https://formspree.io/f/mrbqbazd" method="POST" target="dummyframe"
+        class="container-fluid bg-darkorbit newsletter">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="display-none col-md-5 ps-lg-0 pt-5 pt-md-0 text-start wow fadeIn" data-wow-delay="0.3s">
+                    <img class="img-fluid" src="img/newsletter.png" alt="">
+                </div>
+                <div class="col-md-7  newsletter-text wow fadeIn" data-wow-delay="0.5s">
+                    <div class="btn btn-sm border rounded-pill text-white px-3 mb-3">Newsletter</div>
+                    <h1 class="text-white mb-4">Let's subscribe the newsletter</h1>
+                    <div class="position-relative w-100 mt-3 mb-2">
+                        <input name="email" class="form-control border-0 rounded-pill w-100 ps-4 pe-5" type="email"
+                            placeholder="Enter Your Email" style="height: 48px;">
+                        <button type="submit" class="btn shadow-none position-absolute top-0 end-0 mt-1 me-2"><i
+                                style="color: #395b40  !important;"
+                                class="fa fa-paper-plane text-primary fs-4"></i></button>
+                    </div>
+                    <small class="text-white-50">You accept our privacy policy by providing your email address.</small>
+                </div>
+            </div>
+        </div>
+    </form>
+    <!-- Newsletter End -->
+    <script>
+        document.querySelector('form').addEventListener('submit', function (e) {
+            e.preventDefault(); // Formu otomatik göndermesin, biz kontrol edeceğiz.
+
+            // Formu manuel gönder
+            this.submit();
+
+            // Başarı mesajı oluştur
+            const successMessage = document.createElement('small');
+            successMessage.textContent = 'Thank you for subscribing!';
+            successMessage.style.color = '#ffffff';
+            successMessage.className = 'form-success-message';
+
+            // Eğer daha önce eklendiyse tekrar eklememesi için kontrol
+            if (!document.querySelector('.form-success-message')) {
+                this.querySelector('.newsletter-text').appendChild(successMessage);
+            }
+
+            // Inputu temizle
+            this.querySelector('input[name="email"]').value = '';
+
+            // 20 saniye sonra mesajı kaldır
+            setTimeout(() => {
+                successMessage.remove();
+            }, 20000); // 20.000 ms = 20 saniye
+        });
+    </script>
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-primarybit text-white-50 footer pt-5">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.1s">
+                    <a href="index.html" class="d-inline-block mb-3">
+                        <img style="width: 200px;" src="img/logo.svg" alt="logo">
+                    </a>
+
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.3s">
+                    <h5 class="text-white mb-4">Popular Link</h5>
+                    <a class="btn btn-link" href="about.html">About Us</a>
+                    <a class="btn btn-link" href="contact.html">Contact Us</a>
+                    <a class="btn btn-link" href="privacy.html">Privacy Policy</a>
+                    <a class="btn btn-link" href="terms.html">Terms & Condition</a>
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.5s">
+                    <h5 class="text-white mb-4">Our Services</h5>
+                    <a class="btn btn-link" href="bottling.html">Bottling</a>
+                    <a class="btn btn-link" href="erp-integration.html">ERP Integration</a>
+                    <a class="btn btn-link" href="packaging.html">Packaging</a>
+                    <a class="btn btn-link" href="fmcg.html">FMCG</a>
+                    <a class="btn btn-link" href="line-tracking.html">Line Tracking</a>
+                    <a class="btn btn-link" href="safety.html">Safety</a>
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.7s">
+                    <h5 class="text-white mb-4">Get In Touch</h5>
+                    <p><i style="width: 10px;" class="fa fa-map-marker-alt me-3"></i>Sakarya, TURKEY</p>
+                    <p><a style="color:#ffffff80; text-decoration:none" href="tel:+905464208480"><i style="width: 10px;"
+                                class="fa fa-phone me-3"></i>0 546 420 84 80</a></p>
+
+                    <p><a style="color:#ffffff80; text-decoration:none" href="mailto:hello@vercosai.com"><i
+                                style="width: 10px;" class="fa fa-envelope me-3"></i>hello@vercosai.com</a></p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-outline-light btn-social" href="https://x.com/vercos_ai"><i
+                                class="fab fa-x-twitter"></i></a>
+
+                        <a class="btn btn-outline-light btn-social" href="https://youtube.com/@vercosai"><i
+                                class="fab fa-youtube"></i></a>
+
+                        <a class="btn btn-outline-light btn-social" href="https://www.linkedin.com/company/vercosai/"><i
+                                class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container wow fadeIn" data-wow-delay="0.1s">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="border-bottom" href="https://vercosai.com/en">VercosAI</a>, All Right Reserved.
+
+
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <div class="footer-menu">
+                            <a href="https://vercosai.com/en">Home</a>
+
+                            <a href="https://vercosai.com/en/contact.html">Help</a>
+                            <a href="https://vercosai.com/en/FAQs.html">FAQs</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-dark btn-lg back-to-top pt-2"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
