@@ -270,7 +270,7 @@ color: #fff !important;
             top: 0 !important;
             background: #01490d00 !important;
             border: 2px solid #92DF9F00 !important;
-            
+            overflow: hidden !important;
     
             border-radius: 10px;
         }
